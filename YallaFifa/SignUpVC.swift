@@ -20,11 +20,11 @@ class SignUpVC: GlobalController {
     @IBOutlet weak var scrollView: UIScrollView!
 
     
-    var ref: FIRDatabaseReference!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = FIRDatabase.database().reference()
+        self.ref = Database.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -42,7 +42,7 @@ class SignUpVC: GlobalController {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
         }
         
-        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let user = user {
                 print("successfully signed up")
                 self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])

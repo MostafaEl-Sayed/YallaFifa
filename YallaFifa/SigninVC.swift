@@ -17,16 +17,16 @@ class SigninVC: GlobalController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var ref: FIRDatabaseReference!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = FIRDatabase.database().reference()
+        self.ref = Database.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
     }
     
     @IBAction func signinTapped(_ sender: Any) {
-        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let user = user {
                 let uid = user.uid
                 let defaults = UserDefaults.standard
