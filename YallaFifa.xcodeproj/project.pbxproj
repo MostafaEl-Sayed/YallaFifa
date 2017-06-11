@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF626E9E1EEDA365003770FC /* oswald in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9D1EEDA365003770FC /* oswald */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
 		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */; };
 		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
@@ -36,6 +37,7 @@
 		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
 		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF626E9D1EEDA365003770FC /* oswald */ = {isa = PBXFileReference; lastKnownFileType = folder; path = oswald; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
 		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
 		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		CF9381061EE6F2C60091083B /* YallaFifa */ = {
 			isa = PBXGroup;
 			children = (
+				CF626E9D1EEDA365003770FC /* oswald */,
 				E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */,
 				CF9381071EE6F2C60091083B /* AppDelegate.swift */,
 				CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */,
@@ -215,6 +218,7 @@
 				CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */,
 				CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */,
 				E0D1C3F81EED8C44006D5C34 /* GoogleService-Info.plist in Resources */,
+				CF626E9E1EEDA365003770FC /* oswald in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

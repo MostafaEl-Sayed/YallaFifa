@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class SigninVC: GlobalController {
 
@@ -15,16 +17,16 @@ class SigninVC: GlobalController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var ref: DatabaseReference!
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = Database.database().reference()
+        self.ref = FIRDatabase.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
     }
     
     @IBAction func signinTapped(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let user = user {
                 let uid = user.uid
                 let defaults = UserDefaults.standard

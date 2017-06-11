@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpVC: GlobalController {
 
@@ -19,12 +20,14 @@ class SignUpVC: GlobalController {
     @IBOutlet weak var scrollView: UIScrollView!
 
     
-    var ref: DatabaseReference!
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = Database.database().reference()
+        self.ref = FIRDatabase.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
 
@@ -39,7 +42,7 @@ class SignUpVC: GlobalController {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
         }
         
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let user = user {
                 print("successfully signed up")
                 self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
