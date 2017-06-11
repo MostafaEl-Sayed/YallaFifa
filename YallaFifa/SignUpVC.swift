@@ -7,24 +7,53 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
-class SignUpVC: UIViewController , UIScrollViewDelegate {
+class SignUpVC: GlobalController {
 
-    @IBOutlet weak var containerScrollView: UIScrollView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPassTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
 
-    @IBOutlet weak var continueButton: UIButton!
     
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.ref = Database.database().reference()
+        self.scrollViewInitilaizer(scrollView: scrollView)
     }
 
+
     @IBAction func backTapped(_ sender: Any) {
-        
-        self.navigationController?.popViewController(animated: true)
-        
+        _ = navigationController?.popViewController(animated: true)
     }
+    
+    
+    @IBAction func signupTapped(_ sender: Any) {
+        
+        if passwordTextField.text! != confirmPassTextField.text! {
+            self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
+        }
+        
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            if let user = user {
+                print("successfully signed up")
+                self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
+                self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
+                defaults.set("uid", forKey: user.uid)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "signin")
+                self.present(vc!, animated: true, completion: nil)
+                
+            } else if let error = error {
+                self.presentAlert(title: "Error" , mssg: error.localizedDescription)
+            }
+        }
+    }
+    
     
 }
 

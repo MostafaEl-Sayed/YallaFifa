@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "FIFA-Logo-old.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Fifa-logo.png",
       "scale" : "2x"
     },
     {

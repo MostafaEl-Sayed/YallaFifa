@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "lock-padlock-symbol-for-protect.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "chevron-pointing-to-the-left.png",
       "scale" : "2x"
     },
     {
