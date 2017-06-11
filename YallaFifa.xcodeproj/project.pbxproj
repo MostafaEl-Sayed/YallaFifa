@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
+		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */; };
+		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
+		CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9203411EE9A83200DFBED5 /* Utilites.swift */; };
 		CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381071EE6F2C60091083B /* AppDelegate.swift */; };
 		CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381091EE6F2C60091083B /* ViewController.swift */; };
 		CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF93810B1EE6F2C60091083B /* Main.storyboard */; };
-		CF93810F1EE6F2C60091083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF93810E1EE6F2C60091083B /* Assets.xcassets */; };
 		CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */; };
+		CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9381191EE6F3D60091083B /* Assets.xcassets */; };
+		CF9381261EE6FC9C0091083B /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381251EE6FC9C0091083B /* SignUpVC.swift */; };
+		CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */; };
+		CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */; };
+		CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */; };
+		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
+		CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */; };
+		CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271D1EEB08BF00CA0F1E /* Search.swift */; };
+		CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* place.swift */; };
+		CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA27211EEB672500CA0F1E /* Protocols.swift */; };
+		EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
+		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
+		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
+		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
+		CF9203411EE9A83200DFBED5 /* Utilites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		CF9381041EE6F2C60091083B /* YallaFifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallaFifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9381071EE6F2C60091083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF9381091EE6F2C60091083B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF93810C1EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF93810E1EE6F2C60091083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF9381111EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF9381131EE6F2C60091083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9381191EE6F3D60091083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF9381251EE6FC9C0091083B /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestViewController.swift; sourceTree = "<group>"; };
+		CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsViewController.swift; sourceTree = "<group>"; };
+		CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSDetailsCell.xib; sourceTree = "<group>"; };
+		CFBA271D1EEB08BF00CA0F1E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		CFBA271F1EEB4D6E00CA0F1E /* place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = place.swift; sourceTree = "<group>"; };
+		CFBA27211EEB672500CA0F1E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D2402C424953753B7EEB157 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */,
+				087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AEB28813E26D99CCD31B4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF9380FB1EE6F2C60091083B = {
 			isa = PBXGroup;
 			children = (
 				CF9381061EE6F2C60091083B /* YallaFifa */,
 				CF9381051EE6F2C60091083B /* Products */,
+				7D2402C424953753B7EEB157 /* Pods */,
+				AEB28813E26D99CCD31B4B28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,9 +105,22 @@
 			isa = PBXGroup;
 			children = (
 				CF9381071EE6F2C60091083B /* AppDelegate.swift */,
+				CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */,
+				CFBA27211EEB672500CA0F1E /* Protocols.swift */,
+				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
 				CF9381091EE6F2C60091083B /* ViewController.swift */,
+				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
+				CFBA271F1EEB4D6E00CA0F1E /* place.swift */,
+				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */,
 				CF93810B1EE6F2C60091083B /* Main.storyboard */,
-				CF93810E1EE6F2C60091083B /* Assets.xcassets */,
+				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
+				CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */,
+				CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */,
+				CFBA271D1EEB08BF00CA0F1E /* Search.swift */,
+				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
+				CF9381191EE6F3D60091083B /* Assets.xcassets */,
+				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
+				CF9381251EE6FC9C0091083B /* SignUpVC.swift */,
 				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
 				CF9381131EE6F2C60091083B /* Info.plist */,
 			);
@@ -71,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF9381161EE6F2C60091083B /* Build configuration list for PBXNativeTarget "YallaFifa" */;
 			buildPhases = (
+				C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */,
 				CF9381001EE6F2C60091083B /* Sources */,
 				CF9381011EE6F2C60091083B /* Frameworks */,
 				CF9381021EE6F2C60091083B /* Resources */,
+				675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */,
+				A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,20 +191,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */,
-				CF93810F1EE6F2C60091083B /* Assets.xcassets in Resources */,
+				CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */,
+				CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */,
+				CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */,
 				CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF9381001EE6F2C60091083B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */,
+				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
+				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,
+				CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */,
+				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
+				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */,
+				CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */,
 				CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */,
+				CF9381261EE6FC9C0091083B /* SignUpVC.swift in Sources */,
+				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
 				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
+				CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */,
+				CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +386,7 @@
 		};
 		CF9381171EE6F2C60091083B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZA4ABN5GU3;
@@ -272,6 +400,7 @@
 		};
 		CF9381181EE6F2C60091083B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZA4ABN5GU3;
@@ -302,6 +431,7 @@
 				CF9381181EE6F2C60091083B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

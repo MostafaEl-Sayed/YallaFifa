@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="Yof-6z-yfZ" customClass="PSDetailsTableViewCell" customModule="YallaFifa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yof-6z-yfZ" id="vWL-aJ-QOM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwR-Ht-zbO">
+                        <rect key="frame" x="8" y="82.5" width="121.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.56820684669999999" green="0.75107985730000004" blue="0.25465536119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7a-aH-ICi">
+                        <rect key="frame" x="8" y="32" width="45" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.56820684669999999" green="0.75107985730000004" blue="0.25465536119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="asdasdfasdfasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20e-ho-3tG">
+                        <rect key="frame" x="61" y="30" width="220" height="25.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Joystick" translatesAutoresizingMaskIntoConstraints="NO" id="rsG-r4-ImC">
+                        <rect key="frame" x="289" y="7" width="70" height="70.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Xm0-he-wdO"/>
+                            <constraint firstAttribute="height" constant="70" id="cCO-Wv-knN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="65745674567443634563fsdafasdfasdfasd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBQ-WA-zSy">
+                        <rect key="frame" x="137.5" y="82.5" width="229.5" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2W-QE-k0j">
+                        <rect key="frame" x="8" y="129" width="66.5" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.56820684669999999" green="0.75107985730000004" blue="0.25465536119999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="das" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AY3-K7-Bau">
+                        <rect key="frame" x="82.5" y="125" width="284.5" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="AY3-K7-Bau" secondAttribute="trailing" constant="8" id="0au-nA-1xg"/>
+                    <constraint firstItem="d2W-QE-k0j" firstAttribute="leading" secondItem="L7a-aH-ICi" secondAttribute="leading" id="6lL-Oa-m7l"/>
+                    <constraint firstItem="20e-ho-3tG" firstAttribute="leading" secondItem="L7a-aH-ICi" secondAttribute="trailing" constant="8" id="7bX-s5-9yD"/>
+                    <constraint firstItem="d2W-QE-k0j" firstAttribute="centerY" secondItem="vWL-aJ-QOM" secondAttribute="centerY" multiplier="1.65" id="Bf0-gS-Erj"/>
+                    <constraint firstItem="rsG-r4-ImC" firstAttribute="leading" secondItem="20e-ho-3tG" secondAttribute="trailing" constant="8" id="L5C-S6-Y08"/>
+                    <constraint firstItem="AY3-K7-Bau" firstAttribute="leading" secondItem="d2W-QE-k0j" secondAttribute="trailing" constant="8" id="N14-qw-kgH"/>
+                    <constraint firstItem="rsG-r4-ImC" firstAttribute="centerY" secondItem="L7a-aH-ICi" secondAttribute="centerY" id="QIY-zd-zxX"/>
+                    <constraint firstItem="L7a-aH-ICi" firstAttribute="leading" secondItem="vWL-aJ-QOM" secondAttribute="leading" constant="8" id="Qws-QT-Oe5"/>
+                    <constraint firstItem="AY3-K7-Bau" firstAttribute="centerY" secondItem="d2W-QE-k0j" secondAttribute="centerY" id="Wbt-mI-1i8"/>
+                    <constraint firstItem="jBQ-WA-zSy" firstAttribute="centerY" secondItem="jwR-Ht-zbO" secondAttribute="centerY" id="dtm-uy-xQo"/>
+                    <constraint firstItem="jBQ-WA-zSy" firstAttribute="leading" secondItem="jwR-Ht-zbO" secondAttribute="trailing" constant="8" id="ggF-zR-bt5"/>
+                    <constraint firstItem="20e-ho-3tG" firstAttribute="centerY" secondItem="L7a-aH-ICi" secondAttribute="centerY" id="nWT-Hf-JQ7"/>
+                    <constraint firstAttribute="trailing" secondItem="rsG-r4-ImC" secondAttribute="trailing" constant="16" id="nyE-8w-9aj"/>
+                    <constraint firstItem="L7a-aH-ICi" firstAttribute="centerY" secondItem="vWL-aJ-QOM" secondAttribute="centerY" multiplier="0.5" id="qrq-Pk-bpB"/>
+                    <constraint firstItem="jwR-Ht-zbO" firstAttribute="leading" secondItem="L7a-aH-ICi" secondAttribute="leading" id="tyc-Lt-IVS"/>
+                    <constraint firstAttribute="trailing" secondItem="jBQ-WA-zSy" secondAttribute="trailing" constant="8" id="xMO-VO-oxn"/>
+                    <constraint firstItem="jwR-Ht-zbO" firstAttribute="centerY" secondItem="vWL-aJ-QOM" secondAttribute="centerY" multiplier="1.1" id="zwg-0Z-BWt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="psAddress" destination="AY3-K7-Bau" id="VGh-RG-Afk"/>
+                <outlet property="psName" destination="20e-ho-3tG" id="zYc-A6-yUT"/>
+                <outlet property="psPhoneNumber" destination="jBQ-WA-zSy" id="Syt-4S-wc9"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="127"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Joystick" width="64" height="64"/>
+    </resources>
+</document>
