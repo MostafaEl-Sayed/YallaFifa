@@ -75,11 +75,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
     // The callback to handle data message received via FCM for devices running iOS 10 or above.
     func application(received remoteMessage: MessagingRemoteMessage) {
         print(remoteMessage.appData)
+        print("gggtttttttttt")
     }
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
     print("fcmToken:\(fcmToken)")
     }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        var token = ""
+        for i in 0..<deviceToken.count {
+            token = token + String(format: "%02.2hhx", arguments: [deviceToken[i]])
+        }
+        print(token)
+        print("ffff")
+    }
 
+    
 
 }
 
