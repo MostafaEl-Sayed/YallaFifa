@@ -33,7 +33,6 @@ class SigninVC: GlobalController {
                 let defaults = UserDefaults.standard
                 defaults.set("uid", forKey: uid)
                 print("Good")
-                self.view.endEditing(true)
             }
             if let error = error {
                 self.presentAlert(title: "Error" , mssg: error.localizedDescription)
