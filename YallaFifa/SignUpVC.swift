@@ -50,6 +50,7 @@ class SignUpVC: GlobalController {
                 defaults.set("uid", forKey: user.uid)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "signin")
                 self.present(vc!, animated: true, completion: nil)
+                self.view.endEditing(true)
                 
             } else if let error = error {
                 self.presentAlert(title: "Error" , mssg: error.localizedDescription)
