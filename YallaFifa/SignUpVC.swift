@@ -40,6 +40,7 @@ class SignUpVC: GlobalController {
         if passwordTextField.text! != confirmPassTextField.text! {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
         }else {
+            self.view.endEditing(true)
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                 if let user = user {
                     print("successfully signed up")

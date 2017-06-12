@@ -26,6 +26,7 @@ class SigninVC: GlobalController {
     }
     
     @IBAction func signinTapped(_ sender: Any) {
+        self.view.endEditing(true)
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let user = user {
                 let uid = user.uid
