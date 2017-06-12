@@ -40,21 +40,23 @@ class SignUpVC: GlobalController {
         
         if passwordTextField.text! != confirmPassTextField.text! {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
+        }else {
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                if let user = user {
+                    print("successfully signed up")
+                    self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
+                    self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
+                    defaults.set("uid", forKey: user.uid)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "signin")
+                    self.present(vc!, animated: true, completion: nil)
+                    
+                } else if let error = error {
+                    self.presentAlert(title: "Error" , mssg: error.localizedDescription)
+                }
+            } 
         }
         
-        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if let user = user {
-                print("successfully signed up")
-                self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
-                self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
-                defaults.set("uid", forKey: user.uid)
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "signin")
-                self.present(vc!, animated: true, completion: nil)
-                
-            } else if let error = error {
-                self.presentAlert(title: "Error" , mssg: error.localizedDescription)
-            }
-        }
+        
     }
     
     
