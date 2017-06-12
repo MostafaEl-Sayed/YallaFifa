@@ -29,8 +29,7 @@ class SignUpVC: GlobalController {
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-
-
+    
     @IBAction func backTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }

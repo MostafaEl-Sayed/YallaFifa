@@ -26,6 +26,10 @@ class GlobalController : UIViewController ,UITextFieldDelegate , UIGestureRecogn
         scrollViewHieght = scrollView?.contentSize.height
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
+    }
     
     func scrollViewInitilaizer(scrollView:UIScrollView){
         self.scrollView = scrollView
