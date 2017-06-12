@@ -10,6 +10,9 @@ PODS:
   - Firebase/Database (4.0.2):
     - Firebase/Core
     - FirebaseDatabase (= 4.0.0)
+  - Firebase/Messaging (4.0.2):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.0)
   - FirebaseAnalytics (4.0.1):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -24,6 +27,12 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
   - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
   - GoogleMaps/Base (2.2.0)
@@ -37,6 +46,8 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
@@ -45,12 +56,14 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - Protobuf (3.3.0)
 
 DEPENDENCIES:
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Messaging
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -62,12 +75,14 @@ SPEC CHECKSUMS:
   FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
   FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: 2a2d939a61f4496842e8962f89e163f4addd1808
+PODFILE CHECKSUM: 03545b87233271fc8152e6b7da352bd256dd5d60
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

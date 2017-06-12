@@ -12,6 +12,7 @@ target 'YallaFifa' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
 
 
 end
