@@ -29,8 +29,7 @@ class SignUpVC: GlobalController {
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-
-
+    
     @IBAction func backTapped(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -48,9 +47,9 @@ class SignUpVC: GlobalController {
                 self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                 defaults.set("uid", forKey: user.uid)
+                self.view.endEditing(true)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "signin")
                 self.present(vc!, animated: true, completion: nil)
-                self.view.endEditing(true)
                 
             } else if let error = error {
                 self.presentAlert(title: "Error" , mssg: error.localizedDescription)
