@@ -20,12 +20,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var typeOfDonation = "food" // “food”, “clothing
     var locationManager = CLLocationManager()
     
+    
     @IBOutlet weak var mapView: GMSMapView!
     var chosedLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0,longitude: 0)
-    var choosedLocationDic = [String : Double]()
+    var userCurrentLocation = [String : Double]()
     
     // --------------------------------
-    var locatiionStatus = false
     var anotherLocation = false
     // --------------------------------
     @IBOutlet weak var locationLabel: UILabel!
@@ -36,33 +36,46 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBOutlet weak var addNewPsView: UIView!
     
     // --------------------------------
-    @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var chooseRandomlyView: UIView!
     @IBOutlet weak var chooseRandomlyBtn: UIButton!
     
+    // --------------------------------
+    var allOnlineUsers = [User]()
+    var allPhysically = [User]()
+    
+    // --------------------------------
+    var psChoosedLocation = [String : Double]()
+    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Map setup
         self.mapView.delegate = self
-        print("viewDidLoad")
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        if  locatiionStatus {
-              let camera = GMSCameraPosition.camera(withLatitude: (self.locationManager.location?.coordinate.latitude)!,longitude: (self.locationManager.location?.coordinate.longitude)!, zoom: 14)
-            self.mapView.camera = camera
-
-            
-        }
-    
         mapView.setMinZoom(10, maxZoom: 19)
         self.mapView.isMyLocationEnabled = true
         mapView.isIndoorEnabled = true
         
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         
-        print("\(typeOfDonation) id , DonationsController")
+        // dummy data 
+        let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.96618978)])
+        let onlineUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.23506634),"lng":(29.96618978)])
+        let onlineUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96618978)])
+        let onlineUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96618978)])
         
+        let phyUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.9461897)])
+        let phyUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.27506634),"lng":(29.93618978)])
+        let phyUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96418978)])
+        let phyUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96818978)])
+       
+        allOnlineUsers = [onlineUser1,onlineUser2,onlineUser3,onlineUser4]
+        allPhysically = [phyUser1,phyUser2,phyUser3,phyUser4]
+        drowUsersLocationsMarkers(users: allOnlineUsers, imageMarkerName: "Joystick")
     }
    
+
     @IBAction func currentLocation(_ sender: Any) {
         anotherLocation = false
        
@@ -74,7 +87,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             switch(CLLocationManager.authorizationStatus()) {
             case .notDetermined, .restricted, .denied:
                 
-                   self.displayMessage(title: "Could not find your location", message: "Please allow Wasteless Egypt to access your location from settings")
+                   self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
             case .authorizedAlways, .authorizedWhenInUse:
                 let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: self.mapView.camera.zoom)
                 UIView.animate(withDuration: 20.0, animations: {
@@ -84,55 +97,28 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         } else {
             
             
-            self.displayMessage(title: "Could not find your location", message: "Please allow Wasteless Egypt to access your location from settings")
+            self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
         }
-//
         
-       
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear")
-        if anotherLocation {
-            let camera = GMSCameraPosition.camera(withLatitude:chosedLocation.latitude,longitude: chosedLocation.longitude, zoom: self.mapView.camera.zoom)
-            self.mapView.camera = camera
-            self.locationLabel.text! = "\(self.locatonlabelValue)"
-        }else{
-            determineMyCurrentLocation()
-        }
         
-        
-            
-        
+        let latitude  = self.locationManager.location?.coordinate.latitude
+        let longitude = self.locationManager.location?.coordinate.longitude
+        let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: 20)
+        self.mapView.camera = camera
+        self.locationLabel.text! = "\(self.locatonlabelValue)"
+
         self.navigationController?.navigationBar.isHidden = true
     }
 
-    func determineMyCurrentLocation() -> Bool{
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-            self.mapView?.isMyLocationEnabled = true
-            //locationManager.startUpdatingHeading()
-            return true
-        }else {
-            return false
-        }
-    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        locatiionStatus = true
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        
-        manager.stopUpdatingLocation()
+        //manager.stopUpdatingLocation()
         let camera = GMSCameraPosition.camera(withLatitude: (self.locationManager.location?.coordinate.latitude)!,longitude: (self.locationManager.location?.coordinate.longitude)!, zoom: 14)
         self.mapView.camera = camera
         let lat = userLocation.coordinate.latitude
@@ -140,7 +126,31 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         print("user latitude = \(lat)")
         print("user longitude = \(long)")
         
-        
+    }
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        let lat = position.target.latitude
+        let long = position.target.longitude
+        if segmentControl.selectedSegmentIndex != 0 {
+             psChoosedLocation =
+                ["lat":(31.25506634)
+                ,"lng":(29.9461897)]
+        }
+    }
+    func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
+        // clear all old markers from the map
+        mapView.clear()
+        guard users != nil else {
+            return
+        }
+        for user in users! {
+            let lat = user.location["lat"]
+            let long = user.location["lng"]
+            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let marker = GMSMarker(position: position)
+            marker.title = user.name
+            marker.icon = UIImage(named: imageMarkerName)
+            marker.map = mapView
+        }
     }
     @IBAction func addNewPsBtnAct(_ sender: Any) {
        
@@ -162,9 +172,13 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
    
     @IBAction func segmentAct(_ sender:UISegmentedControl ) {
-        if sender.selectedSegmentIndex == 0{
+        
+        if sender.selectedSegmentIndex == 0{ // Online Users
+            drowUsersLocationsMarkers(users: allOnlineUsers,imageMarkerName: "Joystick")
             self.addNewPsView.isHidden = true
-        }else {
+            
+        }else {// Physical Users
+            drowUsersLocationsMarkers(users: allPhysically,imageMarkerName: "Joystick")
             self.addNewPsView.isHidden = false
         }
     }
@@ -179,21 +193,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        self.chosedLocation = position.target
-        self.choosedLocationDic = [
-            "lat":(self.chosedLocation.latitude) ,
-            "lng":(self.chosedLocation.longitude)
-        ]
-        self.counterChangeStatusOflocation += 1
-        
-        if counterChangeStatusOflocation == 4 {
-            
-            self.locationLabel.text! = "Where should we pick up the donation ?"
-        }
-        
-        
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "AddPhotoController" {
@@ -224,7 +223,7 @@ extension MatchRequestViewController:  GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: ", place.name)
         self.chosedLocation = place.coordinate
-        self.choosedLocationDic = [
+        self.userCurrentLocation = [
             "lat":(self.chosedLocation.latitude) ,
             "lng":(self.chosedLocation.longitude)
         ]

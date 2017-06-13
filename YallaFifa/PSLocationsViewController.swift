@@ -14,9 +14,10 @@ class PSLocationsViewController: UIViewController {
     
     @IBOutlet weak var psNameTextField: UITextField!
     @IBOutlet weak var psPhoneNumberTextField: UITextField!
-    var currentPSLocationAddress = "Address1"
-    var psLocations = [playStation]()
     
+    var psLocations = [User]()
+    var currentPSLocationAddress = "Address1"
+    var psChoosedLocation = [String : Double]()
     
     struct TableViewCellIdentifiers {
         static let psDetailsCell = "PSDetailsCell"
@@ -43,7 +44,7 @@ class PSLocationsViewController: UIViewController {
     
     @IBAction func addNewPSLocation(_ sender: Any) {
         
-        let newPS = playStation(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress)
+        let newPS = User(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress,location: psChoosedLocation)
         self.psLocations.append(newPS)
         self.tableView.reloadData()
     }

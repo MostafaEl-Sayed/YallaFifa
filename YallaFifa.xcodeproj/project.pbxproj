@@ -1,1149 +1,469 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>087D1752BE99D58A38A59AB4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-YallaFifa.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0F159E2D9E06726C0A2A4239</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_YallaFifa.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>675EBDED1C2B6AB18ED45C0B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>7D2402C424953753B7EEB157</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B04C6B37CD708B5CF7D9CCE0</string>
-				<string>087D1752BE99D58A38A59AB4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A4CAA905E4A3D5C4603FB678</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>AEB28813E26D99CCD31B4B28</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>0F159E2D9E06726C0A2A4239</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B04C6B37CD708B5CF7D9CCE0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-YallaFifa.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C7B000FF7415F5E5D9368393</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>[CP] Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [ $? != 0 ] ; then
-    # print error to STDERR
-    echo "error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation." &gt;&amp;2
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>CF626E9F1EEF1275003770FC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>GoogleService-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF626EA01EEF1275003770FC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF626E9F1EEF1275003770FC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF65C4C11EEA022F006FDAE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SSRadioButton.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF65C4C21EEA022F006FDAE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF65C4C11EEA022F006FDAE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF65C4C31EEA11D0006FDAE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>MatchDetailsVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF65C4C41EEA11D0006FDAE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF65C4C31EEA11D0006FDAE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF65C4C51EEA14BE006FDAE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SSRadioButtonsController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF65C4C61EEA14BE006FDAE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF65C4C51EEA14BE006FDAE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF9203411EE9A83200DFBED5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Utilites.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9203421EE9A83200DFBED5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF9203411EE9A83200DFBED5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF9380FB1EE6F2C60091083B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CF9381061EE6F2C60091083B</string>
-				<string>CF9381051EE6F2C60091083B</string>
-				<string>7D2402C424953753B7EEB157</string>
-				<string>AEB28813E26D99CCD31B4B28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9380FC1EE6F2C60091083B</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0830</string>
-				<key>LastUpgradeCheck</key>
-				<string>0830</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>TheGang</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>CF9381031EE6F2C60091083B</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>8.3.2</string>
-						<key>DevelopmentTeam</key>
-						<string>V9V7XX28D6</string>
-						<key>ProvisioningStyle</key>
-						<string>Automatic</string>
-						<key>SystemCapabilities</key>
-						<dict>
-							<key>com.apple.Keychain</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-							<key>com.apple.Push</key>
-							<dict>
-								<key>enabled</key>
-								<string>1</string>
-							</dict>
-						</dict>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>CF9380FF1EE6F2C60091083B</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>CF9380FB1EE6F2C60091083B</string>
-			<key>productRefGroup</key>
-			<string>CF9381051EE6F2C60091083B</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>CF9381031EE6F2C60091083B</string>
-			</array>
-		</dict>
-		<key>CF9380FF1EE6F2C60091083B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CF9381141EE6F2C60091083B</string>
-				<string>CF9381151EE6F2C60091083B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CF9381001EE6F2C60091083B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>E0D1C3F51EED8C44006D5C34</string>
-				<string>CFBA271E1EEB08BF00CA0F1E</string>
-				<string>CF9203421EE9A83200DFBED5</string>
-				<string>E0D1C3F41EED8C44006D5C34</string>
-				<string>CF65C4C61EEA14BE006FDAE1</string>
-				<string>CFBA27201EEB4D6E00CA0F1E</string>
-				<string>E0D1C3F71EED8C44006D5C34</string>
-				<string>CF95CF4A1EE8C37B004166C8</string>
-				<string>E0D1C3F61EED8C44006D5C34</string>
-				<string>CF65C4C41EEA11D0006FDAE1</string>
-				<string>CFBA26F61EEAE58C00CA0F1E</string>
-				<string>CF93810A1EE6F2C60091083B</string>
-				<string>CFBA27221EEB672500CA0F1E</string>
-				<string>CF9381081EE6F2C60091083B</string>
-				<string>CF65C4C21EEA022F006FDAE1</string>
-				<string>CFBA26F81EEAE5DB00CA0F1E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CF9381011EE6F2C60091083B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>EBC8B3A56EA560D26D688646</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CF9381021EE6F2C60091083B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CF9381121EE6F2C60091083B</string>
-				<string>CF93811A1EE6F3D60091083B</string>
-				<string>CFBA26FC1EEAF42000CA0F1E</string>
-				<string>CFBA26FE1EEAF43800CA0F1E</string>
-				<string>CF93810D1EE6F2C60091083B</string>
-				<string>CF626EA01EEF1275003770FC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CF9381031EE6F2C60091083B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CF9381161EE6F2C60091083B</string>
-			<key>buildPhases</key>
-			<array>
-				<string>C7B000FF7415F5E5D9368393</string>
-				<string>CF9381001EE6F2C60091083B</string>
-				<string>CF9381011EE6F2C60091083B</string>
-				<string>CF9381021EE6F2C60091083B</string>
-				<string>675EBDED1C2B6AB18ED45C0B</string>
-				<string>A4CAA905E4A3D5C4603FB678</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>YallaFifa</string>
-			<key>productName</key>
-			<string>YallaFifa</string>
-			<key>productReference</key>
-			<string>CF9381041EE6F2C60091083B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>CF9381041EE6F2C60091083B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>YallaFifa.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CF9381051EE6F2C60091083B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CF9381041EE6F2C60091083B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381061EE6F2C60091083B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E0D1C3F91EED8C78006D5C34</string>
-				<string>CF9381071EE6F2C60091083B</string>
-				<string>CF65C4C11EEA022F006FDAE1</string>
-				<string>CFBA27211EEB672500CA0F1E</string>
-				<string>CF9381091EE6F2C60091083B</string>
-				<string>CF9203411EE9A83200DFBED5</string>
-				<string>CFBA271F1EEB4D6E00CA0F1E</string>
-				<string>CF65C4C31EEA11D0006FDAE1</string>
-				<string>CF93810B1EE6F2C60091083B</string>
-				<string>CF65C4C51EEA14BE006FDAE1</string>
-				<string>CFBA26FB1EEAF42000CA0F1E</string>
-				<string>CFBA26FD1EEAF43800CA0F1E</string>
-				<string>CFBA26F51EEAE58C00CA0F1E</string>
-				<string>CFBA271D1EEB08BF00CA0F1E</string>
-				<string>CFBA26F71EEAE5DB00CA0F1E</string>
-				<string>CF9381191EE6F3D60091083B</string>
-				<string>CF95CF491EE8C37B004166C8</string>
-				<string>CF9381101EE6F2C60091083B</string>
-				<string>E0D1C3EF1EED8C44006D5C34</string>
-				<string>E0D1C3F01EED8C44006D5C34</string>
-				<string>E0D1C3F11EED8C44006D5C34</string>
-				<string>E0D1C3F21EED8C44006D5C34</string>
-				<string>CF626E9F1EEF1275003770FC</string>
-				<string>CF9381131EE6F2C60091083B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>YallaFifa</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381071EE6F2C60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381081EE6F2C60091083B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF9381071EE6F2C60091083B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF9381091EE6F2C60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF93810A1EE6F2C60091083B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF9381091EE6F2C60091083B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF93810B1EE6F2C60091083B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CF93810C1EE6F2C60091083B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF93810C1EE6F2C60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF93810D1EE6F2C60091083B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF93810B1EE6F2C60091083B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF9381101EE6F2C60091083B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CF9381111EE6F2C60091083B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381111EE6F2C60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381121EE6F2C60091083B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF9381101EE6F2C60091083B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF9381131EE6F2C60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF9381141EE6F2C60091083B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
-				<string>DEBUG</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CF9381151EE6F2C60091083B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INFINITE_RECURSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Owholemodule</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CF9381161EE6F2C60091083B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CF9381171EE6F2C60091083B</string>
-				<string>CF9381181EE6F2C60091083B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CF9381171EE6F2C60091083B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B04C6B37CD708B5CF7D9CCE0</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>YallaFifa/YallaFifa.entitlements</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>V9V7XX28D6</string>
-				<key>INFOPLIST_FILE</key>
-				<string>YallaFifa/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>TheGang.YallaFifa.com</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CF9381181EE6F2C60091083B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>087D1752BE99D58A38A59AB4</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>YallaFifa/YallaFifa.entitlements</string>
-				<key>DEVELOPMENT_TEAM</key>
-				<string>V9V7XX28D6</string>
-				<key>INFOPLIST_FILE</key>
-				<string>YallaFifa/Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>TheGang.YallaFifa.com</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SWIFT_VERSION</key>
-				<string>3.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CF9381191EE6F3D60091083B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF93811A1EE6F3D60091083B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF9381191EE6F3D60091083B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CF95CF491EE8C37B004166C8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>MatchRequestViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CF95CF4A1EE8C37B004166C8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CF95CF491EE8C37B004166C8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA26F51EEAE58C00CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PSLocationsViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA26F61EEAE58C00CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA26F51EEAE58C00CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA26F71EEAE5DB00CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PSDetailsTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA26F81EEAE5DB00CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA26F71EEAE5DB00CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA26FB1EEAF42000CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>NothingFoundCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA26FC1EEAF42000CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA26FB1EEAF42000CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA26FD1EEAF43800CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>PSDetailsCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA26FE1EEAF43800CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA26FD1EEAF43800CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA271D1EEB08BF00CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Search.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA271E1EEB08BF00CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA271D1EEB08BF00CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA271F1EEB4D6E00CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>place.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA27201EEB4D6E00CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA271F1EEB4D6E00CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CFBA27211EEB672500CA0F1E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>Protocols.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBA27221EEB672500CA0F1E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFBA27211EEB672500CA0F1E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E0D1C3EF1EED8C44006D5C34</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>enums&amp;variabls.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0D1C3F01EED8C44006D5C34</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SignUpVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0D1C3F11EED8C44006D5C34</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SigninVC.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0D1C3F21EED8C44006D5C34</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>GlobalController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0D1C3F41EED8C44006D5C34</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0D1C3EF1EED8C44006D5C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E0D1C3F51EED8C44006D5C34</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0D1C3F01EED8C44006D5C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E0D1C3F61EED8C44006D5C34</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0D1C3F11EED8C44006D5C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E0D1C3F71EED8C44006D5C34</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0D1C3F21EED8C44006D5C34</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E0D1C3F91EED8C78006D5C34</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.entitlements</string>
-			<key>path</key>
-			<string>YallaFifa.entitlements</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EBC8B3A56EA560D26D688646</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0F159E2D9E06726C0A2A4239</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>CF9380FC1EE6F2C60091083B</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
+		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
+		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */; };
+		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
+		CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9203411EE9A83200DFBED5 /* Utilites.swift */; };
+		CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381071EE6F2C60091083B /* AppDelegate.swift */; };
+		CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381091EE6F2C60091083B /* ViewController.swift */; };
+		CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF93810B1EE6F2C60091083B /* Main.storyboard */; };
+		CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */; };
+		CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9381191EE6F3D60091083B /* Assets.xcassets */; };
+		CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */; };
+		CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */; };
+		CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */; };
+		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
+		CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */; };
+		CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271D1EEB08BF00CA0F1E /* Search.swift */; };
+		CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* place.swift */; };
+		CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA27211EEB672500CA0F1E /* Protocols.swift */; };
+		E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */; };
+		E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */; };
+		E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */; };
+		E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */; };
+		EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
+		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
+		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewContoller.swift; sourceTree = "<group>"; };
+		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
+		CF9203411EE9A83200DFBED5 /* Utilites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		CF9381041EE6F2C60091083B /* YallaFifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallaFifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9381071EE6F2C60091083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF9381091EE6F2C60091083B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF93810C1EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF9381111EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF9381131EE6F2C60091083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9381191EE6F3D60091083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestViewController.swift; sourceTree = "<group>"; };
+		CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsViewController.swift; sourceTree = "<group>"; };
+		CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSDetailsCell.xib; sourceTree = "<group>"; };
+		CFBA271D1EEB08BF00CA0F1E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		CFBA271F1EEB4D6E00CA0F1E /* place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = place.swift; sourceTree = "<group>"; };
+		CFBA27211EEB672500CA0F1E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "enums&variabls.swift"; sourceTree = "<group>"; };
+		E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalController.swift; sourceTree = "<group>"; };
+		E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YallaFifa.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF9381011EE6F2C60091083B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D2402C424953753B7EEB157 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */,
+				087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AEB28813E26D99CCD31B4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF9380FB1EE6F2C60091083B = {
+			isa = PBXGroup;
+			children = (
+				CF9381061EE6F2C60091083B /* YallaFifa */,
+				CF9381051EE6F2C60091083B /* Products */,
+				7D2402C424953753B7EEB157 /* Pods */,
+				AEB28813E26D99CCD31B4B28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF9381051EE6F2C60091083B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF9381041EE6F2C60091083B /* YallaFifa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF9381061EE6F2C60091083B /* YallaFifa */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */,
+				CF9381071EE6F2C60091083B /* AppDelegate.swift */,
+				CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */,
+				CFBA27211EEB672500CA0F1E /* Protocols.swift */,
+				CF9381091EE6F2C60091083B /* ViewController.swift */,
+				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
+				CFBA271F1EEB4D6E00CA0F1E /* place.swift */,
+				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
+				CF93810B1EE6F2C60091083B /* Main.storyboard */,
+				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
+				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
+				CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */,
+				CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */,
+				CFBA271D1EEB08BF00CA0F1E /* Search.swift */,
+				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
+				CF9381191EE6F3D60091083B /* Assets.xcassets */,
+				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
+				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
+				E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */,
+				E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */,
+				E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */,
+				E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */,
+				CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */,
+				CF9381131EE6F2C60091083B /* Info.plist */,
+			);
+			path = YallaFifa;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF9381031EE6F2C60091083B /* YallaFifa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF9381161EE6F2C60091083B /* Build configuration list for PBXNativeTarget "YallaFifa" */;
+			buildPhases = (
+				C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */,
+				CF9381001EE6F2C60091083B /* Sources */,
+				CF9381011EE6F2C60091083B /* Frameworks */,
+				CF9381021EE6F2C60091083B /* Resources */,
+				675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */,
+				A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YallaFifa;
+			productName = YallaFifa;
+			productReference = CF9381041EE6F2C60091083B /* YallaFifa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF9380FC1EE6F2C60091083B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = TheGang;
+				TargetAttributes = {
+					CF9381031EE6F2C60091083B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = V9V7XX28D6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CF9380FF1EE6F2C60091083B /* Build configuration list for PBXProject "YallaFifa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF9380FB1EE6F2C60091083B;
+			productRefGroup = CF9381051EE6F2C60091083B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF9381031EE6F2C60091083B /* YallaFifa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF9381021EE6F2C60091083B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */,
+				CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */,
+				CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */,
+				CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */,
+				CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */,
+				CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF9381001EE6F2C60091083B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */,
+				CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */,
+				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
+				E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */,
+				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,
+				CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */,
+				E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */,
+				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
+				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
+				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */,
+				CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */,
+				CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */,
+				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
+				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
+				CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */,
+				CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF93810B1EE6F2C60091083B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF93810C1EE6F2C60091083B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF9381111EE6F2C60091083B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF9381141EE6F2C60091083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF9381151EE6F2C60091083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF9381171EE6F2C60091083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YallaFifa/YallaFifa.entitlements;
+				DEVELOPMENT_TEAM = V9V7XX28D6;
+				INFOPLIST_FILE = YallaFifa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF9381181EE6F2C60091083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YallaFifa/YallaFifa.entitlements;
+				DEVELOPMENT_TEAM = V9V7XX28D6;
+				INFOPLIST_FILE = YallaFifa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF9380FF1EE6F2C60091083B /* Build configuration list for PBXProject "YallaFifa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9381141EE6F2C60091083B /* Debug */,
+				CF9381151EE6F2C60091083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF9381161EE6F2C60091083B /* Build configuration list for PBXNativeTarget "YallaFifa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9381171EE6F2C60091083B /* Debug */,
+				CF9381181EE6F2C60091083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF9380FC1EE6F2C60091083B /* Project object */;
+}

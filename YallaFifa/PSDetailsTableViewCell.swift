@@ -23,7 +23,7 @@ class PSDetailsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure(newPS: playStation) {
+    func configure(newPS: User) {
         psName.text = newPS.name
         psPhoneNumber.text = newPS.phone
         psAddress.text = newPS.address

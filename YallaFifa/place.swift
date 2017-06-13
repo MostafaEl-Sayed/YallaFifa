@@ -7,37 +7,41 @@
 //
 
 import Foundation
-class playStation: NSObject ,NSCoding{
+class User: NSObject ,NSCoding{
     
     var name: String
     var phone: String
     var address: String
-    init(name:String,phone:String,address:String) {
+    var location: [String:Double]
+    
+    init(name:String,phone:String,address:String,location:[String : Double]) {
         self.name = name
         self.phone = phone
         self.address = address
-        
+        self.location = location
     }
     override init() {
         self.name = ""
         self.phone = ""
         self.address = ""
-        
+        self.location = [String : Double]()
     }
     
     
     
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "Name") as! String
-        phone = aDecoder.decodeObject(forKey: "Items") as! String
-        address = aDecoder.decodeObject(forKey: "IconName") as! String
+        phone = aDecoder.decodeObject(forKey: "Phone") as! String
+        address = aDecoder.decodeObject(forKey: "Address") as! String
+        location = aDecoder.decodeObject(forKey: "Location") as! [String:Double]
         super.init()
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "Name")
-        aCoder.encode(phone, forKey: "Items")
-        aCoder.encode(address, forKey: "IconName")
+        aCoder.encode(phone, forKey: "Phone")
+        aCoder.encode(address, forKey: "Address")
+        aCoder.encode(location, forKey: "Location")
     }
     
 }
