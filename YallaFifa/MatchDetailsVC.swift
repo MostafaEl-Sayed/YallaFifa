@@ -8,35 +8,36 @@
 
 import UIKit
 
-class MatchDetailsVC: UIViewController,SSRadioButtonControllerDelegate {
+class MatchDetailsVC: UIViewController {
 
-    @IBOutlet weak var onlineMatchBtn: SSRadioButton!
-    @IBOutlet weak var faceToFaceMatchBtn: SSRadioButton!
     
-    // --------------------------
-    var typeOfmatch:String?
+    @IBOutlet weak var onlineMatchLabel: UILabel!
+    @IBOutlet weak var meetFriendsLabel: UILabel!
     
-    
-    // --------------------------
-    var radioButtonController:SSRadioButtonsController?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // register buttons to radioButtonController
-        //radioButtonController = SSRadioButtonsController(buttons: onlineMatchBtn,faceToFaceMatchBtn)
         
     }
 
 
     
-    @IBAction func doneSelectionBtnAct(_ sender: Any) {
+    @IBAction func doneSelectionBtnAct(_ sender: UIButton) {
         
-        if radioButtonController?.selectedButton() != nil {
-            typeOfmatch = radioButtonController?.selectedButton()?.titleLabel?.text
-        }else {
-            self.displayMessage(title:"Error selection" , message: "Please enter type of match")
+        if sender.tag == 0 {
+            meetFriendsLabel.backgroundColor = UIColor.clear
+            onlineMatchLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
+        }else{
+            onlineMatchLabel.backgroundColor = UIColor.clear
+            meetFriendsLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
         }
         
+    }
+    
+    @IBAction func goButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func signoutButtonTapped(_ sender: Any) {
         
     }
 

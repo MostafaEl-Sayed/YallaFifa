@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cDY-ky-gTc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k5H-e9-DW7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,12 +50,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVV-Sx-vAl">
                                 <rect key="frame" x="0.0" y="8" width="375" height="699"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifa-logo" translatesAutoresizingMaskIntoConstraints="NO" id="yKH-X7-2di">
+                                        <rect key="frame" x="94" y="30" width="187.5" height="111"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to YALLA FIFA app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pt4-RK-nSO">
+                                        <rect key="frame" x="20" y="161" width="335" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You feel you are ready to start our journy ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9O4-mx-gEL">
+                                        <rect key="frame" x="18" y="196" width="337.5" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online2" translatesAutoresizingMaskIntoConstraints="NO" id="4vk-Nd-4rN">
                                         <rect key="frame" x="8" y="297" width="150" height="105"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-3t-9Sn">
                                         <rect key="frame" x="158" y="297.5" width="209" height="105"/>
-                                        <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -65,11 +79,24 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-Rc-CSN">
+                                        <rect key="frame" x="18" y="410" width="337.5" height="0.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="Wf6-tB-MWk"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUV-I0-PjQ">
+                                        <rect key="frame" x="8" y="297" width="150" height="105"/>
+                                        <connections>
+                                            <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="d3A-NN-Kjw"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-q4-NKI">
-                                        <rect key="frame" x="209" y="410.5" width="150" height="105"/>
+                                        <rect key="frame" x="209" y="417.5" width="150" height="105"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-aY-3uB">
-                                        <rect key="frame" x="8" y="411" width="201" height="105"/>
+                                        <rect key="frame" x="8" y="418" width="201" height="105"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -79,12 +106,28 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-Pe-e7P">
+                                        <rect key="frame" x="18" y="530" width="337.5" height="0.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="FFU-fE-Nnd"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-jm-nz7">
+                                        <rect key="frame" x="185" y="418" width="174" height="105"/>
+                                        <connections>
+                                            <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="LPb-Ec-fWF"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-dH-y69">
                                         <rect key="frame" x="20" y="645" width="75" height="34"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <state key="normal" title="&lt; Signout">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signoutButtonTapped:" destination="cDY-ky-gTc" eventType="touchUpInside" id="9Ei-uz-uK1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-vu-GDm">
                                         <rect key="frame" x="280" y="645" width="75" height="34"/>
@@ -92,52 +135,30 @@
                                         <state key="normal" title="Go &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goButtonTapped:" destination="cDY-ky-gTc" eventType="touchUpInside" id="bX0-Xc-zcT"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to YALLA FIFA app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pt4-RK-nSO">
-                                        <rect key="frame" x="20" y="161" width="335" height="27.5"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-Rc-CSN">
-                                        <rect key="frame" x="18.5" y="402" width="337.5" height="0.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="Wf6-tB-MWk"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-Pe-e7P">
-                                        <rect key="frame" x="18" y="523.5" width="337.5" height="0.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="FFU-fE-Nnd"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You feel you are ready to start our journy ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9O4-mx-gEL">
-                                        <rect key="frame" x="18.5" y="196.5" width="337.5" height="24.5"/>
-                                        <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifa-logo" translatesAutoresizingMaskIntoConstraints="NO" id="yKH-X7-2di">
-                                        <rect key="frame" x="94" y="30" width="187.5" height="111"/>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="MUV-I0-PjQ" firstAttribute="height" secondItem="4vk-Nd-4rN" secondAttribute="height" id="3vB-VF-Dk0"/>
                                     <constraint firstItem="5Z4-3t-9Sn" firstAttribute="leading" secondItem="4vk-Nd-4rN" secondAttribute="trailing" id="5xx-wt-yTD"/>
                                     <constraint firstItem="Pt4-RK-nSO" firstAttribute="leading" secondItem="rVV-Sx-vAl" secondAttribute="leading" constant="20" id="8a1-bU-5f9"/>
                                     <constraint firstItem="9O4-mx-gEL" firstAttribute="width" secondItem="rVV-Sx-vAl" secondAttribute="width" multiplier="0.9" id="8fM-vG-ZrI"/>
+                                    <constraint firstItem="MUV-I0-PjQ" firstAttribute="leading" secondItem="4vk-Nd-4rN" secondAttribute="leading" id="9SQ-xZ-EUj"/>
                                     <constraint firstItem="ZLY-q4-NKI" firstAttribute="height" secondItem="4vk-Nd-4rN" secondAttribute="height" id="AJS-UP-TQ1"/>
                                     <constraint firstItem="nvC-aY-3uB" firstAttribute="leading" secondItem="rVV-Sx-vAl" secondAttribute="leading" constant="8" id="BdO-uZ-Emi"/>
                                     <constraint firstItem="4vk-Nd-4rN" firstAttribute="width" secondItem="rVV-Sx-vAl" secondAttribute="width" multiplier="0.4" id="CDs-tf-50u"/>
                                     <constraint firstItem="Pt4-RK-nSO" firstAttribute="top" secondItem="yKH-X7-2di" secondAttribute="bottom" constant="20" id="D1C-UM-fkn"/>
+                                    <constraint firstItem="1aA-jm-nz7" firstAttribute="height" secondItem="nvC-aY-3uB" secondAttribute="height" id="FgP-Cj-6eq"/>
                                     <constraint firstItem="4vk-Nd-4rN" firstAttribute="height" secondItem="rVV-Sx-vAl" secondAttribute="height" multiplier="0.15" id="Hon-Or-n9v"/>
                                     <constraint firstItem="9O4-mx-gEL" firstAttribute="top" secondItem="Pt4-RK-nSO" secondAttribute="bottom" constant="8" id="Iaf-Tc-hlb"/>
-                                    <constraint firstItem="ZLY-q4-NKI" firstAttribute="top" secondItem="5Z4-3t-9Sn" secondAttribute="bottom" constant="8" id="JOw-KY-ZGc"/>
+                                    <constraint firstItem="ZLY-q4-NKI" firstAttribute="top" secondItem="5Z4-3t-9Sn" secondAttribute="bottom" constant="15" id="JOw-KY-ZGc"/>
                                     <constraint firstAttribute="trailing" secondItem="ZLY-q4-NKI" secondAttribute="trailing" constant="16" id="KYt-T4-Xi6"/>
                                     <constraint firstItem="5Z4-3t-9Sn" firstAttribute="height" secondItem="4vk-Nd-4rN" secondAttribute="height" id="MaQ-Rr-DNb"/>
                                     <constraint firstItem="OlB-Rc-CSN" firstAttribute="width" secondItem="9O4-mx-gEL" secondAttribute="width" id="NAU-cJ-YQH"/>
                                     <constraint firstItem="lgQ-dH-y69" firstAttribute="width" secondItem="rVV-Sx-vAl" secondAttribute="width" multiplier="0.2" id="PYi-x9-WFx"/>
+                                    <constraint firstItem="1aA-jm-nz7" firstAttribute="centerY" secondItem="nvC-aY-3uB" secondAttribute="centerY" id="S8v-Rl-rNa"/>
                                     <constraint firstItem="nfK-Pe-e7P" firstAttribute="width" secondItem="OlB-Rc-CSN" secondAttribute="width" id="Tpj-j7-aL0"/>
                                     <constraint firstItem="nfK-Pe-e7P" firstAttribute="top" secondItem="ZLY-q4-NKI" secondAttribute="bottom" constant="8" id="a9r-iA-QZR"/>
                                     <constraint firstItem="nvC-aY-3uB" firstAttribute="height" secondItem="ZLY-q4-NKI" secondAttribute="height" id="bxa-LA-MkB"/>
@@ -146,11 +167,14 @@
                                     <constraint firstItem="ZLY-q4-NKI" firstAttribute="leading" secondItem="nvC-aY-3uB" secondAttribute="trailing" id="eBM-CK-P9q"/>
                                     <constraint firstAttribute="trailing" secondItem="Pt4-RK-nSO" secondAttribute="trailing" constant="20" id="eTt-Ix-jX0"/>
                                     <constraint firstAttribute="bottom" secondItem="R5D-vu-GDm" secondAttribute="bottom" constant="20" id="eVf-3n-CPf"/>
+                                    <constraint firstItem="1aA-jm-nz7" firstAttribute="trailing" secondItem="ZLY-q4-NKI" secondAttribute="trailing" id="eeE-r6-T89"/>
                                     <constraint firstItem="nfK-Pe-e7P" firstAttribute="centerX" secondItem="OlB-Rc-CSN" secondAttribute="centerX" id="ezF-lf-GrX"/>
-                                    <constraint firstItem="OlB-Rc-CSN" firstAttribute="top" secondItem="4vk-Nd-4rN" secondAttribute="bottom" id="fpL-TK-7lR"/>
+                                    <constraint firstItem="OlB-Rc-CSN" firstAttribute="top" secondItem="4vk-Nd-4rN" secondAttribute="bottom" constant="8" id="fpL-TK-7lR"/>
+                                    <constraint firstItem="1aA-jm-nz7" firstAttribute="leading" secondItem="nvC-aY-3uB" secondAttribute="leading" id="gGJ-og-rBE"/>
                                     <constraint firstItem="9O4-mx-gEL" firstAttribute="centerX" secondItem="Pt4-RK-nSO" secondAttribute="centerX" id="gfa-Wh-OC3"/>
                                     <constraint firstAttribute="trailing" secondItem="R5D-vu-GDm" secondAttribute="trailing" constant="20" id="ghp-kE-Rif"/>
                                     <constraint firstItem="4vk-Nd-4rN" firstAttribute="centerY" secondItem="rVV-Sx-vAl" secondAttribute="centerY" id="j00-Ak-AJV"/>
+                                    <constraint firstItem="MUV-I0-PjQ" firstAttribute="trailing" secondItem="5Z4-3t-9Sn" secondAttribute="trailing" id="jmO-2d-OBM"/>
                                     <constraint firstItem="nvC-aY-3uB" firstAttribute="centerY" secondItem="ZLY-q4-NKI" secondAttribute="centerY" id="kTo-tU-NxD"/>
                                     <constraint firstItem="R5D-vu-GDm" firstAttribute="width" secondItem="lgQ-dH-y69" secondAttribute="width" id="maU-a8-TR9"/>
                                     <constraint firstItem="yKH-X7-2di" firstAttribute="width" secondItem="rVV-Sx-vAl" secondAttribute="width" multiplier="0.5" id="mbV-6F-naC"/>
@@ -160,6 +184,7 @@
                                     <constraint firstAttribute="bottom" secondItem="lgQ-dH-y69" secondAttribute="bottom" constant="20" id="wTj-Ju-sgc"/>
                                     <constraint firstItem="yKH-X7-2di" firstAttribute="centerX" secondItem="rVV-Sx-vAl" secondAttribute="centerX" id="y7X-hy-OaW"/>
                                     <constraint firstItem="5Z4-3t-9Sn" firstAttribute="centerY" secondItem="4vk-Nd-4rN" secondAttribute="centerY" id="yBB-6T-iNt"/>
+                                    <constraint firstItem="MUV-I0-PjQ" firstAttribute="centerY" secondItem="4vk-Nd-4rN" secondAttribute="centerY" id="zKW-0E-7ei"/>
                                     <constraint firstItem="4vk-Nd-4rN" firstAttribute="leading" secondItem="rVV-Sx-vAl" secondAttribute="leading" constant="8" id="zoa-2R-Wa1"/>
                                 </constraints>
                             </view>
@@ -181,6 +206,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="707"/>
+                    <connections>
+                        <outlet property="meetFriendsLabel" destination="nvC-aY-3uB" id="1Z2-Dp-qls"/>
+                        <outlet property="onlineMatchLabel" destination="5Z4-3t-9Sn" id="h2g-l7-jxS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKB-J3-HLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
