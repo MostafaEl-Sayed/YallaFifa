@@ -32,7 +32,8 @@ class SigninVC: GlobalController {
                 let uid = user.uid
                 let defaults = UserDefaults.standard
                 defaults.set("uid", forKey: uid)
-                print("Good")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetails")
+                self.present(vc!, animated: true, completion: nil)
             }
             if let error = error {
                 self.presentAlert(title: "Error" , mssg: error.localizedDescription)

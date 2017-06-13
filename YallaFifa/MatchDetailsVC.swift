@@ -23,7 +23,7 @@ class MatchDetailsVC: UIViewController,SSRadioButtonControllerDelegate {
         super.viewDidLoad()
 
         // register buttons to radioButtonController
-        radioButtonController = SSRadioButtonsController(buttons: onlineMatchBtn,faceToFaceMatchBtn)
+        //radioButtonController = SSRadioButtonsController(buttons: onlineMatchBtn,faceToFaceMatchBtn)
         
     }
 
@@ -39,16 +39,6 @@ class MatchDetailsVC: UIViewController,SSRadioButtonControllerDelegate {
         
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
