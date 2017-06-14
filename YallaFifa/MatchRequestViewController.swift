@@ -110,7 +110,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         let longitude = self.locationManager.location?.coordinate.longitude
         let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: 20)
         self.mapView.camera = camera
-        self.locationLabel.text! = "\(self.locatonlabelValue)"
+        //self.locationLabel.text! = "\(self.locatonlabelValue)"
 
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -128,13 +128,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        let lat = position.target.latitude
-        let long = position.target.longitude
-        if segmentControl.selectedSegmentIndex != 0 {
-             psChoosedLocation =
-                ["lat":(31.25506634)
-                ,"lng":(29.9461897)]
-        }
+        //let lat = position.target.latitude
+        //let long = position.target.longitude
+        psChoosedLocation = ["lat":(31.25506634), "lng":(29.9461897)]
     }
     func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
         // clear all old markers from the map
@@ -242,14 +238,16 @@ extension MatchRequestViewController:  GMSAutocompleteViewControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController) {
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
-    func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController) {
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
     
 }
