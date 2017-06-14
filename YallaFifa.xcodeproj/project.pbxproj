@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF07C0E41EF0D1D70075C469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* User.swift */; };
 		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
 		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */; };
@@ -36,6 +37,7 @@
 		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
 		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF07C0E31EF0D1D70075C469 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
 		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewContoller.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				CF9381091EE6F2C60091083B /* ViewController.swift */,
 				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
 				CFBA271F1EEB4D6E00CA0F1E /* place.swift */,
+				CF07C0E31EF0D1D70075C469 /* User.swift */,
 				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
 				CF93810B1EE6F2C60091083B /* Main.storyboard */,
 				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
@@ -283,6 +286,7 @@
 				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,
 				CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */,
 				E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */,
+				CF07C0E41EF0D1D70075C469 /* User.swift in Sources */,
 				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
 				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
 				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */,

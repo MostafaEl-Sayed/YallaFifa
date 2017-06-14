@@ -44,11 +44,13 @@ class PSLocationsViewController: UIViewController {
     
     @IBAction func addNewPSLocation(_ sender: Any) {
         
-        let newPS = User(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress,location: psChoosedLocation)
+        let newPS = User(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress,location: psChoosedLocation,typeOfUser: "PS")
         self.psLocations.append(newPS)
         self.tableView.reloadData()
     }
-
+    // ------------------------------------------
+    
+   
 
 }
 
