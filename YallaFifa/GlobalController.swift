@@ -105,6 +105,8 @@ class GlobalController : UIViewController ,UITextFieldDelegate , UIGestureRecogn
         activeTextField = textField
     }
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }
