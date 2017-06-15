@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0ZE-wn-IWa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lvl-Wf-jJs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -283,6 +283,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-Qa-Frr">
                                         <rect key="frame" x="270" y="0.0" width="67.5" height="70.5"/>
                                         <state key="normal" image="Search"/>
+                                        <connections>
+                                            <action selector="returnBackSearchBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ztA-VR-FxN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,9 +470,12 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNewPsView" destination="D92-s8-usb" id="c6Y-WD-FrX"/>
+                        <outlet property="chooseLocationView" destination="Q2A-dc-pL5" id="GA5-LW-FVU"/>
                         <outlet property="chooseRandomlyBtn" destination="XbB-HG-w5i" id="aXF-8X-Yx6"/>
                         <outlet property="chooseRandomlyView" destination="tCk-H0-C1b" id="r4h-cG-zPU"/>
+                        <outlet property="getCurrentLocationBtn" destination="PHC-k5-PhA" id="fHv-gm-xQ9"/>
                         <outlet property="mapView" destination="XWb-vO-idT" id="SVg-9v-8zl"/>
+                        <outlet property="menuView" destination="rQx-9C-BaB" id="h5f-Qt-Akk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="api-cN-bzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
