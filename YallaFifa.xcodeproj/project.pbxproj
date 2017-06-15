@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF07C0E41EF0D1D70075C469 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* User.swift */; };
+		CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* PlayStation.swift */; };
 		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
 		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */; };
@@ -24,7 +24,7 @@
 		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
 		CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */; };
 		CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271D1EEB08BF00CA0F1E /* Search.swift */; };
-		CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* place.swift */; };
+		CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* User.swift */; };
 		CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA27211EEB672500CA0F1E /* Protocols.swift */; };
 		E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */; };
 		E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */; };
@@ -37,7 +37,7 @@
 		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
 		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
-		CF07C0E31EF0D1D70075C469 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CF07C0E31EF0D1D70075C469 /* PlayStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStation.swift; sourceTree = "<group>"; };
 		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
 		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewContoller.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSDetailsCell.xib; sourceTree = "<group>"; };
 		CFBA271D1EEB08BF00CA0F1E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		CFBA271F1EEB4D6E00CA0F1E /* place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = place.swift; sourceTree = "<group>"; };
+		CFBA271F1EEB4D6E00CA0F1E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CFBA27211EEB672500CA0F1E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "enums&variabls.swift"; sourceTree = "<group>"; };
 		E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 				CFBA27211EEB672500CA0F1E /* Protocols.swift */,
 				CF9381091EE6F2C60091083B /* ViewController.swift */,
 				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
-				CFBA271F1EEB4D6E00CA0F1E /* place.swift */,
-				CF07C0E31EF0D1D70075C469 /* User.swift */,
+				CFBA271F1EEB4D6E00CA0F1E /* User.swift */,
+				CF07C0E31EF0D1D70075C469 /* PlayStation.swift */,
 				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
 				CF93810B1EE6F2C60091083B /* Main.storyboard */,
 				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
@@ -284,9 +284,9 @@
 				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
 				E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */,
 				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,
-				CFBA27201EEB4D6E00CA0F1E /* place.swift in Sources */,
+				CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */,
 				E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */,
-				CF07C0E41EF0D1D70075C469 /* User.swift in Sources */,
+				CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */,
 				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
 				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
 				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */,

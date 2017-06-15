@@ -14,6 +14,17 @@ import SystemConfiguration
 
 
 
+func isValidEmail(testStr:String) -> Bool {
+    let EMAIL_REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", EMAIL_REGEX)
+    return emailTest.evaluate(with: testStr)
+}
+
+func isValidPhone(testStr: String) -> Bool {
+    let PHONE_REGEX = "01+\\d{9}"
+    let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+    return phoneTest.evaluate(with: testStr)
+}
 extension UIViewController {
 
     func isInternetAvailable() -> Bool
