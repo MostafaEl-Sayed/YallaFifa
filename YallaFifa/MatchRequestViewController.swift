@@ -55,14 +55,20 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var cancelRequestBtn: UIButton!
+    @IBOutlet weak var searchViewBtn: UIButton!
     
+    @IBOutlet weak var smallSearchBtn: UIButton!
     var makeBackEnable = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Map setup
+        // Map setupx
+        let latitude  = self.locationManager.location?.coordinate.latitude
+        let longitude = self.locationManager.location?.coordinate.longitude
+        
         self.userCurrentLocation = [
-            "lat":(self.locationManager.location?.coordinate.latitude)! ,
-            "lng":(self.locationManager.location?.coordinate.longitude)!
+            "lat":latitude! ,
+            "lng":longitude!
         ]
         
         self.mapView.delegate = self
@@ -94,7 +100,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBAction func currentLocation(_ sender: Any) {
         anotherLocation = false
        
-        
+        locationLabel.text! = "Current location"
         let latitude  = self.locationManager.location?.coordinate.latitude
         let longitude = self.locationManager.location?.coordinate.longitude
         locationManager.requestAlwaysAuthorization()
@@ -120,13 +126,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let latitude  = self.locationManager.location?.coordinate.latitude
-        let longitude = self.locationManager.location?.coordinate.longitude
-        let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: 20)
-        self.mapView.camera = camera
-        //self.locationLabel.text! = "\(self.locatonlabelValue)"
-
+        if anotherLocation {
+            let camera = GMSCameraPosition.camera(withLatitude:chosedLocation.latitude,longitude: chosedLocation.longitude, zoom: self.mapView.camera.zoom)
+            self.mapView.camera = camera
+            self.locationLabel.text! = "\(self.locatonlabelValue)"
+        }
         self.navigationController?.navigationBar.isHidden = true
     }
 
@@ -201,13 +205,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     @IBAction func returnBackSearchBtnAct(_ sender: Any) {
         if makeBackEnable {
-            let screenSize = UIScreen.main.bounds
-            let screenWidth = screenSize.width
-            let translationValue = chooseLocationView.frame.size.width + menuView.frame.size.width - (0.1*screenWidth/2)
-            let right = CGAffineTransform(translationX:translationValue ,y: 0)
+            searchViewBtn.isEnabled = true
+            let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-                
-                self.chooseLocationView.transform = right
+                self.chooseLocationView.transform = defaultValue
+                self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
             }, completion: nil)
             makeBackEnable = false
 
@@ -218,6 +220,21 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func cancelRequestBtnAct(_ sender: Any) {
+
+        
+        let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+            self.addNewPsView.transform = defaultValue
+            self.cancelRequestBtn.transform = defaultValue
+            self.chooseLocationView.transform = defaultValue
+            self.estimationTimeAndDistanceView.transform = defaultValue
+        }, completion: nil)
+        self.chooseRandomlyBtn.setTitle("Choose Randomly", for: .normal)
+        self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
+        makeBackEnable = true
+        searchViewBtn.isEnabled = true
+        }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -285,36 +302,37 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
                     } else if let data = data,
                         let response = response as? HTTPURLResponse,
                         response.statusCode == 200 {
-                        
-                        //let status = data["status"] as! String
-                        do {
-                            if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                        DispatchQueue.main.async {
+                            do {
                                 
-                                let status = dictionary["status"] as! String
-                                print(status)
-                                if status == "OK" {
-                                    self.selectedRoute = (dictionary["routes"] as! [[NSObject:AnyObject]])[0] as NSDictionary
-                                    self.overviewPolyline = self.selectedRoute["overview_polyline"] as! NSDictionary
-                                
-                                    let legs = self.selectedRoute["legs"] as! [NSDictionary]
-                                    let startLocationDictionary = legs[0]["start_location"] as! NSDictionary
-                                    self.originCoordinate = CLLocationCoordinate2DMake(startLocationDictionary["lat"] as! Double, startLocationDictionary["lng"] as! Double)
-                                    let endLocationDictionary = legs[legs.count - 1]["end_location"] as! NSDictionary
-                                    self.destinationCoordinate = CLLocationCoordinate2DMake(endLocationDictionary["lat"] as! Double, endLocationDictionary["lng"] as! Double)
+                                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                                     
-                                    self.originAddress = legs[0]["start_address"] as! String
-                                    self.destinationAddress = legs[legs.count - 1]["end_address"] as! String
-                                completionHandler(status, true)
-                                }   else {
-                                completionHandler(status, false)
-                            }
+                                    let status = dictionary["status"] as! String
+                                    print(status)
+                                    if status == "OK" {
+                                        self.selectedRoute = (dictionary["routes"] as! [[NSObject:AnyObject]])[0] as NSDictionary
+                                        self.overviewPolyline = self.selectedRoute["overview_polyline"] as! NSDictionary
+                                        
+                                        let legs = self.selectedRoute["legs"] as! [NSDictionary]
+                                        let startLocationDictionary = legs[0]["start_location"] as! NSDictionary
+                                        self.originCoordinate = CLLocationCoordinate2DMake(startLocationDictionary["lat"] as! Double, startLocationDictionary["lng"] as! Double)
+                                        let endLocationDictionary = legs[legs.count - 1]["end_location"] as! NSDictionary
+                                        self.destinationCoordinate = CLLocationCoordinate2DMake(endLocationDictionary["lat"] as! Double, endLocationDictionary["lng"] as! Double)
+                                        
+                                        self.originAddress = legs[0]["start_address"] as! String
+                                        self.destinationAddress = legs[legs.count - 1]["end_address"] as! String
+                                        completionHandler(status, true)
+                                    }   else {
+                                        completionHandler(status, false)
+                                    }
+                                    
+                                    
+                                }
                                 
-                                
+                            }catch let error as NSError {
+                                print(error.localizedDescription)
+                                completionHandler("", false)
                             }
-                            
-                        }catch let error as NSError {
-                            print(error.localizedDescription)
-                            completionHandler("", false)
                         }
                         
                     }
@@ -363,10 +381,10 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.timeLabel.text! = "\(remainingMins) mins"
         print("bagy oksim bllah")
         let translationValue = estimationTimeAndDistanceView.frame.size.width - menuView.frame.size.width
-        let right = CGAffineTransform(translationX:translationValue ,y: 0)
+        let left = CGAffineTransform(translationX:-translationValue ,y: 0)
        
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-            self.estimationTimeAndDistanceView.transform = right
+            self.estimationTimeAndDistanceView.transform = left
         }, completion: nil)
 
     }
@@ -375,7 +393,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         let screenWidth = screenSize.width
         let translationValue = -chooseLocationView.frame.size.width + menuView.frame.size.width - (0.1*screenWidth/2)
         let left = CGAffineTransform(translationX:translationValue ,y: 0)
-        let top = CGAffineTransform(translationX: 0, y: -300)
+        let top = CGAffineTransform(translationX: 0, y: -addNewPsView.frame.size.height + 8)
         
         let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
@@ -383,12 +401,14 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             // self.container is your view that you want to animate
             self.addNewPsView
                 .transform = down
-            self.getCurrentLocationBtn.transform = down
-            self.chooseRandomlyView.transform = down
+            self.cancelRequestBtn.transform = top
             self.chooseLocationView.transform = left
+            self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
+            
         }, completion: nil)
         self.chooseRandomlyBtn.setTitle("Confirm Request", for: .normal)
         makeBackEnable = true
+        searchViewBtn.isEnabled = false
         
         
     }
@@ -409,6 +429,17 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         return true
     }
     
+    @IBAction func searchViewBtnAct(_ sender: Any) {
+        self.counterChangeStatusOflocation = 0
+        let autocompletecontroller = GMSAutocompleteViewController()
+        autocompletecontroller.delegate = self
+        let filter = GMSAutocompleteFilter()
+        filter.type = .establishment  //suitable filter type
+        filter.country = "EG"  //appropriate country code
+        autocompletecontroller.autocompleteFilter = filter
+        self.present(autocompletecontroller, animated: true, completion: nil)
+        
+    }
     
    
 }

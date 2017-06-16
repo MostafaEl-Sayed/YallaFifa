@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lvl-Wf-jJs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cDY-ky-gTc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -262,7 +262,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87G-gP-Z80">
-                                <rect key="frame" x="112.5" y="28" width="262.5" height="60"/>
+                                <rect key="frame" x="301.5" y="28" width="262.5" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-dS-b8K">
                                         <rect key="frame" x="13.5" y="0.0" width="131" height="60"/>
@@ -349,12 +349,18 @@
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Gi-niE">
                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="70.5"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search about player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-zj-GTI">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-zj-GTI">
                                         <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
+                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nG-WCm">
                                         <rect key="frame" x="270" y="13.5" width="0.5" height="42"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -369,6 +375,12 @@
                                             <action selector="returnBackSearchBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ztA-VR-FxN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISi-Ar-Q68">
+                                        <rect key="frame" x="8" y="8" width="322" height="54.5"/>
+                                        <connections>
+                                            <action selector="searchViewBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ZUG-uK-te8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -378,14 +390,22 @@
                                     <constraint firstItem="ncK-Qa-Frr" firstAttribute="top" secondItem="Q2A-dc-pL5" secondAttribute="top" id="6Zm-9u-Mu7"/>
                                     <constraint firstAttribute="bottom" secondItem="JB2-Gi-niE" secondAttribute="bottom" id="BGc-VU-aV2"/>
                                     <constraint firstItem="ie7-zj-GTI" firstAttribute="centerY" secondItem="Q2A-dc-pL5" secondAttribute="centerY" id="Bzr-HG-uCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ISi-Ar-Q68" secondAttribute="trailing" constant="8" id="CqM-9C-b6S"/>
                                     <constraint firstItem="ie7-zj-GTI" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.6" id="LJF-dp-bfN"/>
                                     <constraint firstItem="rye-nG-WCm" firstAttribute="height" secondItem="ie7-zj-GTI" secondAttribute="height" multiplier="0.6" id="RgB-Tt-sZe"/>
+                                    <constraint firstAttribute="bottom" secondItem="ISi-Ar-Q68" secondAttribute="bottom" constant="8" id="Wyn-8w-uLf"/>
                                     <constraint firstItem="ncK-Qa-Frr" firstAttribute="leading" secondItem="ie7-zj-GTI" secondAttribute="trailing" id="ZCJ-1S-pOk"/>
                                     <constraint firstItem="JB2-Gi-niE" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.2" id="alV-g6-Odd"/>
                                     <constraint firstItem="rye-nG-WCm" firstAttribute="leading" secondItem="ie7-zj-GTI" secondAttribute="trailing" id="c91-gK-rTf"/>
                                     <constraint firstItem="rye-nG-WCm" firstAttribute="centerY" secondItem="ie7-zj-GTI" secondAttribute="centerY" id="g6l-Mb-sUd"/>
+                                    <constraint firstAttribute="bottom" secondItem="uOw-7d-pap" secondAttribute="bottom" id="gZS-Pf-GVN"/>
                                     <constraint firstAttribute="bottom" secondItem="ncK-Qa-Frr" secondAttribute="bottom" id="lb2-a7-puO"/>
+                                    <constraint firstItem="ISi-Ar-Q68" firstAttribute="leading" secondItem="Q2A-dc-pL5" secondAttribute="leading" constant="8" id="n37-9h-vbP"/>
+                                    <constraint firstItem="ISi-Ar-Q68" firstAttribute="top" secondItem="Q2A-dc-pL5" secondAttribute="top" constant="8" id="p3p-St-0Fe"/>
                                     <constraint firstItem="JB2-Gi-niE" firstAttribute="leading" secondItem="Q2A-dc-pL5" secondAttribute="leading" id="pq0-Ow-Ebo"/>
+                                    <constraint firstItem="uOw-7d-pap" firstAttribute="top" secondItem="Q2A-dc-pL5" secondAttribute="top" id="qX2-dM-AbQ"/>
+                                    <constraint firstItem="ncK-Qa-Frr" firstAttribute="leading" secondItem="uOw-7d-pap" secondAttribute="trailing" id="sYZ-UV-g1B"/>
+                                    <constraint firstItem="uOw-7d-pap" firstAttribute="leading" secondItem="JB2-Gi-niE" secondAttribute="trailing" id="vEx-wm-AkA"/>
                                     <constraint firstAttribute="trailing" secondItem="ncK-Qa-Frr" secondAttribute="trailing" id="xFw-TW-8tG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -534,13 +554,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="chooseRandomlyBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="bVp-he-TLg"/>
+                                    <action selector="cancelRequestBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="FS7-2D-qdP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="87G-gP-Z80" secondAttribute="trailing" id="2CI-v2-log"/>
                             <constraint firstItem="tCk-H0-C1b" firstAttribute="width" secondItem="D92-s8-usb" secondAttribute="width" multiplier="0.9" id="88q-iU-sVa"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="top" secondItem="8tx-01-XLE" secondAttribute="bottom" constant="8" id="8Ku-dK-5kI"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="top" secondItem="D92-s8-usb" secondAttribute="bottom" id="9P5-Vd-YkS"/>
@@ -551,6 +570,7 @@
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leading" id="GoY-yB-CgW"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="centerX" secondItem="tCk-H0-C1b" secondAttribute="centerX" id="HeD-22-FO3"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" id="KPL-qZ-RYa"/>
+                            <constraint firstAttribute="trailing" secondItem="87G-gP-Z80" secondAttribute="trailing" constant="-189" id="Oix-y8-b6N"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="height" secondItem="tCk-H0-C1b" secondAttribute="height" id="RVo-Ct-O8H"/>
                             <constraint firstItem="vnr-I5-t0y" firstAttribute="top" secondItem="XWb-vO-idT" secondAttribute="bottom" id="WAY-s5-QS2"/>
                             <constraint firstItem="XWb-vO-idT" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leading" id="al3-bc-zM8"/>
@@ -576,14 +596,18 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNewPsView" destination="D92-s8-usb" id="c6Y-WD-FrX"/>
+                        <outlet property="cancelRequestBtn" destination="AAY-5y-O45" id="GDh-xc-wHB"/>
                         <outlet property="chooseLocationView" destination="Q2A-dc-pL5" id="GA5-LW-FVU"/>
                         <outlet property="chooseRandomlyBtn" destination="XbB-HG-w5i" id="aXF-8X-Yx6"/>
                         <outlet property="chooseRandomlyView" destination="tCk-H0-C1b" id="r4h-cG-zPU"/>
                         <outlet property="distanceLabel" destination="E28-J2-Xnj" id="QAd-md-ojB"/>
                         <outlet property="estimationTimeAndDistanceView" destination="87G-gP-Z80" id="SWt-dL-sjZ"/>
                         <outlet property="getCurrentLocationBtn" destination="PHC-k5-PhA" id="fHv-gm-xQ9"/>
+                        <outlet property="locationLabel" destination="uOw-7d-pap" id="Fyy-uI-Jmu"/>
                         <outlet property="mapView" destination="XWb-vO-idT" id="SVg-9v-8zl"/>
                         <outlet property="menuView" destination="rQx-9C-BaB" id="h5f-Qt-Akk"/>
+                        <outlet property="searchViewBtn" destination="ISi-Ar-Q68" id="Tzf-5u-Cf1"/>
+                        <outlet property="smallSearchBtn" destination="ncK-Qa-Frr" id="hGh-FS-zFf"/>
                         <outlet property="timeLabel" destination="05S-wV-WgO" id="VpB-bI-PWh"/>
                     </connections>
                 </viewController>
@@ -742,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTz-Kd-um5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5511" y="6"/>
+            <point key="canvasLocation" x="5894" y="-3"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="yYR-Y1-gF7">
