@@ -40,3 +40,13 @@ extension UIColor {
         )
     }
 }
+extension NSDictionary {
+    
+    func getValueForKey<T>(Key:String , callBack:T)  -> T{
+        guard let value = self[Key] as? T else{
+            return callBack
+        }
+        return value
+    }
+    
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495671EF41AA300559D77 /* BlueLine.swift */; };
+		CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495691EF41E5800559D77 /* RequestManager.swift */; };
 		CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* PlayStation.swift */; };
 		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
@@ -39,6 +41,8 @@
 		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
 		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0495671EF41AA300559D77 /* BlueLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueLine.swift; sourceTree = "<group>"; };
+		CF0495691EF41E5800559D77 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		CF07C0E31EF0D1D70075C469 /* PlayStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStation.swift; sourceTree = "<group>"; };
 		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
@@ -126,8 +130,10 @@
 				CF9381091EE6F2C60091083B /* ViewController.swift */,
 				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
 				CFBA271F1EEB4D6E00CA0F1E /* User.swift */,
+				CF0495671EF41AA300559D77 /* BlueLine.swift */,
 				CF07C0E31EF0D1D70075C469 /* PlayStation.swift */,
 				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
+				CF0495691EF41E5800559D77 /* RequestManager.swift */,
 				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
 				CF93810B1EE6F2C60091083B /* Main.storyboard */,
 				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */,
@@ -298,10 +304,12 @@
 				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
 				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
 				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */,
+				CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */,
 				CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */,
 				CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */,
 				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
 				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
+				CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */,
 				CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */,
 				CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */,
 			);

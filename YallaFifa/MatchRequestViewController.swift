@@ -250,18 +250,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     //    getDirections(origin: "\(31.25506634),\(29.96618978)", destination: "\(31.29506634),\(29.9461897)", waypoints: nil, travelMode: nil)
     // ----------------------------------------
-    let baseURLDirections = "https://maps.googleapis.com/maps/api/directions/json?"
-    var selectedRoute: NSDictionary!
-    var overviewPolyline: NSDictionary!
-    var originCoordinate: CLLocationCoordinate2D!
-    var destinationCoordinate: CLLocationCoordinate2D!
-    var originAddress: String!
-    var destinationAddress: String!
-    var originMarker: GMSMarker!
-    var destinationMarker: GMSMarker!
-    var routePolyline: GMSPolyline!
     var oneRootadded = false
     var prevMarkerPosition:CLLocationCoordinate2D!
+    var blueLine:BlueLine!
     // -------------------------------------------
     var totalDistanceInMeters: UInt = 0
     var totalDistance: String!
@@ -271,8 +262,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             
             let orgin = startPoint
             let destination = endPoints
-            getDirections(origin: orgin, destination: destination, waypoints: nil, travelMode: nil, completionHandler: { (status, success) -> Void in
+            RequestManager.defaultManager.getDirections(origin: orgin, destination: destination, completionHandler: { (status, success , data) -> Void in
                 if success {
+                    self.blueLine = data
                     self.drawRoute()
                     self.calculateTotalDistanceAndDuration()
                 }
@@ -285,69 +277,13 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     // Network Layer
     
 
-    func getDirections(origin: String!, destination: String!, waypoints: Array<String>!, travelMode: AnyObject!, completionHandler: @escaping ((_ status:   String, _ success: Bool) -> Void)) {
-        if let originLocation = origin {
-            if let destinationLocation = destination {
-                var directionsURLString = baseURLDirections + "origin=" + originLocation + "&destination=" + destinationLocation
-                
-                directionsURLString = directionsURLString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-                
-                let defaultSession = URLSession(configuration: .default)
-                let url = URL(string: directionsURLString)!
-                let task = defaultSession.dataTask(with: url) { data, response, error in
-                    
-                    
-                    if let error = error {
-                        print("DataTask error: " + error.localizedDescription + "\n")
-                    } else if let data = data,
-                        let response = response as? HTTPURLResponse,
-                        response.statusCode == 200 {
-                        DispatchQueue.main.async {
-                            do {
-                                
-                                if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                                    
-                                    let status = dictionary["status"] as! String
-                                    print(status)
-                                    if status == "OK" {
-                                        self.selectedRoute = (dictionary["routes"] as! [[NSObject:AnyObject]])[0] as NSDictionary
-                                        self.overviewPolyline = self.selectedRoute["overview_polyline"] as! NSDictionary
-                                        
-                                        let legs = self.selectedRoute["legs"] as! [NSDictionary]
-                                        let startLocationDictionary = legs[0]["start_location"] as! NSDictionary
-                                        self.originCoordinate = CLLocationCoordinate2DMake(startLocationDictionary["lat"] as! Double, startLocationDictionary["lng"] as! Double)
-                                        let endLocationDictionary = legs[legs.count - 1]["end_location"] as! NSDictionary
-                                        self.destinationCoordinate = CLLocationCoordinate2DMake(endLocationDictionary["lat"] as! Double, endLocationDictionary["lng"] as! Double)
-                                        
-                                        self.originAddress = legs[0]["start_address"] as! String
-                                        self.destinationAddress = legs[legs.count - 1]["end_address"] as! String
-                                        completionHandler(status, true)
-                                    }   else {
-                                        completionHandler(status, false)
-                                    }
-                                    
-                                    
-                                }
-                                
-                            }catch let error as NSError {
-                                print(error.localizedDescription)
-                                completionHandler("", false)
-                            }
-                        }
-                        
-                    }
-                }
-                task.resume()
-            }
-        }
-    }
     
-        func drawRoute() {
-            let route = overviewPolyline["points"] as! String
+    func drawRoute() {
+            let route = blueLine.overviewPolyline["points"] as! String
             let path: GMSPath = GMSPath(fromEncodedPath: route)!
-            routePolyline = GMSPolyline(path: path)
-            routePolyline.strokeWidth = 2
-            routePolyline.map = self.mapView
+            blueLine.routePolyline = GMSPolyline(path: path)
+            blueLine.routePolyline.strokeWidth = 2
+            blueLine.routePolyline.map = self.mapView
             oneRootadded = true
 //            self.distanceLabel.text! = "\(totalDistanceInMeters/1000)km"
 //            self.timeLabel.text! = "\(totalDurationInSeconds/60)mins"
@@ -357,7 +293,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         }
     func calculateTotalDistanceAndDuration() {
         
-        let legs = self.selectedRoute["legs"] as! [NSDictionary]
+        let legs:[NSDictionary] = self.blueLine.selectedRoute.getValueForKey(Key: "legs", callBack: [])
         totalDistanceInMeters = 0
         totalDurationInSeconds = 0
         
@@ -388,6 +324,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         }, completion: nil)
 
     }
+    
     func startAnimatingViews() {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
