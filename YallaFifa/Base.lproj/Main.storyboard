@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Om9-Ey-5hE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lvl-Wf-jJs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -273,8 +273,8 @@
                                                 <color key="textColor" red="0.8798376322" green="0.31035465000000001" blue="0.37376886609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400 meter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="E28-J2-Xnj">
-                                                <rect key="frame" x="66.5" y="24.5" width="64.5" height="11"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="E28-J2-Xnj">
+                                                <rect key="frame" x="66.5" y="30" width="64.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -299,8 +299,8 @@
                                                 <color key="textColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="05S-wV-WgO">
-                                                <rect key="frame" x="32" y="24.5" width="73" height="11"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="05S-wV-WgO">
+                                                <rect key="frame" x="32" y="30" width="73" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -579,9 +579,12 @@
                         <outlet property="chooseLocationView" destination="Q2A-dc-pL5" id="GA5-LW-FVU"/>
                         <outlet property="chooseRandomlyBtn" destination="XbB-HG-w5i" id="aXF-8X-Yx6"/>
                         <outlet property="chooseRandomlyView" destination="tCk-H0-C1b" id="r4h-cG-zPU"/>
+                        <outlet property="distanceLabel" destination="E28-J2-Xnj" id="QAd-md-ojB"/>
+                        <outlet property="estimationTimeAndDistanceView" destination="87G-gP-Z80" id="SWt-dL-sjZ"/>
                         <outlet property="getCurrentLocationBtn" destination="PHC-k5-PhA" id="fHv-gm-xQ9"/>
                         <outlet property="mapView" destination="XWb-vO-idT" id="SVg-9v-8zl"/>
                         <outlet property="menuView" destination="rQx-9C-BaB" id="h5f-Qt-Akk"/>
+                        <outlet property="timeLabel" destination="05S-wV-WgO" id="VpB-bI-PWh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="api-cN-bzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -660,7 +663,7 @@
                                                     <outlet property="delegate" destination="Om9-Ey-5hE" id="3wy-Q6-2Ze"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53A-bE-pEv">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53A-bE-pEv">
                                                 <rect key="frame" x="37" y="467" width="300" height="47"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
@@ -1143,10 +1146,10 @@
             </objects>
             <point key="canvasLocation" x="3921" y="750"/>
         </scene>
-        <!--View Controller-->
+        <!--Match Request Table View Controller-->
         <scene sceneID="twi-LF-mnM">
             <objects>
-                <viewController id="0ZE-wn-IWa" sceneMemberID="viewController">
+                <viewController id="0ZE-wn-IWa" customClass="MatchRequestTableViewController" customModule="YallaFifa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Hm-I7-1Np"/>
                         <viewControllerLayoutGuide type="bottom" id="rEs-BC-ozN"/>
@@ -1237,6 +1240,9 @@
                             <constraint firstItem="1Ub-2C-JG0" firstAttribute="top" secondItem="UQF-RD-4Nn" secondAttribute="topMargin" id="iRZ-5k-lwA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="0NP-J1-hKb" id="KXC-Vy-ZPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teO-ji-aai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

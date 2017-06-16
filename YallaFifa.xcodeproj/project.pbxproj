@@ -12,6 +12,8 @@
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
 		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */; };
 		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
+		CF67D4CB1EF329C5003A5D6B /* MatchRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */; };
+		CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */; };
 		CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9203411EE9A83200DFBED5 /* Utilites.swift */; };
 		CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381071EE6F2C60091083B /* AppDelegate.swift */; };
 		CF93810A1EE6F2C60091083B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381091EE6F2C60091083B /* ViewController.swift */; };
@@ -22,7 +24,7 @@
 		CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */; };
 		CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */; };
 		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
-		CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */; };
+		CFBA26FE1EEAF43800CA0F1E /* UserDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */; };
 		CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271D1EEB08BF00CA0F1E /* Search.swift */; };
 		CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* User.swift */; };
 		CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA27211EEB672500CA0F1E /* Protocols.swift */; };
@@ -42,6 +44,8 @@
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
 		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewContoller.swift; sourceTree = "<group>"; };
 		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
+		CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestTableViewController.swift; sourceTree = "<group>"; };
+		CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		CF9203411EE9A83200DFBED5 /* Utilites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		CF9381041EE6F2C60091083B /* YallaFifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallaFifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9381071EE6F2C60091083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsViewController.swift; sourceTree = "<group>"; };
 		CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
-		CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSDetailsCell.xib; sourceTree = "<group>"; };
+		CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsCell.xib; sourceTree = "<group>"; };
 		CFBA271D1EEB08BF00CA0F1E /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		CFBA271F1EEB4D6E00CA0F1E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CFBA27211EEB672500CA0F1E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -124,15 +128,17 @@
 				CFBA271F1EEB4D6E00CA0F1E /* User.swift */,
 				CF07C0E31EF0D1D70075C469 /* PlayStation.swift */,
 				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
+				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
 				CF93810B1EE6F2C60091083B /* Main.storyboard */,
+				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */,
 				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
 				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
-				CFBA26FD1EEAF43800CA0F1E /* PSDetailsCell.xib */,
+				CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */,
 				CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */,
 				CFBA271D1EEB08BF00CA0F1E /* Search.swift */,
 				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
 				CF9381191EE6F3D60091083B /* Assets.xcassets */,
-				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
+				CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */,
 				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
 				E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */,
 				E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */,
@@ -218,7 +224,7 @@
 				CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */,
 				CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */,
 				CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */,
-				CFBA26FE1EEAF43800CA0F1E /* PSDetailsCell.xib in Resources */,
+				CFBA26FE1EEAF43800CA0F1E /* UserDetailsCell.xib in Resources */,
 				CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */,
 				CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */,
 			);
@@ -280,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */,
+				CF67D4CB1EF329C5003A5D6B /* MatchRequestTableViewController.swift in Sources */,
 				CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */,
+				CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */,
 				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
 				E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */,
 				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,

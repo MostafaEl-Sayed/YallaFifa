@@ -50,6 +50,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var getCurrentLocationBtn: UIButton!
     @IBOutlet weak var chooseLocationView: UIView!
+    @IBOutlet weak var estimationTimeAndDistanceView: UIView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var menuView: UIView!
     
@@ -328,6 +331,10 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             routePolyline.strokeWidth = 2
             routePolyline.map = self.mapView
             oneRootadded = true
+//            self.distanceLabel.text! = "\(totalDistanceInMeters/1000)km"
+//            self.timeLabel.text! = "\(totalDurationInSeconds/60)mins"
+//            self.timeLabel.setValue("\(totalDurationInSeconds/60)mins", forKey: "\(totalDurationInSeconds/60)mins")
+            
             
         }
     func calculateTotalDistanceAndDuration() {
@@ -343,7 +350,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         let distanceInKilometers: Double = Double(totalDistanceInMeters / 1000)
         totalDistance = "Total Distance: \(distanceInKilometers) Km"
-        
+        self.distanceLabel.text! = "\(distanceInKilometers) Km"
         
         let mins = totalDurationInSeconds / 60
         let hours = mins / 60
@@ -353,8 +360,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         let remainingSecs = totalDurationInSeconds % 60
         
         totalDuration = "Duration: \(days) d, \(remainingHours) h, \(remainingMins) mins, \(remainingSecs) secs"
-        
-        print(totalDuration)
+        self.timeLabel.text! = "\(remainingMins) mins"
+        print("bagy oksim bllah")
+        let translationValue = estimationTimeAndDistanceView.frame.size.width - menuView.frame.size.width
+        let right = CGAffineTransform(translationX:translationValue ,y: 0)
+       
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+            self.estimationTimeAndDistanceView.transform = right
+        }, completion: nil)
+
     }
     func startAnimatingViews() {
         let screenSize = UIScreen.main.bounds
