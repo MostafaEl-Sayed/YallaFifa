@@ -358,7 +358,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             
         }
         if oneRootadded {
-            routePolyline.map = nil
+            blueLine.routePolyline.map = nil
         }
         
         createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation["lat"]!),\(userCurrentLocation["lng"]!)", endPoints: "\(marker.position.latitude),\(marker.position.longitude)")
