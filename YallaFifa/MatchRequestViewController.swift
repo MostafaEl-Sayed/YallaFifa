@@ -28,11 +28,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var allPhysically = [User]()
     var psChoosedLocation = [String : Double]()
     var makeBackEnable = false
-    
+    var choosedMetpoint = [String : Double]()
     // --------------------------------
+    @IBOutlet weak var locationLogoImg: UIImageView!
+    @IBOutlet weak var choosePointToMeetFriendLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var getCurrentLocationBtn: UIButton!
     @IBOutlet weak var chooseLocationView: UIView!
     @IBOutlet weak var estimationTimeAndDistanceView: UIView!
@@ -46,6 +47,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBOutlet weak var chooseRandomlyBtn: UIButton!
     @IBOutlet weak var addNewPsView: UIView!
     
+    @IBOutlet weak var chooseMeetingPointView: UIView!
+    @IBOutlet weak var flipViewControllerBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Map setupx
@@ -127,10 +130,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.mapView.camera = camera
         
     }
+    
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        //let lat = position.target.latitude
-        //let long = position.target.longitude
-        psChoosedLocation = ["lat":(31.25506634), "lng":(29.9461897)]
+        let lat = position.target.latitude
+        let long = position.target.longitude
+        choosedMetpoint = [
+            "lat":lat ,
+            "lng":long
+        ]
+        
     }
     func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
         // clear all old markers from the map
@@ -200,6 +208,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
                 self.chooseLocationView.transform = defaultValue
+                self.chooseMeetingPointView.transform = defaultValue
                 self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
             }, completion: nil)
             makeBackEnable = false
@@ -219,13 +228,18 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.addNewPsView.transform = defaultValue
             self.cancelRequestBtn.transform = defaultValue
             self.chooseLocationView.transform = defaultValue
+            self.chooseMeetingPointView.transform = defaultValue
             self.estimationTimeAndDistanceView.transform = defaultValue
+            self.flipViewControllerBtn.transform = defaultValue
         }, completion: nil)
         self.chooseRandomlyBtn.setTitle("Choose Randomly", for: .normal)
         self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
         makeBackEnable = true
         searchViewBtn.isEnabled = true
+        locationLogoImg.isHidden = true
+        choosePointToMeetFriendLabel.isHidden = true
         }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -332,9 +346,13 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.addNewPsView.transform = down
             self.cancelRequestBtn.transform = top
             self.chooseLocationView.transform = left
+            self.chooseMeetingPointView.transform = left
+            self.flipViewControllerBtn.transform = top
     
         }, completion: nil)
-        
+        chooseRandomlyBtn.isEnabled = false
+        locationLogoImg.isHidden = false
+        choosePointToMeetFriendLabel.isHidden = false
         self.chooseRandomlyBtn.setTitle("Confirm Request", for: .normal)
         self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
         makeBackEnable = true

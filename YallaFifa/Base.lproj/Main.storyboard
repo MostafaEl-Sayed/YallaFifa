@@ -428,6 +428,44 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-y2-4bj" userLabel="Choose Meeting Point">
+                                <rect key="frame" x="364.5" y="103" width="270" height="70.5"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose point to meet your Fiend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-8t-4I5">
+                                        <rect key="frame" x="8" y="8" width="216" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="a48-Lh-pq4">
+                                        <rect key="frame" x="232" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="AGd-0N-yyw"/>
+                                            <constraint firstAttribute="height" constant="30" id="Mz1-HT-jud"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KOk-8t-4I5" firstAttribute="leading" secondItem="sYk-y2-4bj" secondAttribute="leading" constant="8" id="03G-Ay-rSL"/>
+                                    <constraint firstItem="a48-Lh-pq4" firstAttribute="leading" secondItem="KOk-8t-4I5" secondAttribute="trailing" constant="8" id="1id-8n-vEr"/>
+                                    <constraint firstItem="a48-Lh-pq4" firstAttribute="centerY" secondItem="sYk-y2-4bj" secondAttribute="centerY" id="D6f-Mj-aRF"/>
+                                    <constraint firstItem="KOk-8t-4I5" firstAttribute="top" secondItem="sYk-y2-4bj" secondAttribute="top" constant="8" id="IzV-EP-qNz"/>
+                                    <constraint firstAttribute="trailing" secondItem="a48-Lh-pq4" secondAttribute="trailing" constant="8" id="Pmm-TX-4Uv"/>
+                                    <constraint firstAttribute="bottom" secondItem="KOk-8t-4I5" secondAttribute="bottom" constant="8" id="R6g-Vn-aKb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-k5-PhA">
                                 <rect key="frame" x="299" y="489.5" width="49" height="48"/>
                                 <constraints>
@@ -439,7 +477,7 @@
                                     <action selector="currentLocation:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="xb5-ep-G4A"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
                                 <rect key="frame" x="173" y="323" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Td5-uf-Wa0"/>
@@ -548,7 +586,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
                                 <rect key="frame" x="27" y="707" width="320.5" height="56.5"/>
                                 <color key="backgroundColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
@@ -576,9 +614,11 @@
                             <constraint firstItem="D92-s8-usb" firstAttribute="top" secondItem="tCk-H0-C1b" secondAttribute="bottom" constant="20" id="DGE-4l-eQv"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.95" id="FQ7-dT-IuD"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leading" id="GoY-yB-CgW"/>
+                            <constraint firstItem="sYk-y2-4bj" firstAttribute="bottom" secondItem="Q2A-dc-pL5" secondAttribute="bottom" id="HZO-Cc-uZJ"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="centerX" secondItem="tCk-H0-C1b" secondAttribute="centerX" id="HeD-22-FO3"/>
                             <constraint firstItem="gN7-eo-3xQ" firstAttribute="bottom" secondItem="rQx-9C-BaB" secondAttribute="bottom" id="JWi-Fu-zed"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" id="KPL-qZ-RYa"/>
+                            <constraint firstItem="sYk-y2-4bj" firstAttribute="leading" secondItem="Q2A-dc-pL5" secondAttribute="trailing" constant="8" id="Piw-tZ-mat"/>
                             <constraint firstItem="gN7-eo-3xQ" firstAttribute="height" secondItem="rQx-9C-BaB" secondAttribute="height" id="QHT-Cf-4TU"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="height" secondItem="tCk-H0-C1b" secondAttribute="height" id="RVo-Ct-O8H"/>
                             <constraint firstItem="vnr-I5-t0y" firstAttribute="top" secondItem="XWb-vO-idT" secondAttribute="bottom" id="WAY-s5-QS2"/>
@@ -590,11 +630,13 @@
                             <constraint firstItem="87G-gP-Z80" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" multiplier="2.3" id="is9-cx-cbl"/>
                             <constraint firstItem="87G-gP-Z80" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.7" id="jMT-wX-muL"/>
                             <constraint firstItem="tCk-H0-C1b" firstAttribute="centerX" secondItem="D92-s8-usb" secondAttribute="centerX" id="kfS-9X-Hzx"/>
+                            <constraint firstItem="sYk-y2-4bj" firstAttribute="top" secondItem="Q2A-dc-pL5" secondAttribute="top" id="ldo-Wa-aNF"/>
                             <constraint firstItem="tCk-H0-C1b" firstAttribute="top" secondItem="PHC-k5-PhA" secondAttribute="bottom" constant="8" id="lgs-Fa-rP5"/>
                             <constraint firstItem="tCk-H0-C1b" firstAttribute="height" secondItem="60y-io-S3O" secondAttribute="height" multiplier="0.08" id="lle-uZ-FNg"/>
                             <constraint firstItem="vnr-I5-t0y" firstAttribute="top" secondItem="D92-s8-usb" secondAttribute="bottom" id="nd8-by-olp"/>
                             <constraint firstItem="PHC-k5-PhA" firstAttribute="trailing" secondItem="tCk-H0-C1b" secondAttribute="trailing" id="ouS-hW-fE2"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.25" id="pCe-lf-iEA"/>
+                            <constraint firstItem="sYk-y2-4bj" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.8" id="pzX-tY-nbB"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="height" secondItem="60y-io-S3O" secondAttribute="height" multiplier="0.1" id="s2E-Wn-ZcK"/>
                             <constraint firstItem="XWb-vO-idT" firstAttribute="top" secondItem="60y-io-S3O" secondAttribute="top" id="u4o-WB-Xtu"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="top" secondItem="rQx-9C-BaB" secondAttribute="bottom" constant="15" id="ufC-Lu-75p"/>
@@ -610,12 +652,16 @@
                         <outlet property="addNewPsView" destination="D92-s8-usb" id="c6Y-WD-FrX"/>
                         <outlet property="cancelRequestBtn" destination="AAY-5y-O45" id="GDh-xc-wHB"/>
                         <outlet property="chooseLocationView" destination="Q2A-dc-pL5" id="GA5-LW-FVU"/>
+                        <outlet property="chooseMeetingPointView" destination="sYk-y2-4bj" id="Bgj-a3-ncb"/>
+                        <outlet property="choosePointToMeetFriendLabel" destination="KOk-8t-4I5" id="IMk-SQ-heY"/>
                         <outlet property="chooseRandomlyBtn" destination="XbB-HG-w5i" id="aXF-8X-Yx6"/>
                         <outlet property="chooseRandomlyView" destination="tCk-H0-C1b" id="r4h-cG-zPU"/>
                         <outlet property="distanceLabel" destination="E28-J2-Xnj" id="QAd-md-ojB"/>
                         <outlet property="estimationTimeAndDistanceView" destination="87G-gP-Z80" id="SWt-dL-sjZ"/>
+                        <outlet property="flipViewControllerBtn" destination="gN7-eo-3xQ" id="jGW-9l-LJV"/>
                         <outlet property="getCurrentLocationBtn" destination="PHC-k5-PhA" id="fHv-gm-xQ9"/>
                         <outlet property="locationLabel" destination="uOw-7d-pap" id="Fyy-uI-Jmu"/>
+                        <outlet property="locationLogoImg" destination="MfD-1K-3xT" id="R5o-0c-2af"/>
                         <outlet property="mapView" destination="XWb-vO-idT" id="SVg-9v-8zl"/>
                         <outlet property="menuView" destination="rQx-9C-BaB" id="h5f-Qt-Akk"/>
                         <outlet property="searchViewBtn" destination="ISi-Ar-Q68" id="Tzf-5u-Cf1"/>
