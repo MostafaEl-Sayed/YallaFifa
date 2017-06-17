@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cDY-ky-gTc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lCy-ha-4Ar">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="3921" y="24"/>
         </scene>
-        <!--Match Request View Controller-->
+        <!--Item-->
         <scene sceneID="vcI-41-KUC">
             <objects>
                 <viewController storyboardIdentifier="MakeDonationViewController" id="lvl-Wf-jJs" customClass="MatchRequestViewController" customModule="YallaFifa" customModuleProvider="target" sceneMemberID="viewController">
@@ -225,11 +225,11 @@
                         <viewControllerLayoutGuide type="bottom" id="vnr-I5-t0y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="60y-io-S3O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWb-vO-idT" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQx-9C-BaB">
@@ -344,39 +344,39 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q2A-dc-pL5" userLabel="Choose location">
-                                <rect key="frame" x="19" y="103" width="337.5" height="70.5"/>
+                                <rect key="frame" x="19" y="103" width="337.5" height="66.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Gi-niE">
-                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="66.5"/>
                                     </imageView>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-zj-GTI">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
+                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
+                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nG-WCm">
-                                        <rect key="frame" x="270" y="13.5" width="0.5" height="42"/>
+                                        <rect key="frame" x="270" y="12.5" width="0.5" height="40"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="R9U-Va-bZX"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-Qa-Frr">
-                                        <rect key="frame" x="270" y="0.0" width="67.5" height="70.5"/>
+                                        <rect key="frame" x="270" y="0.0" width="67.5" height="66.5"/>
                                         <state key="normal" image="Search"/>
                                         <connections>
                                             <action selector="returnBackSearchBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ztA-VR-FxN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISi-Ar-Q68">
-                                        <rect key="frame" x="8" y="8" width="322" height="54.5"/>
+                                        <rect key="frame" x="8" y="8" width="322" height="50.5"/>
                                         <connections>
                                             <action selector="searchViewBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ZUG-uK-te8"/>
                                         </connections>
@@ -422,7 +422,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-k5-PhA">
-                                <rect key="frame" x="299" y="489.5" width="49" height="48"/>
+                                <rect key="frame" x="299" y="457.5" width="49" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="LxH-m7-uag"/>
                                     <constraint firstAttribute="width" constant="49" id="oi7-So-Een"/>
@@ -433,24 +433,24 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
-                                <rect key="frame" x="173" y="323" width="30" height="30"/>
+                                <rect key="frame" x="173" y="303" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Td5-uf-Wa0"/>
                                     <constraint firstAttribute="width" constant="30" id="qTH-5K-r9S"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCk-H0-C1b">
-                                <rect key="frame" x="27.5" y="545.5" width="320.5" height="56.5"/>
+                                <rect key="frame" x="27.5" y="513.5" width="320.5" height="53.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rmh-9f-wwW">
-                                        <rect key="frame" x="285.5" y="18.5" width="27" height="20"/>
+                                        <rect key="frame" x="285.5" y="17" width="27" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="kj8-cb-0hr"/>
                                             <constraint firstAttribute="width" constant="27" id="uTy-u6-Dq1"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-HG-w5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="53.5"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                         <state key="normal" title="Choose Randomly">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -488,25 +488,25 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-s8-usb" userLabel="Add Ps View">
-                                <rect key="frame" x="9" y="622" width="356.5" height="85"/>
+                                <rect key="frame" x="9" y="587" width="356.5" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New PlayStation " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ujx-P2-dha">
-                                        <rect key="frame" x="52" y="12.5" width="302" height="20.5"/>
+                                        <rect key="frame" x="52" y="12" width="302" height="20.5"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Joystick" translatesAutoresizingMaskIntoConstraints="NO" id="uXk-2M-NL2">
-                                        <rect key="frame" x="8" y="12" width="36" height="21.5"/>
+                                        <rect key="frame" x="8" y="12" width="36" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help us by give more information about playstation places" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wyL-Iy-hEc">
-                                        <rect key="frame" x="51.5" y="33" width="302" height="44"/>
+                                        <rect key="frame" x="51.5" y="32.5" width="302" height="39.5"/>
                                         <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWR-uh-AyQ">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="356.5" height="85"/>
+                                        <rect key="frame" x="-0.5" y="-0.5" width="356.5" height="80"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -541,8 +541,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
-                                <rect key="frame" x="27" y="707" width="320.5" height="56.5"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
+                                <rect key="frame" x="27" y="667" width="320.5" height="53.5"/>
                                 <color key="backgroundColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                 <state key="normal" title="Cancel">
@@ -592,6 +592,7 @@
                             <constraint firstItem="MfD-1K-3xT" firstAttribute="centerX" secondItem="XWb-vO-idT" secondAttribute="centerX" id="wuk-Zr-FlY"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="brR-zn-Df5"/>
                     <navigationItem key="navigationItem" id="vEa-aw-hoE"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1170,7 +1171,25 @@
             </objects>
             <point key="canvasLocation" x="4772" y="1530"/>
         </scene>
-        <!--Match Request Table View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="wbk-Ws-hJn">
+            <objects>
+                <tabBarController id="lCy-ha-4Ar" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="otj-iz-SsT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lvl-Wf-jJs" kind="relationship" relationship="viewControllers" id="vUK-JY-Xq8"/>
+                        <segue destination="0ZE-wn-IWa" kind="relationship" relationship="viewControllers" id="bXu-OL-M6u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H98-R6-yfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3921" y="732"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="twi-LF-mnM">
             <objects>
                 <viewController id="0ZE-wn-IWa" customClass="MatchRequestTableViewController" customModule="YallaFifa" customModuleProvider="target" sceneMemberID="viewController">
@@ -1235,7 +1254,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0NP-J1-hKb">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="94" id="fQn-aE-WfJ">
@@ -1264,6 +1283,7 @@
                             <constraint firstItem="1Ub-2C-JG0" firstAttribute="top" secondItem="UQF-RD-4Nn" secondAttribute="topMargin" id="iRZ-5k-lwA"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3xs-j2-qri"/>
                     <connections>
                         <outlet property="tableView" destination="0NP-J1-hKb" id="KXC-Vy-ZPX"/>
                     </connections>
@@ -1519,4 +1539,7 @@
         <image name="signupBackground" width="480" height="800"/>
         <image name="team" width="481" height="340"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vUK-JY-Xq8"/>
+    </inferredMetricsTieBreakers>
 </document>
