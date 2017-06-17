@@ -158,6 +158,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBAction func chooseRandomlyBtnAct(_ sender: Any) {
         
     }
+    @IBAction func flipViewControllerBtnAct(_ sender: Any) {
+        let  mainStory = UIStoryboard(name: "Main", bundle: nil)
+        let search = mainStory.instantiateViewController(withIdentifier: "MatchRequestTableViewController") as! MatchRequestTableViewController
+        UIView.beginAnimations("animation", context: nil)
+        UIView.setAnimationDuration(1.0)
+        self.navigationController!.pushViewController(search, animated: false)
+        UIView.setAnimationTransition(UIViewAnimationTransition.flipFromLeft, for: self.navigationController!.view, cache: false)
+        UIView.commitAnimations()
+    }
     @IBAction func chooseAnotherLocationBtnAct(_ sender: Any) {
         self.counterChangeStatusOflocation = 0 
         let autocompletecontroller = GMSAutocompleteViewController()
