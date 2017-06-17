@@ -23,7 +23,7 @@ class BlueLine {
     
     
     init(blueLineData:NSDictionary) {
-        self.selectedRoute = blueLineData.getValueForKey(Key: "routes", callBack: [])[0]
+        self.selectedRoute = blueLineData.getValueForKey(Key: "routes", callBack: [])[0] as! NSDictionary
         self.overviewPolyline = selectedRoute.getValueForKey(Key: "overview_polyline", callBack: [:])
         let legs:[NSDictionary] = selectedRoute.getValueForKey(Key: "legs", callBack: [])
         let startLocationDictionary:NSDictionary = legs[0].getValueForKey(Key: "start_location", callBack: [:])

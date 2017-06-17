@@ -19,47 +19,33 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var id = ""
     var typeOfDonation = "food" // “food”, “clothing
     var locationManager = CLLocationManager()
-    
-    
-    @IBOutlet weak var mapView: GMSMapView!
-    var chosedLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0,longitude: 0)
+    var chosedLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 30,longitude: 30)
     var userCurrentLocation = [String : Double]()
-    
-    // --------------------------------
     var anotherLocation = false
-    // --------------------------------
-    @IBOutlet weak var locationLabel: UILabel!
     var locatonlabelValue = "Where should we pick up the donation ?"
     var counterChangeStatusOflocation = 0
-    
-    // --------------------------------
-    @IBOutlet weak var addNewPsView: UIView!
-    
-    // --------------------------------
-    @IBOutlet weak var chooseRandomlyView: UIView!
-    @IBOutlet weak var chooseRandomlyBtn: UIButton!
-    
-    // --------------------------------
     var allOnlineUsers = [User]()
     var allPhysically = [User]()
+    var psChoosedLocation = [String : Double]()
+    var makeBackEnable = false
     
     // --------------------------------
-    var psChoosedLocation = [String : Double]()
-    // --------------------------------
-
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var getCurrentLocationBtn: UIButton!
     @IBOutlet weak var chooseLocationView: UIView!
     @IBOutlet weak var estimationTimeAndDistanceView: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var cancelRequestBtn: UIButton!
     @IBOutlet weak var searchViewBtn: UIButton!
-    
     @IBOutlet weak var smallSearchBtn: UIButton!
-    var makeBackEnable = false
+    @IBOutlet weak var chooseRandomlyView: UIView!
+    @IBOutlet weak var chooseRandomlyBtn: UIButton!
+    @IBOutlet weak var addNewPsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Map setupx
@@ -135,14 +121,10 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
         
-        //manager.stopUpdatingLocation()
+        manager.stopUpdatingLocation()
         let camera = GMSCameraPosition.camera(withLatitude: (self.locationManager.location?.coordinate.latitude)!,longitude: (self.locationManager.location?.coordinate.longitude)!, zoom: 14)
         self.mapView.camera = camera
-        let lat = userLocation.coordinate.latitude
-        let long = userLocation.coordinate.longitude
-        
         
     }
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
@@ -269,6 +251,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
                     self.calculateTotalDistanceAndDuration()
                 }
                 else {
+                    self.displayMessage(title: "Request Field", message: "Bad internet connection")
     
                 }
             })
@@ -326,36 +309,35 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     func startAnimatingViews() {
+        
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let translationValue = -chooseLocationView.frame.size.width + menuView.frame.size.width - (0.1*screenWidth/2)
+        
         let left = CGAffineTransform(translationX:translationValue ,y: 0)
         let top = CGAffineTransform(translationX: 0, y: -addNewPsView.frame.size.height + 8)
-        
         let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
+        
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-            // Add the transformation in this block
-            // self.container is your view that you want to animate
-            self.addNewPsView
-                .transform = down
+            
+            self.addNewPsView.transform = down
             self.cancelRequestBtn.transform = top
             self.chooseLocationView.transform = left
-            self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
-            
+    
         }, completion: nil)
+        
         self.chooseRandomlyBtn.setTitle("Confirm Request", for: .normal)
+        self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
         makeBackEnable = true
         searchViewBtn.isEnabled = false
         
-        
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
         startAnimatingViews()
         
         if oneRootadded && prevMarkerPosition.latitude == marker.position.latitude && prevMarkerPosition.longitude == marker.position.longitude{
-            
             return false
-            
         }
         if oneRootadded {
             blueLine.routePolyline.map = nil
