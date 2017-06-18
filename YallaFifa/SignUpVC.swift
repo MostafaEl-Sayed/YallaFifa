@@ -47,7 +47,7 @@ class SignUpVC: GlobalController {
                     self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
                     self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                     defaults.set("uid", forKey: user.uid)
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! MatchDetailsViewContoller
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
                     nav.present(vc, animated: true, completion: nil)
                     
                 } else if let error = error {

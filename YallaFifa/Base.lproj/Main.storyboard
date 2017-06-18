@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k5H-e9-DW7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lvl-Wf-jJs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -231,7 +231,7 @@
                                 <rect key="frame" x="0.0" y="28" width="94" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-bJ-1ho">
-                                        <rect key="frame" x="-1" y="-0.5" width="94.5" height="60"/>
+                                        <rect key="frame" x="-0.5" y="0.0" width="94" height="60"/>
                                         <state key="normal" image="menu"/>
                                     </button>
                                 </subviews>
@@ -256,20 +256,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87G-gP-Z80">
-                                <rect key="frame" x="300" y="28" width="262.5" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87G-gP-Z80">
+                                <rect key="frame" x="300" y="28" width="263" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9R-dS-b8K">
-                                        <rect key="frame" x="13.5" y="0.0" width="131" height="60"/>
+                                        <rect key="frame" x="14" y="0.0" width="131" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="iRq-bL-1Ne">
-                                                <rect key="frame" x="0.0" y="23.5" width="66" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="23" width="66" height="14"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                 <color key="textColor" red="0.8798376322" green="0.31035465000000001" blue="0.37376886609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="E28-J2-Xnj">
-                                                <rect key="frame" x="66.5" y="30" width="64.5" height="0.0"/>
+                                                <rect key="frame" x="66" y="30" width="65" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -286,10 +286,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWs-tG-0jB">
-                                        <rect key="frame" x="157.5" y="0.0" width="105" height="60"/>
+                                        <rect key="frame" x="158" y="0.0" width="105" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-kp-IXj">
-                                                <rect key="frame" x="0.0" y="23.5" width="31.5" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="23" width="32" height="14"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="12"/>
                                                 <color key="textColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -339,13 +339,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpH-nZ-egQ">
-                                <rect key="frame" x="281.5" y="27" width="93.5" height="60"/>
+                                <rect key="frame" x="281" y="28" width="94" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clipboard" translatesAutoresizingMaskIntoConstraints="NO" id="xQ9-wG-mRH">
                                         <rect key="frame" x="23" y="15" width="47" height="30"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gN7-eo-3xQ">
-                                        <rect key="frame" x="-0.5" y="0.0" width="93.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="60"/>
                                         <connections>
                                             <action selector="flipViewControllerBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="IPa-1j-191"/>
                                         </connections>
@@ -377,39 +377,39 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q2A-dc-pL5" userLabel="Choose location">
-                                <rect key="frame" x="19" y="103" width="337.5" height="66.5"/>
+                                <rect key="frame" x="19" y="103" width="338" height="67"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Gi-niE">
-                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68" height="67"/>
                                     </imageView>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-zj-GTI">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
+                                        <rect key="frame" x="68" y="0.0" width="203" height="67"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
+                                        <rect key="frame" x="68" y="0.0" width="203" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nG-WCm">
-                                        <rect key="frame" x="270" y="12.5" width="0.5" height="40.5"/>
+                                        <rect key="frame" x="271" y="13" width="1" height="41"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="R9U-Va-bZX"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-Qa-Frr">
-                                        <rect key="frame" x="270" y="0.0" width="67.5" height="66.5"/>
+                                        <rect key="frame" x="271" y="0.0" width="67" height="67"/>
                                         <state key="normal" image="Search"/>
                                         <connections>
                                             <action selector="returnBackSearchBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ztA-VR-FxN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISi-Ar-Q68">
-                                        <rect key="frame" x="8" y="8" width="322" height="50.5"/>
+                                        <rect key="frame" x="8" y="8" width="322" height="51"/>
                                         <connections>
                                             <action selector="searchViewBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ZUG-uK-te8"/>
                                         </connections>
@@ -455,7 +455,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-y2-4bj" userLabel="Choose Meeting Point">
-                                <rect key="frame" x="364.5" y="103" width="270" height="66.5"/>
+                                <rect key="frame" x="365" y="103" width="270" height="67"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose point to meet your Fiend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-8t-4I5">
                                         <rect key="frame" x="8" y="8" width="216" height="51"/>
@@ -493,7 +493,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-k5-PhA">
-                                <rect key="frame" x="299" y="457.5" width="49" height="48"/>
+                                <rect key="frame" x="317" y="531" width="49" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="LxH-m7-uag"/>
                                     <constraint firstAttribute="width" constant="49" id="oi7-So-Een"/>
@@ -503,66 +503,91 @@
                                     <action selector="currentLocation:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="xb5-ep-G4A"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowLocation" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
                                 <rect key="frame" x="173" y="303" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Td5-uf-Wa0"/>
                                     <constraint firstAttribute="width" constant="30" id="qTH-5K-r9S"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCk-H0-C1b">
-                                <rect key="frame" x="27.5" y="513.5" width="320.5" height="53.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-ul-qgP">
+                                <rect key="frame" x="69" y="259.5" width="237" height="35.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rmh-9f-wwW">
-                                        <rect key="frame" x="285.5" y="17" width="27" height="20"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-qk-P2U" userLabel="choose meting point">
+                                        <rect key="frame" x="0.0" y="0.0" width="237" height="35.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="kgL-ZG-fhj">
+                                                <rect key="frame" x="202" y="11" width="27" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="14" id="NxN-t2-ESH"/>
+                                                    <constraint firstAttribute="width" constant="27" id="t9k-Dx-z2F"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Meeting Point" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nr1-PM-T8B">
+                                                <rect key="frame" x="8" y="8" width="186" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-hr-hCG">
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="35.5"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="chooseRandomlyBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="agG-xw-B15"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="kj8-cb-0hr"/>
-                                            <constraint firstAttribute="width" constant="27" id="uTy-u6-Dq1"/>
+                                            <constraint firstItem="KbB-hr-hCG" firstAttribute="centerY" secondItem="UrI-qk-P2U" secondAttribute="centerY" id="0tm-2o-Qza"/>
+                                            <constraint firstAttribute="trailing" secondItem="kgL-ZG-fhj" secondAttribute="trailing" constant="8" id="CdN-Kq-vRS"/>
+                                            <constraint firstItem="nr1-PM-T8B" firstAttribute="top" secondItem="UrI-qk-P2U" secondAttribute="top" constant="8" id="DUX-r5-HfF"/>
+                                            <constraint firstItem="KbB-hr-hCG" firstAttribute="height" secondItem="UrI-qk-P2U" secondAttribute="height" id="HGN-n4-UqI"/>
+                                            <constraint firstItem="kgL-ZG-fhj" firstAttribute="centerY" secondItem="UrI-qk-P2U" secondAttribute="centerY" id="Orn-rt-kdh"/>
+                                            <constraint firstItem="nr1-PM-T8B" firstAttribute="leading" secondItem="UrI-qk-P2U" secondAttribute="leading" constant="8" id="UV2-2E-3yF"/>
+                                            <constraint firstItem="KbB-hr-hCG" firstAttribute="centerX" secondItem="UrI-qk-P2U" secondAttribute="centerX" id="fex-AN-fH9"/>
+                                            <constraint firstItem="kgL-ZG-fhj" firstAttribute="leading" secondItem="nr1-PM-T8B" secondAttribute="trailing" constant="8" id="idr-wB-HeK"/>
+                                            <constraint firstItem="KbB-hr-hCG" firstAttribute="width" secondItem="UrI-qk-P2U" secondAttribute="width" id="rwM-R1-Dxs"/>
+                                            <constraint firstAttribute="bottom" secondItem="nr1-PM-T8B" secondAttribute="bottom" constant="8" id="wb4-g3-EIm"/>
                                         </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-HG-w5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="53.5"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
-                                        <state key="normal" title="Choose Randomly">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                         <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                <size key="value" width="0.0" height="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                <real key="value" value="2.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                <real key="value" value="0.25"/>
+                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
+                                                <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="chooseRandomlyBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="TSU-Ru-BdT"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="rmh-9f-wwW" firstAttribute="centerY" secondItem="tCk-H0-C1b" secondAttribute="centerY" id="0Yy-jx-nQT"/>
-                                    <constraint firstItem="XbB-HG-w5i" firstAttribute="centerY" secondItem="tCk-H0-C1b" secondAttribute="centerY" id="1nf-oW-vTH"/>
-                                    <constraint firstAttribute="trailing" secondItem="rmh-9f-wwW" secondAttribute="trailing" constant="8" id="82B-81-wWZ"/>
-                                    <constraint firstItem="XbB-HG-w5i" firstAttribute="width" secondItem="tCk-H0-C1b" secondAttribute="width" id="F11-De-GEF"/>
-                                    <constraint firstItem="XbB-HG-w5i" firstAttribute="height" secondItem="tCk-H0-C1b" secondAttribute="height" id="V0G-f2-FqP"/>
-                                    <constraint firstItem="XbB-HG-w5i" firstAttribute="centerX" secondItem="tCk-H0-C1b" secondAttribute="centerX" id="k1m-mI-Ddl"/>
+                                    <constraint firstItem="UrI-qk-P2U" firstAttribute="leading" secondItem="9Ak-ul-qgP" secondAttribute="leading" id="adw-Pj-1AF"/>
+                                    <constraint firstAttribute="trailing" secondItem="UrI-qk-P2U" secondAttribute="trailing" id="gX7-Ow-idu"/>
+                                    <constraint firstAttribute="bottom" secondItem="UrI-qk-P2U" secondAttribute="bottom" id="pmP-wO-GB5"/>
+                                    <constraint firstItem="UrI-qk-P2U" firstAttribute="top" secondItem="9Ak-ul-qgP" secondAttribute="top" id="pr1-dz-IOG"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <real key="value" value="2.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-s8-usb" userLabel="Add Ps View">
-                                <rect key="frame" x="9" y="587" width="356.5" height="80"/>
+                                <rect key="frame" x="9" y="587" width="357" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New PlayStation " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ujx-P2-dha">
-                                        <rect key="frame" x="52" y="12.5" width="302" height="20.5"/>
+                                        <rect key="frame" x="52" y="11.5" width="302" height="21"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -571,15 +596,15 @@
                                         <rect key="frame" x="8" y="12" width="36" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help us by give more information about playstation places" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wyL-Iy-hEc">
-                                        <rect key="frame" x="51.5" y="33" width="302" height="39"/>
+                                        <rect key="frame" x="52" y="32.5" width="302" height="39.5"/>
                                         <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWR-uh-AyQ">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="356.5" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="357" height="80"/>
                                         <connections>
-                                            <segue destination="Om9-Ey-5hE" kind="show" id="SKr-lW-xO8"/>
+                                            <action selector="addNewPSLocationBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="aRy-ng-xWq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -616,7 +641,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
-                                <rect key="frame" x="27" y="667" width="320.5" height="53.5"/>
+                                <rect key="frame" x="27" y="667" width="321" height="32"/>
                                 <color key="backgroundColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                 <state key="normal" title="Cancel">
@@ -635,37 +660,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lpH-nZ-egQ" firstAttribute="centerY" secondItem="xh3-bJ-1ho" secondAttribute="centerY" id="1Mg-dg-feQ"/>
-                            <constraint firstItem="tCk-H0-C1b" firstAttribute="width" secondItem="D92-s8-usb" secondAttribute="width" multiplier="0.9" id="88q-iU-sVa"/>
+                            <constraint firstItem="D92-s8-usb" firstAttribute="top" secondItem="PHC-k5-PhA" secondAttribute="bottom" constant="8" id="1ZP-gn-kz7"/>
+                            <constraint firstItem="9Ak-ul-qgP" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.7" id="75G-YP-ffH"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="top" secondItem="8tx-01-XLE" secondAttribute="bottom" constant="8" id="8Ku-dK-5kI"/>
+                            <constraint firstItem="MfD-1K-3xT" firstAttribute="top" secondItem="9Ak-ul-qgP" secondAttribute="bottom" constant="8" id="98S-JY-Jp1"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="top" secondItem="D92-s8-usb" secondAttribute="bottom" id="9P5-Vd-YkS"/>
                             <constraint firstItem="87G-gP-Z80" firstAttribute="top" secondItem="8tx-01-XLE" secondAttribute="bottom" constant="8" id="9Zq-Xe-CVb"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" id="Cah-3d-2AK"/>
-                            <constraint firstItem="D92-s8-usb" firstAttribute="top" secondItem="tCk-H0-C1b" secondAttribute="bottom" constant="20" id="DGE-4l-eQv"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.95" id="FQ7-dT-IuD"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leading" id="GoY-yB-CgW"/>
                             <constraint firstItem="sYk-y2-4bj" firstAttribute="bottom" secondItem="Q2A-dc-pL5" secondAttribute="bottom" id="HZO-Cc-uZJ"/>
-                            <constraint firstItem="AAY-5y-O45" firstAttribute="centerX" secondItem="tCk-H0-C1b" secondAttribute="centerX" id="HeD-22-FO3"/>
+                            <constraint firstItem="9Ak-ul-qgP" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" id="IIB-Ij-cPH"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" id="KPL-qZ-RYa"/>
                             <constraint firstItem="sYk-y2-4bj" firstAttribute="leading" secondItem="Q2A-dc-pL5" secondAttribute="trailing" constant="8" id="Piw-tZ-mat"/>
                             <constraint firstAttribute="trailing" secondItem="lpH-nZ-egQ" secondAttribute="trailing" id="Pw9-rT-01k"/>
-                            <constraint firstItem="AAY-5y-O45" firstAttribute="height" secondItem="tCk-H0-C1b" secondAttribute="height" id="RVo-Ct-O8H"/>
+                            <constraint firstItem="PHC-k5-PhA" firstAttribute="trailing" secondItem="D92-s8-usb" secondAttribute="trailing" id="SMY-6B-9dp"/>
                             <constraint firstItem="vnr-I5-t0y" firstAttribute="top" secondItem="XWb-vO-idT" secondAttribute="bottom" id="WAY-s5-QS2"/>
                             <constraint firstItem="XWb-vO-idT" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leading" id="al3-bc-zM8"/>
                             <constraint firstAttribute="trailing" secondItem="XWb-vO-idT" secondAttribute="trailing" id="bYS-Lb-sTL"/>
-                            <constraint firstItem="AAY-5y-O45" firstAttribute="width" secondItem="tCk-H0-C1b" secondAttribute="width" id="cKt-mO-X7j"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.9" id="dGK-s9-FbO"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="height" secondItem="60y-io-S3O" secondAttribute="height" multiplier="0.12" id="f4g-6h-uEf"/>
                             <constraint firstItem="87G-gP-Z80" firstAttribute="centerX" secondItem="60y-io-S3O" secondAttribute="centerX" multiplier="2.3" id="is9-cx-cbl"/>
                             <constraint firstItem="87G-gP-Z80" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.7" id="jMT-wX-muL"/>
-                            <constraint firstItem="tCk-H0-C1b" firstAttribute="centerX" secondItem="D92-s8-usb" secondAttribute="centerX" id="kfS-9X-Hzx"/>
                             <constraint firstItem="sYk-y2-4bj" firstAttribute="top" secondItem="Q2A-dc-pL5" secondAttribute="top" id="ldo-Wa-aNF"/>
-                            <constraint firstItem="tCk-H0-C1b" firstAttribute="top" secondItem="PHC-k5-PhA" secondAttribute="bottom" constant="8" id="lgs-Fa-rP5"/>
-                            <constraint firstItem="tCk-H0-C1b" firstAttribute="height" secondItem="60y-io-S3O" secondAttribute="height" multiplier="0.08" id="lle-uZ-FNg"/>
                             <constraint firstItem="vnr-I5-t0y" firstAttribute="top" secondItem="D92-s8-usb" secondAttribute="bottom" id="nd8-by-olp"/>
-                            <constraint firstItem="PHC-k5-PhA" firstAttribute="trailing" secondItem="tCk-H0-C1b" secondAttribute="trailing" id="ouS-hW-fE2"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="width" secondItem="60y-io-S3O" secondAttribute="width" multiplier="0.25" id="pCe-lf-iEA"/>
                             <constraint firstItem="sYk-y2-4bj" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.8" id="pzX-tY-nbB"/>
+                            <constraint firstItem="AAY-5y-O45" firstAttribute="leading" secondItem="60y-io-S3O" secondAttribute="leadingMargin" constant="11" id="r6h-eK-mgG"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="height" secondItem="60y-io-S3O" secondAttribute="height" multiplier="0.1" id="s2E-Wn-ZcK"/>
+                            <constraint firstItem="AAY-5y-O45" firstAttribute="centerX" secondItem="D92-s8-usb" secondAttribute="centerX" id="sfI-jt-sBE"/>
                             <constraint firstItem="XWb-vO-idT" firstAttribute="top" secondItem="60y-io-S3O" secondAttribute="top" id="u4o-WB-Xtu"/>
                             <constraint firstItem="Q2A-dc-pL5" firstAttribute="top" secondItem="rQx-9C-BaB" secondAttribute="bottom" constant="15" id="ufC-Lu-75p"/>
                             <constraint firstItem="MfD-1K-3xT" firstAttribute="centerY" secondItem="XWb-vO-idT" secondAttribute="centerY" constant="-15" id="wRg-0C-Qhe"/>
@@ -680,13 +703,14 @@
                         <outlet property="addNewPsView" destination="D92-s8-usb" id="c6Y-WD-FrX"/>
                         <outlet property="cancelRequestBtn" destination="AAY-5y-O45" id="GDh-xc-wHB"/>
                         <outlet property="chooseLocationView" destination="Q2A-dc-pL5" id="GA5-LW-FVU"/>
+                        <outlet property="chooseMeetingPointLabel" destination="nr1-PM-T8B" id="oij-pa-3fv"/>
+                        <outlet property="chooseMeetingPointLocationView" destination="UrI-qk-P2U" id="mdA-wg-Rca"/>
                         <outlet property="chooseMeetingPointView" destination="sYk-y2-4bj" id="Bgj-a3-ncb"/>
                         <outlet property="choosePointToMeetFriendLabel" destination="KOk-8t-4I5" id="IMk-SQ-heY"/>
-                        <outlet property="chooseRandomlyBtn" destination="XbB-HG-w5i" id="aXF-8X-Yx6"/>
-                        <outlet property="chooseRandomlyView" destination="tCk-H0-C1b" id="r4h-cG-zPU"/>
                         <outlet property="distanceLabel" destination="E28-J2-Xnj" id="QAd-md-ojB"/>
                         <outlet property="estimationTimeAndDistanceView" destination="87G-gP-Z80" id="SWt-dL-sjZ"/>
                         <outlet property="flipViewControllerBtn" destination="gN7-eo-3xQ" id="jGW-9l-LJV"/>
+                        <outlet property="fliveViewControllerView" destination="lpH-nZ-egQ" id="aAu-Vl-Lm2"/>
                         <outlet property="getCurrentLocationBtn" destination="PHC-k5-PhA" id="fHv-gm-xQ9"/>
                         <outlet property="locationLabel" destination="uOw-7d-pap" id="Fyy-uI-Jmu"/>
                         <outlet property="locationLogoImg" destination="MfD-1K-3xT" id="R5o-0c-2af"/>
@@ -753,9 +777,6 @@
                                                     <action selector="backBtnAct:" destination="Om9-Ey-5hE" eventType="touchUpInside" id="Pwb-dE-KKp"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="Qvv-6e-fxN">
-                                                <rect key="frame" x="65" y="67" width="244" height="133"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yDI-xk-9EQ">
                                                 <rect key="frame" x="37" y="208" width="300" height="167"/>
                                                 <string key="text">By using this feature you help us with more information about playstation places around you. Be careful the last position you set the map pin in , will be the place of the new playstation, If you forget back and correct the position</string>
@@ -794,6 +815,9 @@
                                                     <action selector="addNewPSLocation:" destination="Om9-Ey-5hE" eventType="touchUpInside" id="Bhs-D5-S4a"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="Qvv-6e-fxN">
+                                                <rect key="frame" x="65" y="67" width="244" height="133"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1593,6 +1617,7 @@
         <image name="Login-pass-ic" width="24" height="24"/>
         <image name="RightArrow" width="64" height="64"/>
         <image name="Search" width="32" height="32"/>
+        <image name="arrowLocation" width="64" height="64"/>
         <image name="avatar" width="512" height="512"/>
         <image name="blackbk" width="32" height="32"/>
         <image name="clipboard" width="64" height="64"/>
