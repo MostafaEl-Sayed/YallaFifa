@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAuth
+
 class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
 
     
@@ -23,7 +25,6 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(determineMyCurrentLocation())
-        
     }
 
 
@@ -33,9 +34,11 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         if sender.tag == 0 {
             meetFriendsLabel.backgroundColor = UIColor.clear
             onlineMatchLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
+            userType = .onlineMatch
         }else{
             onlineMatchLabel.backgroundColor = UIColor.clear
             meetFriendsLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
+            userType = .meetFriends
         }
         
     }
@@ -65,11 +68,25 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {
-        
+        if userType == .undifiend {
+            presentAlert(title: "", mssg: "You should selecet one of this choices")
+            return
+        }
+        nav = self.navigationController!
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+        nav.pushViewController(vc, animated: true)
     }
     
     @IBAction func signoutButtonTapped(_ sender: Any) {
-        
+        defaults.set("uid", forKey: "")
+        do{
+            try Auth.auth().signOut()
+            nav.dismiss(animated: true, completion: nil)
+        }
+        catch let error as NSError{
+            presentAlert(title: "", mssg: error.localizedDescription)
+        }
     }
 
 }

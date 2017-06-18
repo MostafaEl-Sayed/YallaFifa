@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dgv-ge-E2p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k5H-e9-DW7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,17 +21,17 @@
                         <viewControllerLayoutGuide type="bottom" id="p4r-L9-bma"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qej-cv-4VU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-Cu-l0f" userLabel="BG View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="FNy-KE-ZDt">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kT-e0-uh3" userLabel="backgroundShadow">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -48,28 +48,28 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVV-Sx-vAl">
-                                <rect key="frame" x="0.0" y="8" width="375" height="699"/>
+                                <rect key="frame" x="0.0" y="8" width="375" height="659"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifa-logo" translatesAutoresizingMaskIntoConstraints="NO" id="yKH-X7-2di">
-                                        <rect key="frame" x="94" y="30" width="187.5" height="111"/>
+                                        <rect key="frame" x="94" y="30" width="187.5" height="101"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to YALLA FIFA app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pt4-RK-nSO">
-                                        <rect key="frame" x="20" y="161" width="335" height="27.5"/>
+                                        <rect key="frame" x="20" y="151" width="335" height="27.5"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You feel you are ready to start our journy ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9O4-mx-gEL">
-                                        <rect key="frame" x="18" y="196" width="337.5" height="24.5"/>
+                                        <rect key="frame" x="18" y="186" width="337.5" height="24.5"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online2" translatesAutoresizingMaskIntoConstraints="NO" id="4vk-Nd-4rN">
-                                        <rect key="frame" x="8" y="297" width="150" height="105"/>
+                                        <rect key="frame" x="8" y="280" width="150" height="99"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-3t-9Sn">
-                                        <rect key="frame" x="158" y="297.5" width="209" height="105"/>
+                                        <rect key="frame" x="158" y="280.5" width="209" height="99"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -80,23 +80,23 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OlB-Rc-CSN">
-                                        <rect key="frame" x="18" y="410" width="337.5" height="0.5"/>
+                                        <rect key="frame" x="18" y="387" width="337.5" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="Wf6-tB-MWk"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUV-I0-PjQ">
-                                        <rect key="frame" x="8" y="297" width="359" height="105"/>
+                                        <rect key="frame" x="8" y="280" width="359" height="99"/>
                                         <connections>
                                             <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="d3A-NN-Kjw"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-q4-NKI">
-                                        <rect key="frame" x="209" y="417.5" width="150" height="105"/>
+                                        <rect key="frame" x="209" y="394.5" width="150" height="99"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-aY-3uB">
-                                        <rect key="frame" x="8" y="418" width="201" height="105"/>
+                                        <rect key="frame" x="8" y="395" width="201" height="99"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -107,20 +107,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-Pe-e7P">
-                                        <rect key="frame" x="18" y="530" width="337.5" height="0.5"/>
+                                        <rect key="frame" x="18" y="501" width="337.5" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="FFU-fE-Nnd"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-jm-nz7">
-                                        <rect key="frame" x="8" y="418" width="351" height="105"/>
+                                        <rect key="frame" x="8" y="395" width="351" height="99"/>
                                         <connections>
                                             <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="LPb-Ec-fWF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-dH-y69">
-                                        <rect key="frame" x="20" y="645" width="75" height="34"/>
+                                        <rect key="frame" x="20" y="605" width="75" height="34"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <state key="normal" title="&lt; Signout">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,14 +130,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-vu-GDm">
-                                        <rect key="frame" x="280" y="645" width="75" height="34"/>
+                                        <rect key="frame" x="280" y="605" width="75" height="34"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <state key="normal" title="Go &gt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="goButtonTapped:" destination="cDY-ky-gTc" eventType="touchUpInside" id="bX0-Xc-zcT"/>
-                                            <segue destination="dgv-ge-E2p" kind="show" id="V0H-Zh-Upk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -204,9 +203,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V9p-e4-QiU"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="707"/>
                     <connections>
                         <outlet property="meetFriendsLabel" destination="nvC-aY-3uB" id="1Z2-Dp-qls"/>
                         <outlet property="onlineMatchLabel" destination="5Z4-3t-9Sn" id="h2g-l7-jxS"/>
@@ -214,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKB-J3-HLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3921" y="24"/>
+            <point key="canvasLocation" x="5823.1999999999998" y="41.829085457271368"/>
         </scene>
         <!--Match Request View Controller-->
         <scene sceneID="vcI-41-KUC">
@@ -225,11 +221,11 @@
                         <viewControllerLayoutGuide type="bottom" id="vnr-I5-t0y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="60y-io-S3O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWb-vO-idT" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="707"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQx-9C-BaB">
                                 <rect key="frame" x="0.0" y="28" width="94" height="60"/>
@@ -372,9 +368,6 @@
                                     <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
                                         <size key="value" width="0.0" height="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
                                         <real key="value" value="2.5"/>
                                     </userDefinedRuntimeAttribute>
@@ -384,39 +377,39 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q2A-dc-pL5" userLabel="Choose location">
-                                <rect key="frame" x="19" y="103" width="337.5" height="70.5"/>
+                                <rect key="frame" x="19" y="103" width="337.5" height="66.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="JB2-Gi-niE">
-                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="66.5"/>
                                     </imageView>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie7-zj-GTI">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
+                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
-                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="70.5"/>
+                                        <rect key="frame" x="67.5" y="0.0" width="202.5" height="66.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rye-nG-WCm">
-                                        <rect key="frame" x="270" y="13.5" width="0.5" height="42.5"/>
+                                        <rect key="frame" x="270" y="12.5" width="0.5" height="40.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="R9U-Va-bZX"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-Qa-Frr">
-                                        <rect key="frame" x="270" y="0.0" width="67.5" height="70.5"/>
+                                        <rect key="frame" x="270" y="0.0" width="67.5" height="66.5"/>
                                         <state key="normal" image="Search"/>
                                         <connections>
                                             <action selector="returnBackSearchBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ztA-VR-FxN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISi-Ar-Q68">
-                                        <rect key="frame" x="8" y="8" width="322" height="54.5"/>
+                                        <rect key="frame" x="8" y="8" width="322" height="50.5"/>
                                         <connections>
                                             <action selector="searchViewBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="ZUG-uK-te8"/>
                                         </connections>
@@ -462,15 +455,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-y2-4bj" userLabel="Choose Meeting Point">
-                                <rect key="frame" x="364.5" y="103" width="270" height="70.5"/>
+                                <rect key="frame" x="364.5" y="103" width="270" height="66.5"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose point to meet your Fiend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-8t-4I5">
-                                        <rect key="frame" x="8" y="8" width="216" height="55"/>
+                                        <rect key="frame" x="8" y="8" width="216" height="51"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="a48-Lh-pq4">
-                                        <rect key="frame" x="232" y="20" width="30" height="30"/>
+                                        <rect key="frame" x="232" y="18" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="AGd-0N-yyw"/>
                                             <constraint firstAttribute="height" constant="30" id="Mz1-HT-jud"/>
@@ -500,7 +493,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHC-k5-PhA">
-                                <rect key="frame" x="299" y="489.5" width="49" height="48"/>
+                                <rect key="frame" x="299" y="457.5" width="49" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="LxH-m7-uag"/>
                                     <constraint firstAttribute="width" constant="49" id="oi7-So-Een"/>
@@ -511,24 +504,24 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationGreen" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-1K-3xT">
-                                <rect key="frame" x="173" y="323" width="30" height="30"/>
+                                <rect key="frame" x="173" y="303" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Td5-uf-Wa0"/>
                                     <constraint firstAttribute="width" constant="30" id="qTH-5K-r9S"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCk-H0-C1b">
-                                <rect key="frame" x="27.5" y="545.5" width="320.5" height="56.5"/>
+                                <rect key="frame" x="27.5" y="513.5" width="320.5" height="53.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="rmh-9f-wwW">
-                                        <rect key="frame" x="285.5" y="18.5" width="27" height="20"/>
+                                        <rect key="frame" x="285.5" y="17" width="27" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="kj8-cb-0hr"/>
                                             <constraint firstAttribute="width" constant="27" id="uTy-u6-Dq1"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-HG-w5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="53.5"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                         <state key="normal" title="Choose Randomly">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -566,25 +559,28 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-s8-usb" userLabel="Add Ps View">
-                                <rect key="frame" x="9" y="622" width="356.5" height="85"/>
+                                <rect key="frame" x="9" y="587" width="356.5" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New PlayStation " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ujx-P2-dha">
-                                        <rect key="frame" x="52" y="13" width="302" height="20.5"/>
+                                        <rect key="frame" x="52" y="12.5" width="302" height="20.5"/>
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN-Bold" family="Myanmar Sangam MN" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Joystick" translatesAutoresizingMaskIntoConstraints="NO" id="uXk-2M-NL2">
-                                        <rect key="frame" x="8" y="12" width="36" height="21.5"/>
+                                        <rect key="frame" x="8" y="12" width="36" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help us by give more information about playstation places" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wyL-Iy-hEc">
-                                        <rect key="frame" x="51.5" y="33.5" width="302" height="43.5"/>
+                                        <rect key="frame" x="51.5" y="33" width="302" height="39"/>
                                         <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWR-uh-AyQ">
-                                        <rect key="frame" x="-0.5" y="-0.5" width="356.5" height="85"/>
+                                        <rect key="frame" x="-0.5" y="-0.5" width="356.5" height="80"/>
+                                        <connections>
+                                            <segue destination="Om9-Ey-5hE" kind="show" id="SKr-lW-xO8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -620,7 +616,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-5y-O45">
-                                <rect key="frame" x="27" y="707" width="320.5" height="56.5"/>
+                                <rect key="frame" x="27" y="667" width="320.5" height="53.5"/>
                                 <color key="backgroundColor" red="0.87983763217926025" green="0.31035465002059937" blue="0.37376886606216431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                 <state key="normal" title="Cancel">
@@ -703,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="api-cN-bzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5711.1999999999998" y="23.838080959520241"/>
+            <point key="canvasLocation" x="6648.8000000000002" y="41.829085457271368"/>
         </scene>
         <!--Locations View Controller-->
         <scene sceneID="iNg-9n-R49">
@@ -856,7 +852,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTz-Kd-um5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6832.8000000000002" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="7488.8000000000002" y="41.829085457271368"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="yYR-Y1-gF7">
@@ -1036,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0U-y9-FXl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="752"/>
+            <point key="canvasLocation" x="4054" y="791"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sl3-Ua-yrc">
@@ -1258,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCz-op-2QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4772" y="1530"/>
+            <point key="canvasLocation" x="4884" y="791"/>
         </scene>
         <!--Item-->
         <scene sceneID="twi-LF-mnM">
@@ -1361,7 +1357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teO-ji-aai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5711" y="722"/>
+            <point key="canvasLocation" x="5710" y="791"/>
         </scene>
         <!--SigninVC-->
         <scene sceneID="NEe-Q8-nSj">
@@ -1564,46 +1560,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0I-1V-mZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3015" y="6"/>
+            <point key="canvasLocation" x="4054" y="42"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="V24-7l-gXv">
+        <scene sceneID="adN-Nq-deN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GIV-I0-HDb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="matchDetailsNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LfZ-ds-XyS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GMI-3h-zaj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gLm-An-13W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="k5H-e9-DW7" kind="relationship" relationship="rootViewController" id="GmB-nL-uiA"/>
+                        <segue destination="cDY-ky-gTc" kind="relationship" relationship="rootViewController" id="qZs-66-xUh"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cif-Pl-Nww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AF4-Pj-0P1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3014" y="-711"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="1V9-dn-QaB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dgv-ge-E2p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="brR-zn-Df5"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4dq-Pz-H3y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lvl-Wf-jJs" kind="relationship" relationship="rootViewController" id="lBa-1r-oyx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gif-P2-TNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4831" y="24"/>
+            <point key="canvasLocation" x="4884" y="41.829085457271368"/>
         </scene>
     </scenes>
     <resources>

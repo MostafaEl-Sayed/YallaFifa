@@ -44,12 +44,9 @@ class MatchRequestTableViewController: UIViewController {
     }
 
     @IBAction func backbtnAct(_ sender: Any) {
-       
-        let  mainStory = UIStoryboard(name: "Main", bundle: nil)
-        let search = mainStory.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
         UIView.beginAnimations("animation", context: nil)
         UIView.setAnimationDuration(1.0)
-        self.navigationController!.pushViewController(search, animated: false)
+        nav.popViewController(animated: true)
         UIView.setAnimationTransition(UIViewAnimationTransition.flipFromLeft, for: self.navigationController!.view, cache: false)
         UIView.commitAnimations()
     }

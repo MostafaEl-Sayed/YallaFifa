@@ -12,17 +12,17 @@
 		CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* PlayStation.swift */; };
 		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
-		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */; };
+		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */; };
 		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
-		CF67D4CB1EF329C5003A5D6B /* MatchRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */; };
+		CF67D4CB1EF329C5003A5D6B /* MatchRequestTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */; };
 		CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */; };
 		CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9203411EE9A83200DFBED5 /* Utilites.swift */; };
 		CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381071EE6F2C60091083B /* AppDelegate.swift */; };
 		CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF93810B1EE6F2C60091083B /* Main.storyboard */; };
 		CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */; };
 		CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9381191EE6F3D60091083B /* Assets.xcassets */; };
-		CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */; };
-		CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */; };
+		CF95CF4A1EE8C37B004166C8 /* MatchRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */; };
+		CFBA26F61EEAE58C00CA0F1E /* PSLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */; };
 		CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */; };
 		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
 		CFBA26FE1EEAF43800CA0F1E /* UserDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */; };
@@ -45,9 +45,9 @@
 		CF07C0E31EF0D1D70075C469 /* PlayStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStation.swift; sourceTree = "<group>"; };
 		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
-		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewContoller.swift; sourceTree = "<group>"; };
+		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
 		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
-		CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestTableViewController.swift; sourceTree = "<group>"; };
+		CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestTableVC.swift; sourceTree = "<group>"; };
 		CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		CF9203411EE9A83200DFBED5 /* Utilites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		CF9381041EE6F2C60091083B /* YallaFifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallaFifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +56,8 @@
 		CF9381111EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF9381131EE6F2C60091083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF9381191EE6F3D60091083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestViewController.swift; sourceTree = "<group>"; };
-		CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsViewController.swift; sourceTree = "<group>"; };
+		CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestVC.swift; sourceTree = "<group>"; };
+		CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsVC.swift; sourceTree = "<group>"; };
 		CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsCell.xib; sourceTree = "<group>"; };
@@ -124,22 +124,13 @@
 				E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */,
 				CF9381071EE6F2C60091083B /* AppDelegate.swift */,
 				CF0495691EF41E5800559D77 /* RequestManager.swift */,
+				CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */,
+				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
 				CFDDCCC51EF43A4600A0C1D8 /* Helpers */,
 				CFDDCCC41EF43A1A00A0C1D8 /* Models */,
-				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift */,
-				CF95CF491EE8C37B004166C8 /* MatchRequestViewController.swift */,
-				CF93810B1EE6F2C60091083B /* Main.storyboard */,
-				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableViewController.swift */,
-				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
-				CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */,
-				CFBA26F51EEAE58C00CA0F1E /* PSLocationsViewController.swift */,
-				CFBA271D1EEB08BF00CA0F1E /* Search.swift */,
-				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
+				E0E85A051EF5FBC500E62F01 /* Views */,
+				E0E85A041EF5FB9400E62F01 /* Controllers */,
 				CF9381191EE6F3D60091083B /* Assets.xcassets */,
-				CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */,
-				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
-				E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */,
-				E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */,
 				CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */,
 				CF9381131EE6F2C60091083B /* Info.plist */,
 			);
@@ -167,6 +158,31 @@
 				E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E0E85A041EF5FB9400E62F01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */,
+				CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */,
+				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */,
+				CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */,
+				CFBA271D1EEB08BF00CA0F1E /* Search.swift */,
+				E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */,
+				E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E0E85A051EF5FBC500E62F01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF93810B1EE6F2C60091083B /* Main.storyboard */,
+				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
+				CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */,
+				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */,
-				CF67D4CB1EF329C5003A5D6B /* MatchRequestTableViewController.swift in Sources */,
+				CF67D4CB1EF329C5003A5D6B /* MatchRequestTableVC.swift in Sources */,
 				CFBA271E1EEB08BF00CA0F1E /* Search.swift in Sources */,
 				CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */,
 				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
@@ -314,11 +330,11 @@
 				CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */,
 				E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */,
 				CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */,
-				CF95CF4A1EE8C37B004166C8 /* MatchRequestViewController.swift in Sources */,
+				CF95CF4A1EE8C37B004166C8 /* MatchRequestVC.swift in Sources */,
 				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
-				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsViewContoller.swift in Sources */,
+				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */,
 				CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */,
-				CFBA26F61EEAE58C00CA0F1E /* PSLocationsViewController.swift in Sources */,
+				CFBA26F61EEAE58C00CA0F1E /* PSLocationsVC.swift in Sources */,
 				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
 				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
 				CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */,

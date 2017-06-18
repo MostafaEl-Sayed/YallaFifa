@@ -20,10 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
 
     var window: UIWindow?
 
-    
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        nav.navigationBar.isHidden = true
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootController = storyboard.instantiateViewController(withIdentifier: "signin") as! SigninVC
+        nav.viewControllers =  [rootController]
+        
+        if let window = self.window {
+            window.rootViewController = nav
+        }
+        
         // Provide Google Maps Key
         GMSPlacesClient.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
         GMSServices.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
@@ -37,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                 options: authOptions,
                 completionHandler: {_, _ in })
             // For iOS 10 data message (sent via FCM
-            Messaging.messaging().remoteMessageDelegate = self
+            Messaging.messaging().delegate = self
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -47,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
+        
         return true
     }
 

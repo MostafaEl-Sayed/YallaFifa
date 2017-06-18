@@ -10,13 +10,21 @@ import Foundation
 import UIKit
 
 let defaults = UserDefaults.standard
+var nav = UINavigationController()
+var userType = UserType.undifiend
+
+enum UserType{
+    case undifiend
+    case meetFriends
+    case onlineMatch
+}
 
 extension UIViewController{
     func presentAlert(title : String , mssg : String){
         let alertController = UIAlertController(title: title, message: mssg, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
+        nav.present(alertController, animated: true, completion: nil)
     }
 }
 
