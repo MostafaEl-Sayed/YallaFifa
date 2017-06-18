@@ -30,6 +30,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var makeBackEnable = false
     var choosedMetpoint = [String : Double]()
     var newPSStatusActive = false
+    var startChooseMeetingPointStatus = false
     // --------------------------------
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
@@ -143,14 +144,48 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             "lat":lat ,
             "lng":long
         ]
-        print("fsss")
+        if startChooseMeetingPointStatus {
+            animateViewsWhileSelectingMeetPoint()
+            startChooseMeetingPointStatus = false
+        }
+        
 //        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
 //            self.chooseLocationView.alpha = 0.0
 //        }, completion: nil)
         
     }
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        let defaultValue = CGAffineTransform(translationX: 0, y:0)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            
+            self.addNewPsView.transform = defaultValue
+            
+            self.getCurrentLocationBtn.transform = defaultValue
+            self.menuView.transform = defaultValue
+            self.fliveViewControllerView.transform = defaultValue
+        })
+        self.chooseLocationView.isHidden = false
+    }
+    func animateViewsWhileSelectingMeetPoint()  {
+        let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
+        let top = CGAffineTransform(translationX: 0, y: -100)
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.chooseLocationView.alpha = 1.0
+            self.addNewPsView.transform = down
+            
+            self.getCurrentLocationBtn.transform = down
+            self.menuView.transform = top
+            self.fliveViewControllerView.transform = top
+        })
+        self.chooseLocationView.isHidden = true
+    }
+    
+    
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
-        print("sadasdas")
+       animateViewsWhileSelectingMeetPoint()
     }
     
     func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
