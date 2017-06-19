@@ -167,6 +167,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.fliveViewControllerView.transform = defaultValue
         })
         self.chooseLocationView.isHidden = false
+        self.estimationTimeAndDistanceView.isHidden = false
     }
     func animateViewsWhileSelectingMeetPoint()  {
         let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
@@ -181,6 +182,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.fliveViewControllerView.transform = top
         })
         self.chooseLocationView.isHidden = true
+        self.estimationTimeAndDistanceView.isHidden = true
     }
     
     
