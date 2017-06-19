@@ -74,6 +74,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         }
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+        vc.userCurrentLocation = self.userCurrentLocation
         self.navigationController!.pushViewController(vc, animated: true)
     }
     

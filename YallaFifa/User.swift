@@ -49,22 +49,22 @@ class User: NSObject ,NSCoding {
 
 class Location : NSObject ,NSCoding {
     
-    var latitude : String!
-    var longtude : String!
+    var latitude : Double!
+    var longtude : Double!
     
     init(data: NSDictionary) {
-        latitude = data.getValueForKey(Key: "lat", callBack: "")
-        longtude = data.getValueForKey(Key: "long", callBack: "")
+        latitude = data.getValueForKey(Key: "lat", callBack: 0.0)
+        longtude = data.getValueForKey(Key: "long", callBack: 0.0)
     }
     
     override init() {
-        latitude = ""
-        longtude = ""
+        latitude = 0.0
+        longtude = 0.0
     }
     
     required init?(coder aDecoder: NSCoder) {
-        latitude = aDecoder.decodeObject(forKey: "latitude") as! String
-        longtude = aDecoder.decodeObject(forKey: "longtude") as! String
+        latitude = aDecoder.decodeObject(forKey: "latitude") as! Double
+        longtude = aDecoder.decodeObject(forKey: "longtude") as! Double
     }
     
     func encode(with aCoder: NSCoder) {

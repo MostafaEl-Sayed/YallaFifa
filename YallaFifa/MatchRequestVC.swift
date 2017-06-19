@@ -16,8 +16,6 @@ import GooglePlacePicker
 class MatchRequestViewController: UIViewController , CLLocationManagerDelegate , GMSMapViewDelegate  {
 
     
-    var id = ""
-    var typeOfDonation = "food" // “food”, “clothing
     var locationManager = CLLocationManager()
     var chosedLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 30,longitude: 30)
     var userCurrentLocation = [String : Double]()
@@ -33,7 +31,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var startChooseMeetingPointStatus = false
     
     var usersData : [User]!
-
 
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
@@ -103,6 +100,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     func getData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
             self.usersData = data
+            self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
             compilitionHandler()
         }
     }
@@ -111,6 +109,10 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         getData {
             print("Some data changed")
             // Here bbe
+            RequestManager.defaultManager.getListOfUserData(completionHandler: { (usersChanged) in
+                self.drowUsersLocationsMarkers(users: usersChanged, imageMarkerName: "\(userType)")
+            })
+            
         }
     }
     
@@ -218,17 +220,22 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         guard users != nil else {
             return
         }
-//        for user in users! {
-//            let lat = user.location.latitude
-//            let long = user.location.longtude
-//            let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-//            let marker = GMSMarker(position: position)
-//            marker.title = user.name
-//            marker.icon = UIImage(named: imageMarkerName)
-//            
-//            marker.map = mapView
-//            
-//        }
+        
+        for user in users! {
+            
+            if user.typeOfUser != "\(userType)" {
+                continue
+            }
+            let lat = user.location.latitude
+            let long = user.location.longtude
+            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let marker = GMSMarker(position: position)
+            marker.title = "\(userType)"
+            marker.icon = UIImage(named: imageMarkerName)
+            
+            marker.map = mapView
+            
+        }
     }
     @IBAction func addNewPsBtnAct(_ sender: Any) {
        
@@ -294,6 +301,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     @IBAction func cancelRequestBtnAct(_ sender: Any) {
         self.blueLine.routePolyline.map = nil
+        self.estimationTimeAndDistanceView.isHidden = true
 
         
         let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
@@ -347,6 +355,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
                     self.blueLine = data
                     self.drawRoute()
                     self.calculateTotalDistanceAndDuration()
+                    
                 }
                 else {
                     self.displayMessage(title: "Request Field", message: "Bad internet connection")
@@ -360,6 +369,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
 
     
     func drawRoute() {
+        self.estimationTimeAndDistanceView.isHidden = false
             let route = blueLine.overviewPolyline["points"] as! String
             let path: GMSPath = GMSPath(fromEncodedPath: route)!
             blueLine.routePolyline = GMSPolyline(path: path)
@@ -442,6 +452,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         startAnimatingViews()
         chooseMeetingPointLabel.text! = "Choose Meeting Point"
         newPSStatusActive = false
+        
         if oneRootadded && prevMarkerPosition.latitude == marker.position.latitude && prevMarkerPosition.longitude == marker.position.longitude{
             return false
         }
