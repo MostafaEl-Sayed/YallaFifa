@@ -16,16 +16,16 @@ class MatchRequestTableViewController: UIViewController {
             static let psDetailsCell = "UserDetailsCell"
             static let nothingFoundCell = "NothingFoundCell"
         }
-    let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.97618978)],typeOfUser: "online")
-    let onlineUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.23506634),"lng":(29.97618978)],typeOfUser: "online")
-    let onlineUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.97618978)],typeOfUser: "online")
-    let onlineUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.97618978)],typeOfUser: "online"
-    )
-    
-    let phyUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.9461897)],typeOfUser: "physically")
-    let phyUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.27506634),"lng":(29.93618978)],typeOfUser: "physically")
-    let phyUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96418978)],typeOfUser: "physically")
-    let phyUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96818978)],typeOfUser: "physically")
+//    let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.97618978)],typeOfUser: "online")
+//    let onlineUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.23506634),"lng":(29.97618978)],typeOfUser: "online")
+//    let onlineUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.97618978)],typeOfUser: "online")
+//    let onlineUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.97618978)],typeOfUser: "online"
+//    )
+//    
+//    let phyUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.9461897)],typeOfUser: "physically")
+//    let phyUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.27506634),"lng":(29.93618978)],typeOfUser: "physically")
+//    let phyUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96418978)],typeOfUser: "physically")
+//    let phyUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96818978)],typeOfUser: "physically")
     
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class MatchRequestTableViewController: UIViewController {
             cellNib = UINib(nibName: TableViewCellIdentifiers.nothingFoundCell, bundle: nil)
             tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.nothingFoundCell)
         
-        nearbyUsers = [onlineUser1,onlineUser2,onlineUser3,onlineUser4,phyUser1,phyUser2,phyUser3,phyUser4]
+        //nearbyUsers = [onlineUser1,onlineUser2,onlineUser3,onlineUser4,phyUser1,phyUser2,phyUser3,phyUser4]
 
     }
 

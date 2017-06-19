@@ -31,7 +31,10 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var choosedMetpoint = [String : Double]()
     var newPSStatusActive = false
     var startChooseMeetingPointStatus = false
-    // --------------------------------
+    
+    var usersData : [User]!
+
+
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
     @IBOutlet weak var choosePointToMeetFriendLabel: UILabel!
@@ -55,8 +58,18 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     @IBOutlet weak var flipViewControllerBtn: UIButton!
     @IBOutlet weak var fliveViewControllerView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for data in usersData {
+            print(data.email)
+            print(data.phone)
+            print(data.location.longtude)
+            print(data.location.latitude)
+        }
+        
         // Map setupx
         let latitude  = self.locationManager.location?.coordinate.latitude
         let longitude = self.locationManager.location?.coordinate.longitude
@@ -75,20 +88,20 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         
         // dummy data 
-        let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.97618978)],typeOfUser: "online")
-        let onlineUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.23506634),"lng":(29.97618978)],typeOfUser: "online")
-        let onlineUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.97618978)],typeOfUser: "online")
-        let onlineUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.97618978)],typeOfUser: "online"
-        )
-        
-        let phyUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.9461897)],typeOfUser: "physically")
-        let phyUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.27506634),"lng":(29.93618978)],typeOfUser: "physically")
-        let phyUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96418978)],typeOfUser: "physically")
-        let phyUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96818978)],typeOfUser: "physically")
+//        let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.97618978)],typeOfUser: "online")
+//        let onlineUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.23506634),"lng":(29.97618978)],typeOfUser: "online")
+//        let onlineUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.97618978)],typeOfUser: "online")
+//        let onlineUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.97618978)],typeOfUser: "online"
+//        )
+//        
+//        let phyUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.9461897)],typeOfUser: "physically")
+//        let phyUser2 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.27506634),"lng":(29.93618978)],typeOfUser: "physically")
+//        let phyUser3 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.28506634),"lng":(29.96418978)],typeOfUser: "physically")
+//        let phyUser4 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.29506634),"lng":(29.96818978)],typeOfUser: "physically")
        
-        allOnlineUsers = [onlineUser1,onlineUser2,onlineUser3,onlineUser4]
-        allPhysically = [phyUser1,phyUser2,phyUser3,phyUser4]
-        drowUsersLocationsMarkers(users: allOnlineUsers, imageMarkerName: "Joystick")
+//        allOnlineUsers = [onlineUser1,onlineUser2,onlineUser3,onlineUser4]
+//        allPhysically = [phyUser1,phyUser2,phyUser3,phyUser4]
+//        drowUsersLocationsMarkers(users: allOnlineUsers, imageMarkerName: "Joystick")
     }
    
 
@@ -196,17 +209,17 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         guard users != nil else {
             return
         }
-        for user in users! {
-            let lat = user.location["lat"]
-            let long = user.location["lng"]
-            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-            let marker = GMSMarker(position: position)
-            marker.title = user.name
-            marker.icon = UIImage(named: imageMarkerName)
-            
-            marker.map = mapView
-            
-        }
+//        for user in users! {
+//            let lat = user.location.latitude
+//            let long = user.location.longtude
+//            let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+//            let marker = GMSMarker(position: position)
+//            marker.title = user.name
+//            marker.icon = UIImage(named: imageMarkerName)
+//            
+//            marker.map = mapView
+//            
+//        }
     }
     @IBAction func addNewPsBtnAct(_ sender: Any) {
        

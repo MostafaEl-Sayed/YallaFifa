@@ -24,10 +24,8 @@ class UserDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configure(newPS: User) {
-        userName.text = newPS.name
-        userAddress.text = newPS.address
-        userPhone.text = newPS.phone
-        
+        userName.text = newPS.email
+        userPhone.text = newPS.phone        
     }
 
 

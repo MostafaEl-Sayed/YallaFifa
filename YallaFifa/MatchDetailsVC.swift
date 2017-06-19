@@ -8,7 +8,9 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
 
@@ -16,18 +18,21 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var onlineMatchLabel: UILabel!
     @IBOutlet weak var meetFriendsLabel: UILabel!
     
-    // -------------------------------
     var locationManager = CLLocationManager()
     var userCurrentLocation = [String : Double]()
-    
-    // -------------------------------
+    var usersData : [User]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(determineMyCurrentLocation())
     }
 
-
+    func getData(compilitionHandler : @escaping ()-> Void){
+        RequestManager.defaultManager.getListOfUserData { (data) in
+            self.usersData = data
+            compilitionHandler()
+        }
+    }
     
     @IBAction func doneSelectionBtnAct(_ sender: UIButton) {
         
@@ -42,6 +47,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         }
         
     }
+    
     func determineMyCurrentLocation() -> Bool{
         
         locationManager = CLLocationManager()
@@ -55,6 +61,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
             return false
         }
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
  
@@ -68,13 +75,16 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {
-        if userType == .undifiend {
+        if userType == .undefined {
             presentAlert(title: "", mssg: "You should selecet one of this choices")
             return
         }
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
-        self.navigationController!.pushViewController(vc, animated: true)
+        getData {
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+            vc.usersData = self.usersData
+            self.navigationController!.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func signoutButtonTapped(_ sender: Any) {

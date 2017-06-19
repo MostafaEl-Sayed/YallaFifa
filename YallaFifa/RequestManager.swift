@@ -100,5 +100,19 @@ class RequestManager{
         }
     }
     
+    func getListOfUserData(completionHandler:@escaping (_ data: [User]) -> Void){
+        ref.observe(.value, with: { snapshot in
+            var usersArr = [User]()
+            for child in snapshot.children  {
+                let child = child as! DataSnapshot
+                let value = child.value as! NSDictionary
+                for data in value {
+                    usersArr.append(User(data: data.value as! NSDictionary))
+                }
+            }
+            completionHandler(usersArr)
+        })
+    }
+    
 }
 

@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 let defaults = UserDefaults.standard
-var userType = UserType.undifiend
+var userType = UserType.undefined
 
 enum UserType{
-    case undifiend
+    case undefined
     case meetFriends
     case onlineMatch
 }
