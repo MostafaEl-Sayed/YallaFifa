@@ -31,7 +31,7 @@ class SignUpVC: GlobalController {
     }
     
     @IBAction func backTapped(_ sender: Any) {
-        nav.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
     }
     
     
@@ -48,7 +48,7 @@ class SignUpVC: GlobalController {
                     self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                     defaults.set("uid", forKey: user.uid)
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
-                    nav.present(vc, animated: true, completion: nil)
+                    self.navigationController!.present(vc, animated: true, completion: nil)
                     
                 } else if let error = error {
                     self.presentAlert(title: "Error" , mssg: error.localizedDescription)

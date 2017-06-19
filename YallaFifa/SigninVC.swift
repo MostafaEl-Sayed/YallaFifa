@@ -33,10 +33,10 @@ class SigninVC: GlobalController {
                 let defaults = UserDefaults.standard
                 defaults.set("uid", forKey: uid)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
-                nav.present(vc, animated: true, completion: nil)
+                self.navigationController!.present(vc, animated: true, completion: nil)
             }
             if let error = error {
-                nav.presentAlert(title: "Error" , mssg: error.localizedDescription)
+                self.navigationController!.presentAlert(title: "Error" , mssg: error.localizedDescription)
             }
         }
 

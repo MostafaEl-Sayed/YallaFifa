@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 let defaults = UserDefaults.standard
-var nav = UINavigationController()
 var userType = UserType.undifiend
 
 enum UserType{
@@ -24,7 +23,7 @@ extension UIViewController{
         let alertController = UIAlertController(title: title, message: mssg, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
-        nav.present(alertController, animated: true, completion: nil)
+        self.navigationController!.present(alertController, animated: true, completion: nil)
     }
 }
 

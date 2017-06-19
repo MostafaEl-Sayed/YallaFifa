@@ -30,7 +30,7 @@ class PSLocationsViewController: GlobalController {
 
    
     @IBAction func backBtnAct(_ sender: Any) {
-        nav.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
     }
     
     @IBAction func addNewPSLocation(_ sender: Any) {

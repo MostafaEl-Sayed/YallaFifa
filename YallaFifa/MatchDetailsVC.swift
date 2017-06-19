@@ -72,17 +72,16 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
             presentAlert(title: "", mssg: "You should selecet one of this choices")
             return
         }
-        nav = self.navigationController!
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
-        nav.pushViewController(vc, animated: true)
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func signoutButtonTapped(_ sender: Any) {
         defaults.set("uid", forKey: "")
         do{
             try Auth.auth().signOut()
-            nav.dismiss(animated: true, completion: nil)
+            self.navigationController!.dismiss(animated: true, completion: nil)
         }
         catch let error as NSError{
             presentAlert(title: "", mssg: error.localizedDescription)

@@ -46,7 +46,7 @@ class MatchRequestTableViewController: UIViewController {
     @IBAction func backbtnAct(_ sender: Any) {
         UIView.beginAnimations("animation", context: nil)
         UIView.setAnimationDuration(1.0)
-        nav.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
         UIView.setAnimationTransition(UIViewAnimationTransition.flipFromLeft, for: self.navigationController!.view, cache: false)
         UIView.commitAnimations()
     }
