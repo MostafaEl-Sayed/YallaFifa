@@ -20,19 +20,12 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     
     var locationManager = CLLocationManager()
     var userCurrentLocation = [String : Double]()
-    var usersData : [User]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(determineMyCurrentLocation())
     }
 
-    func getData(compilitionHandler : @escaping ()-> Void){
-        RequestManager.defaultManager.getListOfUserData { (data) in
-            self.usersData = data
-            compilitionHandler()
-        }
-    }
     
     @IBAction func doneSelectionBtnAct(_ sender: UIButton) {
         
@@ -79,12 +72,9 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
             presentAlert(title: "", mssg: "You should selecet one of this choices")
             return
         }
-        getData {
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
-            vc.usersData = self.usersData
-            self.navigationController!.pushViewController(vc, animated: true)
-        }
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+        self.navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func signoutButtonTapped(_ sender: Any) {

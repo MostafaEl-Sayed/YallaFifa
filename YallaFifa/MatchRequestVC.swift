@@ -63,12 +63,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for data in usersData {
-            print(data.email)
-            print(data.phone)
-            print(data.location.longtude)
-            print(data.location.latitude)
-        }
+        userObserver()
         
         // Map setupx
         let latitude  = self.locationManager.location?.coordinate.latitude
@@ -105,6 +100,20 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
    
 
+    func getData(compilitionHandler : @escaping ()-> Void){
+        RequestManager.defaultManager.getListOfUserData { (data) in
+            self.usersData = data
+            compilitionHandler()
+        }
+    }
+    
+    func userObserver(){
+        getData {
+            print("Some data changed")
+            // Here bbe
+        }
+    }
+    
     @IBAction func currentLocation(_ sender: Any) {
         anotherLocation = false
        
