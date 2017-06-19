@@ -24,7 +24,8 @@ class SigninVC: GlobalController {
         
         RequestManager.defaultManager.signIn(email: emailTextField.text!, password: passwordTextField.text!) {(status, success) in
             if success {
-                self.navigationController!.popViewController(animated: true)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
+                self.navigationController!.present(vc, animated: true, completion: nil)
             }
             else{
                 self.navigationController!.presentAlert(title: "Error" , mssg: status)

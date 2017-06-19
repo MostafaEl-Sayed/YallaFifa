@@ -37,8 +37,7 @@ class SignUpVC: GlobalController {
              RequestManager.defaultManager.sigup(email: emailTextField.text!, password: passwordTextField.text!, phoneNumber: phoneNumberTextField.text!, completionHandler: { (status, success) in
                 
                 if success {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
-                    self.navigationController!.present(vc, animated: true, completion: nil)
+                    self.navigationController!.popViewController(animated: true)
                 }
                 else {
                     self.presentAlert(title: "Error" , mssg: status)
