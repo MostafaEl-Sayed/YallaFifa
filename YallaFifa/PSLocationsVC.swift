@@ -18,7 +18,7 @@ class PSLocationsViewController: GlobalController {
     
     var psLocations = [PlayStation]()
     var currentPSLocationAddress = "Address1"
-    var psChoosedLocation = [String : Double]()
+    var psChoosedLocation = Location()
     
 
     override func viewDidLoad() {

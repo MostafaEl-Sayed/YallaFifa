@@ -18,18 +18,18 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     var locationManager = CLLocationManager()
     var chosedLocation:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 30,longitude: 30)
-    var userCurrentLocation = [String : Double]()
+    var userCurrentLocation = Location()
     var anotherLocation = false
     var locatonlabelValue = "Where should we pick up the donation ?"
     var counterChangeStatusOflocation = 0
     var allOnlineUsers = [User]()
     var allPhysically = [User]()
-    var psChoosedLocation = [String : Double]()
+    var psChoosedLocationPoint = Location()
     var makeBackEnable = false
-    var choosedMetpoint = [String : Double]()
+    var choosedMetpoint = Location()
     var newPSStatusActive = false
     var startChooseMeetingPointStatus = false
-    
+    var statusOfSwitchedControllers = false
     var usersData : [User]!
 
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
@@ -62,14 +62,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         userObserver()
         
-        // Map setupx
-        let latitude  = self.locationManager.location?.coordinate.latitude
-        let longitude = self.locationManager.location?.coordinate.longitude
-        
-        self.userCurrentLocation = [
-            "lat":latitude! ,
-            "lng":longitude!
-        ]
         
         self.mapView.delegate = self
         mapView.setMinZoom(10, maxZoom: 19)
@@ -95,8 +87,33 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
 //        allPhysically = [phyUser1,phyUser2,phyUser3,phyUser4]
 //        drowUsersLocationsMarkers(users: allOnlineUsers, imageMarkerName: "Joystick")
     }
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWill")
+        
+        // Map setupx
+        let latitude  = self.userCurrentLocation.latitude
+        let longitude = self.userCurrentLocation.longtude
+        
+        let camera = GMSCameraPosition.camera(withLatitude:latitude!,longitude: longitude!, zoom: self.mapView.camera.zoom)
+            self.mapView.camera = camera
+            self.locationLabel.text! = "\(self.locatonlabelValue)"
+        
+        self.navigationController?.navigationBar.isHidden = true
+        resetAllViewsToDefaultValues()
+        statusOfSwitchedControllers = false
+    }
 
+    func resetAllViewsToDefaultValues()  {
+        let defaultValue = CGAffineTransform(translationX: 0, y:0)
+        self.menuView.transform = defaultValue
+        self.fliveViewControllerView.transform = defaultValue
+        self.chooseLocationView.transform = defaultValue
+        self.addNewPsView.transform = defaultValue
+        self.getCurrentLocationBtn.transform = defaultValue
+        self.estimationTimeAndDistanceView.transform = defaultValue
+        
+    }
     func getData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
             self.usersData = data
@@ -142,16 +159,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
 
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if anotherLocation {
-            let camera = GMSCameraPosition.camera(withLatitude:chosedLocation.latitude,longitude: chosedLocation.longitude, zoom: self.mapView.camera.zoom)
-            self.mapView.camera = camera
-            self.locationLabel.text! = "\(self.locatonlabelValue)"
-        }
-        self.navigationController?.navigationBar.isHidden = true
-    }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -164,23 +171,22 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         let lat = position.target.latitude
         let long = position.target.longitude
-        choosedMetpoint = [
-            "lat":lat ,
-            "lng":long
-        ]
-        if startChooseMeetingPointStatus {
-            animateViewsWhileSelectingMeetPoint()
-            startChooseMeetingPointStatus = false
+        if !newPSStatusActive {
+            choosedMetpoint.latitude = lat
+            choosedMetpoint.longtude = long
+        }else {
+            
+            psChoosedLocationPoint.latitude = lat
+            psChoosedLocationPoint.longtude = long
+            print("m5tar ps")
         }
         
-//        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
-//            self.chooseLocationView.alpha = 0.0
-//        }, completion: nil)
+    
         
     }
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         let defaultValue = CGAffineTransform(translationX: 0, y:0)
-        
+        print("idleAt")
         UIView.animate(withDuration: 0.5, animations: {
             
             
@@ -191,27 +197,28 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.fliveViewControllerView.transform = defaultValue
         })
         self.chooseLocationView.isHidden = false
-        self.estimationTimeAndDistanceView.isHidden = false
-    }
-    func animateViewsWhileSelectingMeetPoint()  {
-        let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
-        let top = CGAffineTransform(translationX: 0, y: -100)
-        UIView.animate(withDuration: 0.5, animations: {
-            
-            self.chooseLocationView.alpha = 1.0
-            self.addNewPsView.transform = down
-            
-            self.getCurrentLocationBtn.transform = down
-            self.menuView.transform = top
-            self.fliveViewControllerView.transform = top
-        })
-        self.chooseLocationView.isHidden = true
-        self.estimationTimeAndDistanceView.isHidden = true
+        
     }
     
     
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
-       animateViewsWhileSelectingMeetPoint()
+        print("mapViewDidStartTileRendering")
+        if statusOfSwitchedControllers {
+            let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
+            let top = CGAffineTransform(translationX: 0, y: -100)
+            UIView.animate(withDuration: 0.01, animations: {
+                
+                self.chooseLocationView.alpha = 1.0
+                self.addNewPsView.transform = down
+                
+                self.getCurrentLocationBtn.transform = down
+                self.menuView.transform = top
+                self.fliveViewControllerView.transform = top
+            })
+            self.chooseLocationView.isHidden = true
+        }
+        statusOfSwitchedControllers = true
+        
     }
     
     func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
@@ -243,6 +250,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     @IBAction func chooseRandomlyBtnAct(_ sender: Any) {
+        if newPSStatusActive {
+            self.performSegue(withIdentifier: "PSLocationsViewController", sender: nil)
+        }else {
+            self.performSegue(withIdentifier: "UserProfileViewController", sender: nil)
+        }
         
     }
     @IBAction func flipViewControllerBtnAct(_ sender: Any) {
@@ -323,19 +335,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         choosePointToMeetFriendLabel.isHidden = true
         }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "AddPhotoController" {
-            
-//            let destinationVC = segue.destination as! AddPhotoController
-//            destinationVC.id = self.id
-//            destinationVC.user = self.user
-//            destinationVC.typeOfDonation = self.typeOfDonation
-//            destinationVC.orderLocation = self.choosedLocationDic
-            
-        }
-    }
     //    getDirections(origin: "\(31.25506634),\(29.96618978)", destination: "\(31.29506634),\(29.9461897)", waypoints: nil, travelMode: nil)
     // ----------------------------------------
     var oneRootadded = false
@@ -369,7 +368,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
 
     
     func drawRoute() {
-        self.estimationTimeAndDistanceView.isHidden = false
+            self.estimationTimeAndDistanceView.isHidden = false
             let route = blueLine.overviewPolyline["points"] as! String
             let path: GMSPath = GMSPath(fromEncodedPath: route)!
             blueLine.routePolyline = GMSPolyline(path: path)
@@ -460,7 +459,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             blueLine.routePolyline.map = nil
         }
         
-        createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation["lat"]!),\(userCurrentLocation["lng"]!)", endPoints: "\(marker.position.latitude),\(marker.position.longitude)")
+        createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation.latitude),\(userCurrentLocation.longtude)", endPoints: "\(marker.position.latitude),\(marker.position.longitude)")
         prevMarkerPosition = marker.position
         return true
     }
@@ -483,6 +482,19 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PSLocationsViewController"{
+            let psLocationVC = segue.destination as! PSLocationsViewController
+            psLocationVC.psChoosedLocation = self.psChoosedLocationPoint
+            
+        } else if segue.identifier == "UserProfileViewController" {
+            let userProfileVC = segue.destination as! UserProfileViewController
+            userProfileVC.choosedMetpoint = self.choosedMetpoint
+        }
+    }
+    
 }
 
 extension MatchRequestViewController:   UIGestureRecognizerDelegate {
@@ -496,10 +508,8 @@ extension MatchRequestViewController:  GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: ", place.name)
         self.chosedLocation = place.coordinate
-        self.userCurrentLocation = [
-            "lat":(self.chosedLocation.latitude) ,
-            "lng":(self.chosedLocation.longitude)
-        ]
+        self.userCurrentLocation.latitude = chosedLocation.latitude
+        self.userCurrentLocation.longtude = chosedLocation.longitude
         self.locatonlabelValue = place.name
         self.anotherLocation = true
         self.dismiss(animated: true, completion: nil)

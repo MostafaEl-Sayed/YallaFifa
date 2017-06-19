@@ -19,7 +19,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var meetFriendsLabel: UILabel!
     
     var locationManager = CLLocationManager()
-    var userCurrentLocation = [String : Double]()
+    var userCurrentLocation = Location()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +61,8 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         manager.stopUpdatingLocation()
         let lat = userLocation.coordinate.latitude
         let long = userLocation.coordinate.longitude
-        self.userCurrentLocation = [
-            "lat":(lat) ,
-            "lng":(long)
-        ]
+        self.userCurrentLocation.longtude = long
+        self.userCurrentLocation.latitude = lat
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {

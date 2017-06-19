@@ -12,9 +12,9 @@ class PlayStation: NSObject ,NSCoding{
     var name: String
     var phone: String
     var address: String
-    var location: [String:Double]
+    var location: Location
     
-    init(name:String,phone:String,address:String,location:[String : Double]) {
+    init(name:String,phone:String,address:String,location:Location) {
         self.name = name
         self.phone = phone
         self.address = address
@@ -25,7 +25,7 @@ class PlayStation: NSObject ,NSCoding{
         self.name = ""
         self.phone = ""
         self.address = ""
-        self.location = [String : Double]()
+        self.location = Location()
         
     }
     
@@ -35,7 +35,7 @@ class PlayStation: NSObject ,NSCoding{
         name = aDecoder.decodeObject(forKey: "Name") as! String
         phone = aDecoder.decodeObject(forKey: "Phone") as! String
         address = aDecoder.decodeObject(forKey: "Address") as! String
-        location = aDecoder.decodeObject(forKey: "Location") as! [String:Double]
+        location = aDecoder.decodeObject(forKey: "Location") as! Location
         
         super.init()
     }

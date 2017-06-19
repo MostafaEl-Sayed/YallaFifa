@@ -10,6 +10,7 @@
 		CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495671EF41AA300559D77 /* BlueLine.swift */; };
 		CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495691EF41E5800559D77 /* RequestManager.swift */; };
 		CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* PlayStation.swift */; };
+		CF1B562C1EF879A30007E5B0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */; };
 		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
 		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
 		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */; };
@@ -43,6 +44,7 @@
 		CF0495671EF41AA300559D77 /* BlueLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueLine.swift; sourceTree = "<group>"; };
 		CF0495691EF41E5800559D77 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		CF07C0E31EF0D1D70075C469 /* PlayStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStation.swift; sourceTree = "<group>"; };
+		CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
 		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */,
+				CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */,
 				CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */,
 				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */,
 				CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */,
@@ -336,6 +339,7 @@
 				CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */,
 				CFBA26F61EEAE58C00CA0F1E /* PSLocationsVC.swift in Sources */,
 				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
+				CF1B562C1EF879A30007E5B0 /* UserProfileViewController.swift in Sources */,
 				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
 				CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */,
 				CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */,
