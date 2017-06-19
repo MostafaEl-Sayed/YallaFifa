@@ -7,38 +7,32 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
-import FirebaseDatabase
 
 class SigninVC: GlobalController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    var ref: DatabaseReference!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = Database.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
     }
     
     @IBAction func signinTapped(_ sender: Any) {
         self.view.endEditing(true)
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if let user = user {
-                let uid = user.uid
-                let defaults = UserDefaults.standard
-                defaults.set("uid", forKey: uid)
+        
+        RequestManager.defaultManager.signIn(email: emailTextField.text!, password: passwordTextField.text!) {(status, success) in
+            if success {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
                 self.navigationController!.present(vc, animated: true, completion: nil)
             }
-            if let error = error {
-                self.navigationController!.presentAlert(title: "Error" , mssg: error.localizedDescription)
+            else{
+                self.navigationController!.presentAlert(title: "Error" , mssg: status)
+
             }
         }
-
     }
+    
+    
 }

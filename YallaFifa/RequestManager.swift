@@ -7,13 +7,19 @@
 //
 
 import Foundation
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class RequestManager{
     
+    var ref: DatabaseReference!
     
     static let defaultManager = RequestManager()
-    private init (){}
+    private init (){
+        print("* my private init *")
+        self.ref = Database.database().reference()
+    }
     
     func getDirections(origin: String!, destination: String!, completionHandler: @escaping ((_ status:   String, _ success: Bool,_ blueline: BlueLine?) -> Void)) {
         let baseURLDirections = "https://maps.googleapis.com/maps/api/directions/json?"
@@ -61,6 +67,35 @@ class RequestManager{
                     }
                 }
                 task.resume()
+            }
+        }
+    }
+    
+    func signIn(email : String , password : String , completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let user = user {
+                let uid = user.uid
+                let defaults = UserDefaults.standard
+                defaults.set("uid", forKey: uid)
+                completionHandler("Succefuly signin" , true)
+            }
+            if let error = error {
+                completionHandler(error.localizedDescription , false)
+            }
+        }
+    }
+    
+    func sigup(email : String , password : String , phoneNumber : String , completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if let user = user {
+                print("successfully signed up")
+                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber ])
+                self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
+                defaults.set("uid", forKey: user.uid)
+                completionHandler("Succefuly signup" , true)
+            } else if let error = error {
+                completionHandler(error.localizedDescription , false)
             }
         }
     }

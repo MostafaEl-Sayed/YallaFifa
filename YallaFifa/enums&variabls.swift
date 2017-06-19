@@ -23,7 +23,7 @@ extension UIViewController{
         let alertController = UIAlertController(title: title, message: mssg, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
-        self.navigationController!.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

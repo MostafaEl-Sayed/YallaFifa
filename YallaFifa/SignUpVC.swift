@@ -19,12 +19,8 @@ class SignUpVC: GlobalController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
 
-    
-    var ref: DatabaseReference!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ref = Database.database().reference()
         self.scrollViewInitilaizer(scrollView: scrollView)
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -41,22 +37,18 @@ class SignUpVC: GlobalController {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")
         }else {
             self.view.endEditing(true)
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-                if let user = user {
-                    print("successfully signed up")
-                    self.ref.child("users").child(user.uid).setValue(["email": self.emailTextField.text! , "phoneNumber" :self.phoneNumberTextField.text!])
-                    self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
-                    defaults.set("uid", forKey: user.uid)
+             RequestManager.defaultManager.sigup(email: emailTextField.text!, password: passwordTextField.text!, phoneNumber: phoneNumberTextField.text!, completionHandler: { (status, success) in
+                
+                if success {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
                     self.navigationController!.present(vc, animated: true, completion: nil)
-                    
-                } else if let error = error {
-                    self.presentAlert(title: "Error" , mssg: error.localizedDescription)
                 }
-            } 
+                else {
+                    self.presentAlert(title: "Error" , mssg: status)
+                }
+                
+             })
         }
-        
-        
     }
     
     
