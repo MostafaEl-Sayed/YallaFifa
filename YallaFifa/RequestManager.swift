@@ -109,7 +109,7 @@ class RequestManager{
             completionHandler("Successfuly signout",true)
         }
         catch let error as NSError{
-            completionHandler("Fail to signout",false)
+            completionHandler(error.localizedDescription,false)
         }
     }
     
@@ -129,10 +129,10 @@ class RequestManager{
         })
     }
     
-    func newPS( playStation : PlayStation ){
+    func newPS( name: String, phone: String, longtude: Double, latitude: Double ){
         let currentUserUid = defaults.value(forKey: "uid") as! String
-        self.ref.child("PS").child(currentUserUid).setValue(["name": playStation.name , "phoneNumber" : playStation.phone])
-        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : playStation.location.longtude , "lat" : playStation.location.latitude])
+        self.ref.child("PS").child(currentUserUid).setValue(["name": name , "phoneNumber" : phone])
+        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
     }
     
     func getListOfPlayStationData(completionHandler:@escaping (_ data: [PlayStation]) -> Void){

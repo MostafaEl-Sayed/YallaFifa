@@ -51,18 +51,13 @@ class PSLocationsViewController: GlobalController {
         if errorMessageContent != "" {
             self.displayMessage(title: errorMessageTitle, message: errorMessageContent)
         }else {
-
-            let newPs:NSDictionary = ["name":"\(psNameTextField.text!)",
-                "phoneNumber":"\(psPhoneNumberTextField.text!)",
-                "location":psChoosedLocation]
-            let newPS = PlayStation(data:newPs)
             
             let alertController = UIAlertController(title: "Success", message: "Successfuly added new play station, press ok to return back to the map", preferredStyle: .alert)
             
             // Create the actions
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
                 UIAlertAction in
-                RequestManager.defaultManager.newPS(playStation: newPS)
+                RequestManager.defaultManager.newPS(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, longtude: self.psChoosedLocation.longtude, latitude: self.psChoosedLocation.latitude)
                 self.navigationController?.popViewController(animated: false)
             }
             alertController.addAction(okAction)

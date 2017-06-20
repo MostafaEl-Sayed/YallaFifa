@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GLO-Sg-xCl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GLO-Sg-xCl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -570,6 +570,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="357" height="80"/>
                                         <connections>
                                             <action selector="addNewPSLocationBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="aRy-ng-xWq"/>
+                                            <segue destination="Om9-Ey-5hE" kind="show" id="iml-mM-q7I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -678,7 +679,6 @@
                         <outlet property="searchViewBtn" destination="ISi-Ar-Q68" id="Tzf-5u-Cf1"/>
                         <outlet property="smallSearchBtn" destination="ncK-Qa-Frr" id="hGh-FS-zFf"/>
                         <outlet property="timeLabel" destination="05S-wV-WgO" id="VpB-bI-PWh"/>
-                        <segue destination="Om9-Ey-5hE" kind="show" identifier="PSLocationsViewController" id="H16-UV-2iS"/>
                         <segue destination="Zdc-Od-LhW" kind="show" identifier="UserProfileViewController" id="N2N-GT-NSA"/>
                     </connections>
                 </viewController>
