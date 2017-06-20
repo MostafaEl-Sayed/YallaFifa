@@ -151,7 +151,7 @@ class RequestManager{
         })
     }
     
-    func updateLocationFor(_ childKey : childKey , longtude : String , latitude : String){
+    func updateLocationFor(_ childKey : childKey , longtude : Double, latitude : Double){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child(childKey.rawValue).child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
     }

@@ -16,16 +16,16 @@ class PSLocationsViewController: GlobalController {
     @IBOutlet weak var psPhoneNumberTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var psLocations = [PlayStation]()
+    
     var currentPSLocationAddress = "Address1"
-    var psChoosedLocation = Location()
+    var psChoosedLocation:Location!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.scrollViewInitilaizer(scrollView: scrollView)
-        
+        print(psChoosedLocation.latitude)
         
     }
 

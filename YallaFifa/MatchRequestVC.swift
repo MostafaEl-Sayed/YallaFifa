@@ -33,6 +33,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var mapCounterStatusOpening = 0
     var btnPressedStatus = true
     var usersData : [User]!
+    var psData : [PlayStation]!
     
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
@@ -63,7 +64,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userObserver()
+        userDataObserver()
+        playStationDataObserver()
         
         
         self.mapView.delegate = self
@@ -121,19 +123,33 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     
-    func getData(compilitionHandler : @escaping ()-> Void){
+    func getUserData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
             self.usersData = data
-            self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
+            print("user data : \(self.usersData)")
             compilitionHandler()
         }
     }
+    func getPlayStationData(compilitionHandler : @escaping ()-> Void){
+        RequestManager.defaultManager.getListOfPlayStationData(completionHandler: { (data) in
+            self.psData = data
+            print("ps data : \(self.psData)")
+            compilitionHandler()
+        })
+    }
+
     
-    func userObserver(){
-        getData {
-            self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
+    func playStationDataObserver(){
+        getPlayStationData {
+            self.drowPSLocationsMarkers(playstationLocations: self.psData, imageMarkerName: "onlineMatch")
         }
     }
+    func userDataObserver(){
+        getUserData {
+            self.drowUserLocationsMarkers(users: self.usersData, imageMarkerName: "onlineMatch")
+        }
+    }
+    
     
     @IBAction func currentLocation(_ sender: Any) {
         anotherLocation = false
@@ -177,6 +193,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         if !newPSStatusActive {
             choosedMetpoint.latitude = lat
             choosedMetpoint.longtude = long
+            print("m5tarr 3ady")
         }else {
             
             psChoosedLocationPoint.latitude = lat
@@ -225,7 +242,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     
-    func drowUsersLocationsMarkers(users:[User]?,imageMarkerName:String)  {
+    func drowUserLocationsMarkers(users:[User]?,imageMarkerName:String)  {
         // clear all old markers from the map
         mapView.clear()
         guard users != nil else {
@@ -239,6 +256,26 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             }
             let lat = user.location.latitude
             let long = user.location.longtude
+            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let marker = GMSMarker(position: position)
+            marker.title = "\(userType)"
+            marker.icon = UIImage(named: imageMarkerName)
+            
+            marker.map = mapView
+            
+        }
+    }
+    func drowPSLocationsMarkers(playstationLocations:[PlayStation]?,imageMarkerName:String)  {
+        // clear all old markers from the map
+        mapView.clear()
+        guard playstationLocations != nil else {
+            return
+        }
+        
+        for psLocation in playstationLocations! {
+            print("marra\(psLocation.location.latitude)")
+            let lat = psLocation.location.latitude
+            let long = psLocation.location.longtude
             let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let marker = GMSMarker(position: position)
             marker.title = "\(userType)"
@@ -281,17 +318,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.present(autocompletecontroller, animated: true, completion: nil)
     }
    
-    @IBAction func segmentAct(_ sender:UISegmentedControl ) {
-        
-        if sender.selectedSegmentIndex == 0{ // Online Users
-            drowUsersLocationsMarkers(users: allOnlineUsers,imageMarkerName: "Joystick")
-            self.addNewPsView.isHidden = true
-            
-        }else {// Physical Users
-            drowUsersLocationsMarkers(users: allPhysically,imageMarkerName: "Joystick")
-            self.addNewPsView.isHidden = false
-        }
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {

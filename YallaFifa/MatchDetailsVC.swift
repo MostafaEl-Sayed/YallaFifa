@@ -66,8 +66,9 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {
+        RequestManager.defaultManager.updateLocationFor(.user, longtude: self.userCurrentLocation.longtude, latitude: self.userCurrentLocation.latitude)
         if userType == .undefined {
-            presentAlert(title: "", mssg: "You should selecet one of this choices")
+            presentAlert(title: "Fail", mssg: "You should selecet one of this choices")
             return
         }
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -77,15 +78,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     }
     
     @IBAction func signoutButtonTapped(_ sender: Any) {
-        defaults.set("uid", forKey: "")
-        do{
-            try Auth.auth().signOut()
-            self.navigationController!.dismiss(animated: true, completion: nil)
         }
-        catch let error as NSError{
-            presentAlert(title: "", mssg: error.localizedDescription)
-        }
-    }
 
 }
 
