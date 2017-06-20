@@ -120,6 +120,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         chooseMeetingPointLabel.text! = "Choose Meeting Point"
         
     }
+    
     func getData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
             self.usersData = data
@@ -129,7 +130,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     func userObserver(){
-        self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
+        getData {
+            self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
+        }
     }
     
     @IBAction func currentLocation(_ sender: Any) {

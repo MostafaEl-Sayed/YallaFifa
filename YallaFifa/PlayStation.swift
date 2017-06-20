@@ -11,20 +11,16 @@ class PlayStation: NSObject ,NSCoding{
     
     var name: String
     var phone: String
-    var address: String
     var location: Location
     
-    init(name:String,phone:String,address:String,location:Location) {
-        self.name = name
-        self.phone = phone
-        self.address = address
-        self.location = location
-        
+    init(data : NSDictionary) {
+        self.name = data.getValueForKey(Key: "name", callBack: "")
+        self.phone = data.getValueForKey(Key: "phoneNumber", callBack: "")
+        self.location = Location(data: data.getValueForKey(Key: "location" , callBack: [:]))        
     }
     override init() {
         self.name = ""
         self.phone = ""
-        self.address = ""
         self.location = Location()
         
     }
@@ -34,7 +30,6 @@ class PlayStation: NSObject ,NSCoding{
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "Name") as! String
         phone = aDecoder.decodeObject(forKey: "Phone") as! String
-        address = aDecoder.decodeObject(forKey: "Address") as! String
         location = aDecoder.decodeObject(forKey: "Location") as! Location
         
         super.init()
@@ -43,7 +38,6 @@ class PlayStation: NSObject ,NSCoding{
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "Name")
         aCoder.encode(phone, forKey: "Phone")
-        aCoder.encode(address, forKey: "Address")
         aCoder.encode(location, forKey: "Location")
         
     }

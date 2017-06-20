@@ -18,6 +18,11 @@ enum UserType{
     case onlineMatch
 }
 
+enum childKey : String{
+    case playstation = "PS"
+    case user = "users"
+}
+
 extension UIViewController{
     func presentAlert(title : String , mssg : String){
         let alertController = UIAlertController(title: title, message: mssg, preferredStyle: .alert)

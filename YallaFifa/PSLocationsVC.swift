@@ -28,7 +28,6 @@ class PSLocationsViewController: GlobalController {
         
     }
 
-   
     @IBAction func backBtnAct(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
     }
@@ -47,28 +46,15 @@ class PSLocationsViewController: GlobalController {
             errorMessageTitle = "Invalid phone number"
             errorMessageContent = "Please enter valid phone number"
         }
+        
         if errorMessageContent != "" {
             self.displayMessage(title: errorMessageTitle, message: errorMessageContent)
         }else {
-            let newPS = PlayStation(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress,location: psChoosedLocation)
-            self.psLocations.append(newPS)
-            RequestManager.defaultManager.newPS(psDetails: newPS, completionHandler: { (resultMessage, status) in
-                if status {
-                    let alertController = UIAlertController(title: "Success", message:"Successfuly added new play station", preferredStyle: .alert)
-                    
-                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                        UIAlertAction in
-                        self.navigationController?.popViewController(animated: false)
-                    }
-                    
-                    alertController.addAction(okAction)
-                }
-                print(resultMessage)
-            })
+            RequestManager.defaultManager.newPS(name: "", phoneNumber: "")
         }
        
     }
-    // ------------------------------------------
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if  textField.tag == 2 {
             let currentCharacterCount = textField.text?.characters.count ?? 0

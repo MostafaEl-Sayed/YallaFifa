@@ -99,23 +99,6 @@ class RequestManager{
             }
         }
     }
-    func newPS(psDetails:PlayStation, completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
-        
-        Auth.auth().createUser(withEmail: "PS@YallaFifa.com", password: "PSYALLAFIFAPS") { (user, error) in
-            if let user = user {
-                print("successfully signed up")
-                self.ref.child("PS").child(user.uid).setValue(["name": psDetails.name , "phoneNumber" : psDetails.phone])
-                self.ref.child("PS").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
-                completionHandler("Succefuly Added" , true)
-            } else if let error = error {
-                completionHandler(error.localizedDescription , false)
-            }
-        }
-    }
-    func updateLocationForCurrentUser(longtude : String , latitude : String){
-        let currentUserUid = defaults.value(forKey: "uid") as! String
-        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
-    }
     
     func getListOfUserData(completionHandler:@escaping (_ data: [User]) -> Void){
         ref.observe(.value, with: { snapshot in
@@ -123,14 +106,41 @@ class RequestManager{
             for child in snapshot.children  {
                 let child = child as! DataSnapshot
                 let value = child.value as! NSDictionary
-                for data in value {
-                    usersArr.append(User(data: data.value as! NSDictionary))
+                if child.key == "users" {
+                    for data in value {
+                        usersArr.append(User(data: data.value as! NSDictionary))
+                    }
                 }
             }
             completionHandler(usersArr)
         })
     }
     
+    func newPS(name : String , phoneNumber : String){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("PS").child(currentUserUid).setValue(["name": name , "phoneNumber" : phoneNumber])
+        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : "" , "lat" : ""])
+    }
     
+    func getListOfPlayStationData(completionHandler:@escaping (_ data: [PlayStation]) -> Void){
+        ref.observe(.value, with: { snapshot in
+            var psArr = [PlayStation]()
+            for child in snapshot.children  {
+                let child = child as! DataSnapshot
+                let value = child.value as! NSDictionary
+                if child.key == "PS" {
+                    for data in value {
+                        psArr.append(PlayStation(data: data.value as! NSDictionary))
+                    }
+                }
+            }
+            completionHandler(psArr)
+        })
+    }
+    
+    func updateLocationFor(_ childKey : childKey , longtude : String , latitude : String){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child(childKey.rawValue).child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
+    }
 }
 
