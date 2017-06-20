@@ -570,7 +570,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="357" height="80"/>
                                         <connections>
                                             <action selector="addNewPSLocationBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="aRy-ng-xWq"/>
-                                            <segue destination="Om9-Ey-5hE" kind="show" id="iml-mM-q7I"/>
                                         </connections>
                                     </button>
                                 </subviews>
