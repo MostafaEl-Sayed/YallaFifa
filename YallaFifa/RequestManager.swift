@@ -99,6 +99,23 @@ class RequestManager{
             }
         }
     }
+    func newPS(psDetails:PlayStation, completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+        
+        Auth.auth().createUser(withEmail: "PS@YallaFifa.com", password: "PSYALLAFIFAPS") { (user, error) in
+            if let user = user {
+                print("successfully signed up")
+                self.ref.child("PS").child(user.uid).setValue(["name": psDetails.name , "phoneNumber" : psDetails.phone])
+                self.ref.child("PS").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
+                completionHandler("Succefuly Added" , true)
+            } else if let error = error {
+                completionHandler(error.localizedDescription , false)
+            }
+        }
+    }
+    func updateLocationForCurrentUser(longtude : String , latitude : String){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
+    }
     
     func getListOfUserData(completionHandler:@escaping (_ data: [User]) -> Void){
         ref.observe(.value, with: { snapshot in
@@ -114,10 +131,6 @@ class RequestManager{
         })
     }
     
-    func updateLocationForCurrentUser(longtude : String , latitude : String){
-        let currentUserUid = defaults.value(forKey: "uid") as! String
-        self.ref.child("users").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
-    }
     
 }
 

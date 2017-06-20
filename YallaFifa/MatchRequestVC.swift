@@ -30,8 +30,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var newPSStatusActive = false
     var startChooseMeetingPointStatus = false
     var statusOfSwitchedControllers = false
+    var mapCounterStatusOpening = 0
+    var btnPressedStatus = true
     var usersData : [User]!
-
+    
+    
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
     @IBOutlet weak var choosePointToMeetFriendLabel: UILabel!
@@ -113,6 +116,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.getCurrentLocationBtn.transform = defaultValue
         self.estimationTimeAndDistanceView.transform = defaultValue
         
+        newPSStatusActive = false
+        chooseMeetingPointLabel.text! = "Choose Meeting Point"
+        
     }
     func getData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
@@ -123,19 +129,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     func userObserver(){
-        getData {
-            print("Some data changed")
-            // Here bbe
-            RequestManager.defaultManager.getListOfUserData(completionHandler: { (usersChanged) in
-                self.drowUsersLocationsMarkers(users: usersChanged, imageMarkerName: "\(userType)")
-            })
-            
-        }
+        self.drowUsersLocationsMarkers(users: self.usersData, imageMarkerName: "\(userType)")
     }
     
     @IBAction func currentLocation(_ sender: Any) {
         anotherLocation = false
-       
+        self.btnPressedStatus = false
         locationLabel.text! = "Current location"
         let latitude  = self.locationManager.location?.coordinate.latitude
         let longitude = self.locationManager.location?.coordinate.longitude
@@ -156,6 +155,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             
             self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
         }
+        self.btnPressedStatus = true
         
     }
 
@@ -203,7 +203,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
         print("mapViewDidStartTileRendering")
-        if statusOfSwitchedControllers {
+        self.mapCounterStatusOpening += 1
+        if statusOfSwitchedControllers && self.mapCounterStatusOpening > 2 && self.btnPressedStatus {
             let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
             let top = CGAffineTransform(translationX: 0, y: -100)
             UIView.animate(withDuration: 0.01, animations: {

@@ -52,7 +52,19 @@ class PSLocationsViewController: GlobalController {
         }else {
             let newPS = PlayStation(name: self.psNameTextField.text!, phone: self.psPhoneNumberTextField.text!, address: currentPSLocationAddress,location: psChoosedLocation)
             self.psLocations.append(newPS)
-            // add to fireBase
+            RequestManager.defaultManager.newPS(psDetails: newPS, completionHandler: { (resultMessage, status) in
+                if status {
+                    let alertController = UIAlertController(title: "Success", message:"Successfuly added new play station", preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                        UIAlertAction in
+                        self.navigationController?.popViewController(animated: false)
+                    }
+                    
+                    alertController.addAction(okAction)
+                }
+                print(resultMessage)
+            })
         }
        
     }
