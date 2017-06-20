@@ -486,6 +486,31 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
    
+    @IBAction func menuBtnAct(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Success", message: "Successfuly added new play station", preferredStyle: .actionSheet)
+        
+        // Create the actions
+        let signoutAction = UIAlertAction(title: "Signout", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            RequestManager.defaultManager.signout(completionHandler: { (status, success) in
+                if success {
+              // go to signin screeen ya ray2 , a7mody
+                }else {
+                    self.displayMessage(title: "Fail", message: status)
+                }
+            })
+            
+        }
+        let userProfileAction = UIAlertAction(title: "Profile", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            
+        }
+        alertController.addAction(signoutAction)
+        alertController.addAction(userProfileAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

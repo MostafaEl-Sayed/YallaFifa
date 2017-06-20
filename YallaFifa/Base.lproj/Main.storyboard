@@ -233,6 +233,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh3-bJ-1ho">
                                         <rect key="frame" x="-0.5" y="0.0" width="94" height="60"/>
                                         <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="menuBtnAct:" destination="lvl-Wf-jJs" eventType="touchUpInside" id="85M-wT-Ft7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1014,7 +1017,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0U-y9-FXl" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4054" y="791"/>
+            <point key="canvasLocation" x="4993" y="790"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="sl3-Ua-yrc">

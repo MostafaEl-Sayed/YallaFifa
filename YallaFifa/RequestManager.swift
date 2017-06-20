@@ -74,9 +74,12 @@ class RequestManager{
     func signIn(email : String , password : String , completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let user = user {
-                let uid = user.uid
+                let uidd = "\(user.uid)"
+            
                 let defaults = UserDefaults.standard
-                defaults.set("uid", forKey: uid)
+                defaults.setValue("\(uidd)", forKey: "uid")
+    
+                
                 completionHandler("Succefuly signin" , true)
             }
             if let error = error {
@@ -99,6 +102,16 @@ class RequestManager{
             }
         }
     }
+    func signout(completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void)  {
+        defaults.set("uid", forKey: "")
+        do{
+            try Auth.auth().signOut()
+            completionHandler("Successfuly signout",true)
+        }
+        catch let error as NSError{
+            completionHandler("Fail to signout",false)
+        }
+    }
     
     func getListOfUserData(completionHandler:@escaping (_ data: [User]) -> Void){
         ref.observe(.value, with: { snapshot in
@@ -116,10 +129,10 @@ class RequestManager{
         })
     }
     
-    func newPS(name : String , phoneNumber : String){
+    func newPS( playStation : PlayStation ){
         let currentUserUid = defaults.value(forKey: "uid") as! String
-        self.ref.child("PS").child(currentUserUid).setValue(["name": name , "phoneNumber" : phoneNumber])
-        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : "" , "lat" : ""])
+        self.ref.child("PS").child(currentUserUid).setValue(["name": playStation.name , "phoneNumber" : playStation.phone])
+        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : playStation.location.longtude , "lat" : playStation.location.latitude])
     }
     
     func getListOfPlayStationData(completionHandler:@escaping (_ data: [PlayStation]) -> Void){

@@ -26,6 +26,7 @@ class PSLocationsViewController: GlobalController {
 
         self.scrollViewInitilaizer(scrollView: scrollView)
         
+        
     }
 
     @IBAction func backBtnAct(_ sender: Any) {
@@ -50,7 +51,23 @@ class PSLocationsViewController: GlobalController {
         if errorMessageContent != "" {
             self.displayMessage(title: errorMessageTitle, message: errorMessageContent)
         }else {
-            RequestManager.defaultManager.newPS(name: "", phoneNumber: "")
+
+            let newPs:NSDictionary = ["name":"\(psNameTextField.text!)",
+                "phoneNumber":"\(psPhoneNumberTextField.text!)",
+                "location":psChoosedLocation]
+            let newPS = PlayStation(data:newPs)
+            
+            let alertController = UIAlertController(title: "Success", message: "Successfuly added new play station, press ok to return back to the map", preferredStyle: .alert)
+            
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                RequestManager.defaultManager.newPS(playStation: newPS)
+                self.navigationController?.popViewController(animated: false)
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
         }
        
     }
