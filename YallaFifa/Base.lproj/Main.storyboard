@@ -678,6 +678,7 @@
                         <outlet property="searchViewBtn" destination="ISi-Ar-Q68" id="Tzf-5u-Cf1"/>
                         <outlet property="smallSearchBtn" destination="ncK-Qa-Frr" id="hGh-FS-zFf"/>
                         <outlet property="timeLabel" destination="05S-wV-WgO" id="VpB-bI-PWh"/>
+                        <segue destination="Om9-Ey-5hE" kind="show" identifier="PSLocationsViewController" id="H16-UV-2iS"/>
                         <segue destination="Zdc-Od-LhW" kind="show" identifier="UserProfileViewController" id="N2N-GT-NSA"/>
                     </connections>
                 </viewController>
