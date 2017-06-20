@@ -26,7 +26,6 @@ class PSLocationsViewController: GlobalController {
 
         self.scrollViewInitilaizer(scrollView: scrollView)
         print(psChoosedLocation.latitude)
-        
     }
 
     @IBAction func backBtnAct(_ sender: Any) {

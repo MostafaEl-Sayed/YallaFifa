@@ -132,6 +132,7 @@ class RequestManager{
     func newPS( name: String, phone: String, longtude: Double, latitude: Double ){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("PS").child(currentUserUid).setValue(["name": name , "phoneNumber" : phone])
+        print("\(longtude),\(latitude)")
         self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
     }
     
