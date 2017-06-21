@@ -250,7 +250,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         }
         
         for user in users! {
-            
+            print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
             if user.typeOfUser != "\(userType)" {
                 continue
             }

@@ -93,7 +93,7 @@ class RequestManager{
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 print("successfully signed up")
-                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber ])
+                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                 defaults.set("uid", forKey: user.uid)
                 completionHandler("Succefuly signup" , true)
@@ -155,6 +155,11 @@ class RequestManager{
     func updateLocationFor(_ childKey : childKey , longtude : Double, latitude : Double){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child(childKey.rawValue).child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
+    }
+    
+    func updateTypeOfUser(typeOfUser:UserType){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("users").child(currentUserUid).child("typeOfUser").setValue("\(typeOfUser)")
     }
 }
 
