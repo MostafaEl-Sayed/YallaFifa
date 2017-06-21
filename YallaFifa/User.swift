@@ -12,18 +12,21 @@ class User: NSObject ,NSCoding {
     var email: String
     var phone: String
     var location: Location!
+    var psCounter : Int!
     var typeOfUser:String
     
     init(data: NSDictionary) {
         self.email = data.getValueForKey(Key: "email", callBack: "")
         self.phone = data.getValueForKey(Key: "phoneNumber", callBack: "")
         self.location = Location(data: data.getValueForKey(Key: "location" , callBack: [:]))
+        self.psCounter = data.getValueForKey(Key: "psCounter", callBack: 0)
         self.typeOfUser = "online"
     }
     
     override init() {
         self.email = ""
         self.phone = ""
+        self.psCounter = 0
         self.location = Location()
         self.typeOfUser = ""
     }
@@ -33,6 +36,7 @@ class User: NSObject ,NSCoding {
     required init?(coder aDecoder: NSCoder) {
         email = aDecoder.decodeObject(forKey: "Email") as! String
         phone = aDecoder.decodeObject(forKey: "Phone") as! String
+        psCounter = aDecoder.decodeObject(forKey: "psCounter") as! Int
         location = aDecoder.decodeObject(forKey: "Location") as! Location
         typeOfUser = aDecoder.decodeObject(forKey: "typeOfUser") as! String
     }
@@ -40,6 +44,7 @@ class User: NSObject ,NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(email, forKey: "Email")
         aCoder.encode(phone, forKey: "Phone")
+        aCoder.encode(psCounter, forKey: "psCounter")
         aCoder.encode(location, forKey: "Location")
         aCoder.encode(typeOfUser, forKey: "typeOfUser")
     }

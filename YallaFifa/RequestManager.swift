@@ -93,7 +93,7 @@ class RequestManager{
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 print("successfully signed up")
-                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ])
+                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" , "psCounter" : 0 ])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                 defaults.set("uid", forKey: user.uid)
                 completionHandler("Succefuly signup" , true)
@@ -130,10 +130,13 @@ class RequestManager{
     }
     
     func newPS( name: String, phone: String, longtude: Double, latitude: Double ){
-        let currentUserUid = defaults.value(forKey: "uid") as! String
-        self.ref.child("PS").child(currentUserUid).setValue(["name": name , "phoneNumber" : phone])
-        print("\(longtude),\(latitude)")
-        self.ref.child("PS").child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
+        getCurrentUserForPsCreated { (counter) in
+            let currentUserUid = defaults.value(forKey: "uid") as! String
+            self.ref.child("PS").child(currentUserUid+"\(counter)").setValue(["name": name , "phoneNumber" : phone])
+            print("\(longtude),\(latitude)")
+            self.ref.child("PS").child(currentUserUid+"\(counter)").child("location").setValue(["long" : longtude , "lat" : latitude])
+            self.updateUserCounter(counter)
+        }
     }
     
     func getListOfPlayStationData(completionHandler:@escaping (_ data: [PlayStation]) -> Void){
@@ -160,6 +163,24 @@ class RequestManager{
     func updateTypeOfUser(typeOfUser:UserType){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("users").child(currentUserUid).child("typeOfUser").setValue("\(typeOfUser)")
+    }
+    
+    private func getCurrentUserForPsCreated(completionHandler:@escaping (_ counter : Int)->Void){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("users").child(currentUserUid).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as! NSDictionary
+            let userCounter : Int = value.getValueForKey(Key: "psCounter", callBack: 0)
+            completionHandler(userCounter)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func updateUserCounter(_ oldCounter : Int){
+        let newCounter = oldCounter + 1
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("users").child(currentUserUid).child("psCounter").setValue(newCounter)
     }
 }
 
