@@ -226,6 +226,9 @@
 						DevelopmentTeam = V9V7XX28D6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -472,7 +475,7 @@
 				INFOPLIST_FILE = YallaFifa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_BUNDLE_IDENTIFIER = "TheGang.YallaFifa.com-com.YallaFifa.TheGang-com.YallaFifa.TheGang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -488,7 +491,7 @@
 				INFOPLIST_FILE = YallaFifa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_BUNDLE_IDENTIFIER = "TheGang.YallaFifa.com-com.YallaFifa.TheGang-com.YallaFifa.TheGang";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

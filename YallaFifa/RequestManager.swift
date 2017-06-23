@@ -60,7 +60,7 @@ class RequestManager{
                                 
                             }catch let error as NSError {
                                 print(error.localizedDescription)
-                                completionHandler("", false , nil)
+                                completionHandler("\(error.localizedDescription)", false , nil)
                             }
                         }
                         

@@ -26,6 +26,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var allPhysically = [User]()
     var psChoosedLocationPoint = Location()
     var makeBackEnable = false
+    var currentStatusOfMakingRequest = false
     var choosedMetpoint = Location()
     var newPSStatusActive = false
     var startChooseMeetingPointStatus = false
@@ -34,11 +35,16 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var btnPressedStatus = true
     var usersData : [User]!
     var psData : [PlayStation]!
-    
+    var oneRootadded = false
+    var prevMarkerPosition:CLLocationCoordinate2D!
+    var blueLine:BlueLine!
+    var totalDistanceInMeters: UInt = 0
+    var totalDistance: String!
+    var totalDurationInSeconds: UInt = 0
+    var totalDuration: String!
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
-    @IBOutlet weak var choosePointToMeetFriendLabel: UILabel!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var getCurrentLocationBtn: UIButton!
@@ -55,7 +61,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     @IBOutlet weak var addNewPsView: UIView!
     
     @IBOutlet weak var chooseMeetingPointLocationView: UIView!
-    @IBOutlet weak var chooseMeetingPointView: UIView!
+   
     
     @IBOutlet weak var flipViewControllerBtn: UIButton!
     @IBOutlet weak var fliveViewControllerView: UIView!
@@ -74,7 +80,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         mapView.isIndoorEnabled = true
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
         
         // dummy data 
 //        let onlineUser1 = User(name: "Ahmed", phone: "011411", address: "", location: ["lat":(31.25506634),"lng":(29.97618978)],typeOfUser: "online")
@@ -108,6 +113,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         resetAllViewsToDefaultValues()
         statusOfSwitchedControllers = false
     }
+    
+    
+   
+
+    
+    
 
     func resetAllViewsToDefaultValues()  {
         let defaultValue = CGAffineTransform(translationX: 0, y:0)
@@ -146,39 +157,159 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     func userDataObserver(){
         getUserData {
-            self.drowUserLocationsMarkers(users: self.usersData, imageMarkerName: "onlineMatch")
+            self.drowUserLocationsMarkers(users: self.usersData, imageMarkerName: "user")
         }
+        
+    }
+    func createBlueLineBetween2locations(orderedLatLong startPoint :String,endPoints:String){
+        
+        let orgin = startPoint
+        let destination = endPoints
+        print("start point \(orgin),dest\(destination)")
+        RequestManager.defaultManager.getDirections(origin: orgin, destination: destination, completionHandler: { (status, success , data) -> Void in
+            if success {
+                self.blueLine = data
+                self.drawRoute()
+                self.calculateTotalDistanceAndDuration()
+                
+            }
+            else {
+                print("status : \(status),success ?\(success)")
+                self.displayMessage(title: "Request Field", message: "Bad internet connection")
+                
+            }
+        })
+        
+    }
+    func drawRoute() {
+        self.estimationTimeAndDistanceView.isHidden = false
+        let route = blueLine.overviewPolyline["points"] as! String
+        let path: GMSPath = GMSPath(fromEncodedPath: route)!
+        blueLine.routePolyline = GMSPolyline(path: path)
+        blueLine.routePolyline.strokeWidth = 2
+        blueLine.routePolyline.map = self.mapView
+        oneRootadded = true
+        //            self.distanceLabel.text! = "\(totalDistanceInMeters/1000)km"
+        //            self.timeLabel.text! = "\(totalDurationInSeconds/60)mins"
+        //            self.timeLabel.setValue("\(totalDurationInSeconds/60)mins", forKey: "\(totalDurationInSeconds/60)mins")
+        
+        
+    }
+    func calculateTotalDistanceAndDuration() {
+        
+        let legs:[NSDictionary] = self.blueLine.selectedRoute.getValueForKey(Key: "legs", callBack: [])
+        totalDistanceInMeters = 0
+        totalDurationInSeconds = 0
+        
+        for leg in legs {
+            totalDistanceInMeters += (leg["distance"] as! NSDictionary)["value"] as! UInt
+            totalDurationInSeconds += (leg["duration"] as! NSDictionary)["value"] as! UInt
+        }
+        
+        let distanceInKilometers: Double = Double(totalDistanceInMeters / 1000)
+        totalDistance = "Total Distance: \(distanceInKilometers) Km"
+        self.distanceLabel.text! = "\(distanceInKilometers) Km"
+        
+        let mins = totalDurationInSeconds / 60
+        let hours = mins / 60
+        let days = hours / 24
+        let remainingHours = hours % 24
+        let remainingMins = mins % 60
+        let remainingSecs = totalDurationInSeconds % 60
+        
+        totalDuration = "Duration: \(days) d, \(remainingHours) h, \(remainingMins) mins, \(remainingSecs) secs"
+        self.timeLabel.text! = "\(remainingMins) mins"
+       
+        let translationValue = estimationTimeAndDistanceView.frame.size.width - menuView.frame.size.width
+        let left = CGAffineTransform(translationX:-translationValue ,y: 0)
+        self.fliveViewControllerView.isHidden = true
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+            self.estimationTimeAndDistanceView.transform = left
+        }, completion: nil)
+        
+        
     }
     
-    
-    @IBAction func currentLocation(_ sender: Any) {
-        anotherLocation = false
-        self.btnPressedStatus = false
-        locationLabel.text! = "Current location"
-        let latitude  = self.locationManager.location?.coordinate.latitude
-        let longitude = self.locationManager.location?.coordinate.longitude
-        locationManager.requestAlwaysAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            switch(CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                
-                   self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
-            case .authorizedAlways, .authorizedWhenInUse:
-                let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: self.mapView.camera.zoom)
-                UIView.animate(withDuration: 20.0, animations: {
-                    self.mapView.camera = camera
-                })
-            }
-        } else {
+    func startAnimatingViews() {
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let translationValue = -chooseLocationView.frame.size.width + menuView.frame.size.width - (0.1*screenWidth/2)
+        
+        let left = CGAffineTransform(translationX:translationValue ,y: 0)
+        let top = CGAffineTransform(translationX: 0, y: -addNewPsView.frame.size.height + 8)
+        let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
             
+            self.addNewPsView.transform = down
+            self.cancelRequestBtn.transform = top
+            self.chooseLocationView.transform = left
             
-            self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
-        }
-        self.btnPressedStatus = true
+            self.flipViewControllerBtn.transform = top
+            
+        }, completion: nil)
+        //chooseRandomlyBtn.isEnabled = false
+        locationLogoImg.isHidden = false
+        //choosePointToMeetFriendLabel.isHidden = false
+        //self.chooseRandomlyBtn.setTitle("Confirm Request", for: .normal)
+        self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
+        makeBackEnable = true
+        searchViewBtn.isEnabled = false
+        flipViewControllerBtn.isHidden = true
         
     }
 
-
+   
+    func drowUserLocationsMarkers(users:[User]?,imageMarkerName:String)  {
+        // clear all old markers from the map
+        //mapView.clear()
+        guard users != nil else {
+            return
+        }
+        
+        for user in users! {
+            print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
+            print(userType)
+//            if "\(user.typeOfUser)" != "\(userType)" {
+//                continue
+//            }
+            print("\(userType)----- \(user.typeOfUser)")
+            let lat = user.location.latitude
+            let long = user.location.longtude
+            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let marker = GMSMarker(position: position)
+            marker.title = "\(userType)"
+            marker.icon = UIImage(named: imageMarkerName)
+            
+            marker.map = mapView
+            
+        }
+    }
+    func drowPSLocationsMarkers(playstationLocations:[PlayStation]?,imageMarkerName:String)  {
+        // clear all old markers from the map
+        //mapView.clear()
+        guard playstationLocations != nil else {
+            return
+        }
+        
+        for psLocation in playstationLocations! {
+            print("psname\(psLocation.name)Ps:\(psLocation.location.latitude)")
+            let lat = psLocation.location.latitude
+            let long = psLocation.location.longtude
+            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let marker = GMSMarker(position: position)
+            marker.title = "\(userType)"
+            marker.icon = UIImage(named: imageMarkerName)
+            
+            marker.map = mapView
+            
+        }
+    }
+    
+    
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         manager.stopUpdatingLocation()
@@ -186,27 +317,41 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.mapView.camera = camera
         
     }
-    
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        addNewPsView.isHidden = true
+        currentStatusOfMakingRequest = true
+        
+        startAnimatingViews()
+        chooseMeetingPointLabel.text! = "Choose Meeting Point"
+        newPSStatusActive = false
+        
+        if oneRootadded && prevMarkerPosition.latitude == marker.position.latitude && prevMarkerPosition.longitude == marker.position.longitude{
+            return false
+        }
+        if oneRootadded {
+            blueLine.routePolyline.map = nil
+        }
+        
+        createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation.latitude!),\(userCurrentLocation.longtude!)", endPoints: "\(marker.position.latitude),\(marker.position.longitude)")
+        prevMarkerPosition = marker.position
+        return true
+    }
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         let lat = position.target.latitude
         let long = position.target.longitude
         if !newPSStatusActive {
             choosedMetpoint.latitude = lat
             choosedMetpoint.longtude = long
-            print("m5tarr 3ady")
+            
         }else {
             
             psChoosedLocationPoint.latitude = lat
             psChoosedLocationPoint.longtude = long
-            print("m5tar ps")
+            
         }
         
-    
-        
-    }
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         let defaultValue = CGAffineTransform(translationX: 0, y:0)
-        print("idleAt")
+        
         UIView.animate(withDuration: 0.5, animations: {
             
             
@@ -217,14 +362,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             self.fliveViewControllerView.transform = defaultValue
         })
         self.chooseLocationView.isHidden = false
-        
     }
-    
-    
+
     func mapViewDidStartTileRendering(_ mapView: GMSMapView) {
-        print("mapViewDidStartTileRendering")
+        
         self.mapCounterStatusOpening += 1
-        if statusOfSwitchedControllers && self.mapCounterStatusOpening > 2 && self.btnPressedStatus {
+        if statusOfSwitchedControllers && self.mapCounterStatusOpening > 2 && self.btnPressedStatus && !currentStatusOfMakingRequest{
             let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
             let top = CGAffineTransform(translationX: 0, y: -100)
             UIView.animate(withDuration: 0.01, animations: {
@@ -242,48 +385,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     
-    func drowUserLocationsMarkers(users:[User]?,imageMarkerName:String)  {
-        // clear all old markers from the map
-        mapView.clear()
-        guard users != nil else {
-            return
-        }
-        
-        for user in users! {
-            print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
-            if user.typeOfUser != "\(userType)" {
-                continue
-            }
-            let lat = user.location.latitude
-            let long = user.location.longtude
-            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-            let marker = GMSMarker(position: position)
-            marker.title = "\(userType)"
-            marker.icon = UIImage(named: imageMarkerName)
-            
-            marker.map = mapView
-            
-        }
-    }
-    func drowPSLocationsMarkers(playstationLocations:[PlayStation]?,imageMarkerName:String)  {
-        // clear all old markers from the map
-        mapView.clear()
-        guard playstationLocations != nil else {
-            return
-        }
-        
-        for psLocation in playstationLocations! {
-            print("marra\(psLocation.location.latitude)")
-            let lat = psLocation.location.latitude
-            let long = psLocation.location.longtude
-            let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-            let marker = GMSMarker(position: position)
-            marker.title = "\(userType)"
-            marker.icon = UIImage(named: imageMarkerName)
-            
-            marker.map = mapView
-            
-        }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
     }
     @IBAction func addNewPsBtnAct(_ sender: Any) {
        
@@ -317,20 +421,43 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         autocompletecontroller.autocompleteFilter = filter
         self.present(autocompletecontroller, animated: true, completion: nil)
     }
+    @IBAction func currentLocation(_ sender: Any) {
+        anotherLocation = false
+        self.btnPressedStatus = false
+        let latitude  = self.locationManager.location?.coordinate.latitude
+        let longitude = self.locationManager.location?.coordinate.longitude
+        locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            switch(CLLocationManager.authorizationStatus()) {
+            case .notDetermined, .restricted, .denied:
+                
+                self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
+            case .authorizedAlways, .authorizedWhenInUse:
+                let camera = GMSCameraPosition.camera(withLatitude: latitude!,longitude: longitude!, zoom: self.mapView.camera.zoom)
+                
+                UIView.animate(withDuration: 20.0, animations: {
+                    self.mapView.camera = camera
+                })
+            }
+        } else {
+            
+            
+            self.displayMessage(title: "Could not find your location", message: "Please allow YallaFifa to access your location from settings")
+        }
+        self.btnPressedStatus = true
+        
+    }
    
 
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("Error \(error)")
-    }
+    
     @IBAction func returnBackSearchBtnAct(_ sender: Any) {
         if makeBackEnable {
             searchViewBtn.isEnabled = true
             let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
                 self.chooseLocationView.transform = defaultValue
-                self.chooseMeetingPointView.transform = defaultValue
+                
                 self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
             }, completion: nil)
             makeBackEnable = false
@@ -343,16 +470,17 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     @IBAction func cancelRequestBtnAct(_ sender: Any) {
+        
+        self.currentStatusOfMakingRequest = false
         self.blueLine.routePolyline.map = nil
         self.estimationTimeAndDistanceView.isHidden = true
-
-        
+        self.addNewPsView.isHidden = false
         let defaultValue = CGAffineTransform(translationX:0 ,y: 0)
         UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
             self.addNewPsView.transform = defaultValue
             self.cancelRequestBtn.transform = defaultValue
             self.chooseLocationView.transform = defaultValue
-            self.chooseMeetingPointView.transform = defaultValue
+            
             self.estimationTimeAndDistanceView.transform = defaultValue
             self.flipViewControllerBtn.transform = defaultValue
         }, completion: { (finished: Bool) in
@@ -363,137 +491,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
         makeBackEnable = true
         searchViewBtn.isEnabled = true
-        choosePointToMeetFriendLabel.isHidden = true
+        oneRootadded = false
         }
+   
     
-    //    getDirections(origin: "\(31.25506634),\(29.96618978)", destination: "\(31.29506634),\(29.9461897)", waypoints: nil, travelMode: nil)
-    // ----------------------------------------
-    var oneRootadded = false
-    var prevMarkerPosition:CLLocationCoordinate2D!
-    var blueLine:BlueLine!
-    // -------------------------------------------
-    var totalDistanceInMeters: UInt = 0
-    var totalDistance: String!
-    var totalDurationInSeconds: UInt = 0
-    var totalDuration: String!
-        func createBlueLineBetween2locations(orderedLatLong startPoint :String,endPoints:String){
-            
-            let orgin = startPoint
-            let destination = endPoints
-            RequestManager.defaultManager.getDirections(origin: orgin, destination: destination, completionHandler: { (status, success , data) -> Void in
-                if success {
-                    self.blueLine = data
-                    self.drawRoute()
-                    self.calculateTotalDistanceAndDuration()
-                    
-                }
-                else {
-                    self.displayMessage(title: "Request Field", message: "Bad internet connection")
     
-                }
-            })
-    
-        }
-    // Network Layer
-    
-
-    
-    func drawRoute() {
-            self.estimationTimeAndDistanceView.isHidden = false
-            let route = blueLine.overviewPolyline["points"] as! String
-            let path: GMSPath = GMSPath(fromEncodedPath: route)!
-            blueLine.routePolyline = GMSPolyline(path: path)
-            blueLine.routePolyline.strokeWidth = 2
-            blueLine.routePolyline.map = self.mapView
-            oneRootadded = true
-//            self.distanceLabel.text! = "\(totalDistanceInMeters/1000)km"
-//            self.timeLabel.text! = "\(totalDurationInSeconds/60)mins"
-//            self.timeLabel.setValue("\(totalDurationInSeconds/60)mins", forKey: "\(totalDurationInSeconds/60)mins")
-            
-            
-        }
-    func calculateTotalDistanceAndDuration() {
-        
-        let legs:[NSDictionary] = self.blueLine.selectedRoute.getValueForKey(Key: "legs", callBack: [])
-        totalDistanceInMeters = 0
-        totalDurationInSeconds = 0
-        
-        for leg in legs {
-            totalDistanceInMeters += (leg["distance"] as! NSDictionary)["value"] as! UInt
-            totalDurationInSeconds += (leg["duration"] as! NSDictionary)["value"] as! UInt
-        }
-        
-        let distanceInKilometers: Double = Double(totalDistanceInMeters / 1000)
-        totalDistance = "Total Distance: \(distanceInKilometers) Km"
-        self.distanceLabel.text! = "\(distanceInKilometers) Km"
-        
-        let mins = totalDurationInSeconds / 60
-        let hours = mins / 60
-        let days = hours / 24
-        let remainingHours = hours % 24
-        let remainingMins = mins % 60
-        let remainingSecs = totalDurationInSeconds % 60
-        
-        totalDuration = "Duration: \(days) d, \(remainingHours) h, \(remainingMins) mins, \(remainingSecs) secs"
-        self.timeLabel.text! = "\(remainingMins) mins"
-        print("bagy oksim bllah")
-        let translationValue = estimationTimeAndDistanceView.frame.size.width - menuView.frame.size.width
-        let left = CGAffineTransform(translationX:-translationValue ,y: 0)
-        self.fliveViewControllerView.isHidden = true
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-            self.estimationTimeAndDistanceView.transform = left
-        }, completion: nil)
-        
-
-    }
-    
-    func startAnimatingViews() {
-        
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let translationValue = -chooseLocationView.frame.size.width + menuView.frame.size.width - (0.1*screenWidth/2)
-        
-        let left = CGAffineTransform(translationX:translationValue ,y: 0)
-        let top = CGAffineTransform(translationX: 0, y: -addNewPsView.frame.size.height + 8)
-        let down = CGAffineTransform(translationX: 0, y: addNewPsView.frame.size.height)
-        
-        UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
-            
-            self.addNewPsView.transform = down
-            self.cancelRequestBtn.transform = top
-            self.chooseLocationView.transform = left
-            self.chooseMeetingPointView.transform = left
-            self.flipViewControllerBtn.transform = top
-    
-        }, completion: nil)
-        //chooseRandomlyBtn.isEnabled = false
-        locationLogoImg.isHidden = false
-        //choosePointToMeetFriendLabel.isHidden = false
-        //self.chooseRandomlyBtn.setTitle("Confirm Request", for: .normal)
-        self.smallSearchBtn.setImage(UIImage(named:"RightLongArrow"), for: .normal)
-        makeBackEnable = true
-        searchViewBtn.isEnabled = false
-        flipViewControllerBtn.isHidden = true
-       
-    }
-    
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
-        startAnimatingViews()
-        chooseMeetingPointLabel.text! = "Choose Meeting Point"
-        newPSStatusActive = false
-        
-        if oneRootadded && prevMarkerPosition.latitude == marker.position.latitude && prevMarkerPosition.longitude == marker.position.longitude{
-            return false
-        }
-        if oneRootadded {
-            blueLine.routePolyline.map = nil
-        }
-        
-        createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation.latitude),\(userCurrentLocation.longtude)", endPoints: "\(marker.position.latitude),\(marker.position.longitude)")
-        prevMarkerPosition = marker.position
-        return true
-    }
     
     @IBAction func searchViewBtnAct(_ sender: Any) {
         self.counterChangeStatusOflocation = 0
@@ -539,11 +541,16 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PSLocationsViewController"{
             let psLocationVC = segue.destination as! PSLocationsViewController
+            if  self.psChoosedLocationPoint.longtude == 0.0 {
+                self.psChoosedLocationPoint.longtude = self.mapView.camera.target.longitude
+                self.psChoosedLocationPoint.latitude = self.mapView.camera.target.latitude
+                
+            }
             psLocationVC.psChoosedLocation = self.psChoosedLocationPoint
+            
             
         } else if segue.identifier == "UserProfileViewController" {
             let userProfileVC = segue.destination as! UserProfileViewController

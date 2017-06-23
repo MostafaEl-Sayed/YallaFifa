@@ -15,7 +15,7 @@ var userType = UserType.undefined
 enum UserType{
     case undefined
     case meetFriends
-    case onlineMatch
+    case online
 }
 
 enum childKey : String{

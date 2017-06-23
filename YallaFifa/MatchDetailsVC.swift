@@ -32,7 +32,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         if sender.tag == 0 {
             meetFriendsLabel.backgroundColor = UIColor.clear
             onlineMatchLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
-            userType = .onlineMatch
+            userType = .online
         }else{
             onlineMatchLabel.backgroundColor = UIColor.clear
             meetFriendsLabel.backgroundColor = UIColor(hex: "C6A128", alphaNum: 0.5)
