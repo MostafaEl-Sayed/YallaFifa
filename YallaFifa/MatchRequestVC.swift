@@ -34,7 +34,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var btnPressedStatus = true
     var usersData : [User]!
     var psData : [PlayStation]!
-    
+    var userStatus = true
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
@@ -515,26 +515,43 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
    
     @IBAction func menuBtnAct(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "Success", message: "Successfuly added new play station", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Menu", message: nil, preferredStyle: .actionSheet)
         
         // Create the actions
         let signoutAction = UIAlertAction(title: "Signout", style: UIAlertActionStyle.default) {
             UIAlertAction in
             RequestManager.defaultManager.signout(completionHandler: { (status, success) in
                 if success {
-              // go to signin screeen ya ray2 , a7mody
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
+                    self.navigationController!.present(vc, animated: true, completion: nil)
                 }else {
-                    self.displayMessage(title: "Fail", message: status)
+                    self.presentAlert(title: "Fail", mssg: status)
                 }
             })
-            
+            self.view.endEditing(true)
         }
+        
         let userProfileAction = UIAlertAction(title: "Profile", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
+        
+        var userStatusTitle = "Offline"
+        if userStatus == true {
+            userStatusTitle = "Online"
+        }
+        let userStatusAction = UIAlertAction(title: userStatusTitle , style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            self.userStatus = !self.userStatus
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
         alertController.addAction(signoutAction)
         alertController.addAction(userProfileAction)
+        alertController.addAction(cancelAction)
+        alertController.addAction(userStatusAction)
         self.present(alertController, animated: true, completion: nil)
         
     }
