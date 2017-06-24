@@ -22,6 +22,10 @@ enum childKey : String{
     case playstation = "PS"
     case user = "users"
 }
+enum userAvailabilty : String{
+    case online = "on"
+    case offline = "off"
+}
 
 extension UIViewController{
     func presentAlert(title : String , mssg : String){
