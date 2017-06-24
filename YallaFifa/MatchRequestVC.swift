@@ -42,7 +42,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var totalDistance: String!
     var totalDurationInSeconds: UInt = 0
     var totalDuration: String!
-    
+    var currentUserDetails:User!
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
     @IBOutlet weak var mapView: GMSMapView!
@@ -280,6 +280,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let marker = GMSMarker(position: position)
             marker.title = "\(userType)"
+            let userImg = UIImage(named:imageMarkerName)
+            
             marker.icon = UIImage(named: imageMarkerName)
             
             marker.map = mapView
