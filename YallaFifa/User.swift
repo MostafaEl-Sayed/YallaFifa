@@ -20,7 +20,7 @@ class User: NSObject ,NSCoding {
         self.phone = data.getValueForKey(Key: "phoneNumber", callBack: "")
         self.location = Location(data: data.getValueForKey(Key: "location" , callBack: [:]))
         self.psCounter = data.getValueForKey(Key: "psCounter", callBack: 0)
-        self.typeOfUser = "online"
+        self.typeOfUser = data.getValueForKey(Key: "typeOfUser", callBack: "")
     }
     
     override init() {

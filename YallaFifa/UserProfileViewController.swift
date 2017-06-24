@@ -11,11 +11,23 @@ import UIKit
 class UserProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var requestGameBtn: UIButton!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userPhoneNumber: UILabel!
     var choosedMetpoint = Location()
+    var userProfileData = User()
+    var startRequesting = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        prepareDataOfProfileView()
+        
+        
+    }
+    func prepareDataOfProfileView(){
+        if startRequesting {
+            self.requestGameBtn.isHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

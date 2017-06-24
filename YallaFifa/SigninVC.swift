@@ -17,6 +17,12 @@ class SigninVC: GlobalController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollViewInitilaizer(scrollView: scrollView)
+        loadLastEmailLogined()
+    }
+    func loadLastEmailLogined()  {
+        if  let userEmail = defaults.value(forKey: "email") as? String {
+            self.emailTextField.text = userEmail
+        }
     }
     
     @IBAction func signinTapped(_ sender: Any) {
@@ -24,6 +30,7 @@ class SigninVC: GlobalController {
         
         RequestManager.defaultManager.signIn(email: emailTextField.text!, password: passwordTextField.text!) {(status, success) in
             if success {
+                
                 RequestManager.defaultManager.updateUserAvailability(userStatus: .online)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
                 self.navigationController!.present(vc, animated: true, completion: nil)

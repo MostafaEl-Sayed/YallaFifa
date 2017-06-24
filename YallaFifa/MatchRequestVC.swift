@@ -44,6 +44,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var totalDuration: String!
     var currentUserDetails:User!
     var userStatus = true
+    var myProfileStatus = false
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
@@ -273,16 +274,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         for user in users! {
             print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
             print(userType)
-//            if "\(user.typeOfUser)" != "\(userType)" {
-//                continue
-//            }
-            print("\(userType)----- \(user.typeOfUser)")
+            if "\(user.typeOfUser)" != "\(userType)" {
+                continue
+            }
             let lat = user.location.latitude
             let long = user.location.longtude
             let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let marker = GMSMarker(position: position)
             marker.title = "\(userType)"
-            let userImg = UIImage(named:imageMarkerName)
+            
             
             marker.icon = UIImage(named: imageMarkerName)
             
@@ -530,6 +530,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
                 if success {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
                     self.navigationController!.present(vc, animated: true, completion: nil)
+                    
                 }else {
                     self.presentAlert(title: "Fail", mssg: status)
                 }
@@ -539,8 +540,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         let userProfileAction = UIAlertAction(title: "Profile", style: UIAlertActionStyle.default) {
             UIAlertAction in
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
-//            self.navigationController?.pushViewController(vc, animated: true)
+            self.myProfileStatus = true
+            self.performSegue(withIdentifier: "UserProfileViewController", sender: nil)
         }
         
         var userStatusTitle = "Offline"
@@ -575,7 +576,13 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             
         } else if segue.identifier == "UserProfileViewController" {
             let userProfileVC = segue.destination as! UserProfileViewController
-            userProfileVC.choosedMetpoint = self.choosedMetpoint
+            if myProfileStatus {
+                userProfileVC.choosedMetpoint = self.choosedMetpoint
+                userProfileVC.userProfileData = RequestManager.defaultManager.currUser
+            }else{
+                userProfileVC.userProfileData = User() // dummy data should come from notificaation
+            }
+            
         }
     }
     

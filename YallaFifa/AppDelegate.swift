@@ -46,6 +46,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         
         FirebaseApp.configure()
         
+        if let userLogined = defaults.value(forKey: "loginStatus") as? Bool {
+            print("userlogined\(userLogined)")
+            if !userLogined {
+                print("geet wala ay 7aga")
+
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = storyboard.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
+                self.window?.rootViewController = navigationController
+                self.window?.makeKeyAndVisible()
+            }else {
+                print("geet wala ay 7aga matchDetailsNav")
+
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = storyboard.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
+                self.window?.rootViewController = navigationController
+                self.window?.makeKeyAndVisible()
+                
+                
+            }
+        }
+        
         return true
     }
 

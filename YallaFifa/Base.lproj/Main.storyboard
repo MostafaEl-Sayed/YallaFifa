@@ -1201,7 +1201,7 @@
                                     <constraint firstAttribute="height" constant="0.5" id="VQA-iN-HiJ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-jz-Ohl">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-jz-Ohl">
                                 <rect key="frame" x="47.5" y="527" width="281" height="53.5"/>
                                 <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
@@ -1235,6 +1235,11 @@
                             <constraint firstItem="Lue-Qb-u1Z" firstAttribute="top" secondItem="Blf-1O-qxO" secondAttribute="bottom" constant="-1.5" id="p7p-SL-pRG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="requestGameBtn" destination="mB3-jz-Ohl" id="GhN-7c-5B3"/>
+                        <outlet property="userNameLabel" destination="lTe-Up-q3h" id="69d-Va-uVG"/>
+                        <outlet property="userPhoneNumber" destination="RMT-AL-ll7" id="HRh-B4-Nuj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCz-op-2QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1551,7 +1556,7 @@
             <objects>
                 <navigationController storyboardIdentifier="matchDetailsNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LfZ-ds-XyS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gLm-An-13W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gLm-An-13W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1569,7 +1574,7 @@
             <objects>
                 <navigationController storyboardIdentifier="siginVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GLO-Sg-xCl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m3r-aA-MOD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="m3r-aA-MOD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

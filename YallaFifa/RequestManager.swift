@@ -14,7 +14,7 @@ import FirebaseDatabase
 class RequestManager{
     
     var ref: DatabaseReference!
-    
+    var currUser = User()
     static let defaultManager = RequestManager()
     private init (){
         print("* my private init *")
@@ -74,11 +74,14 @@ class RequestManager{
     func signIn(email : String , password : String , completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let user = user {
+                
+                self.currUser.email = user.email!
+                self.currUser.phone = user.phoneNumber!
                 let uidd = "\(user.uid)"
-            
                 let defaults = UserDefaults.standard
                 defaults.setValue("\(uidd)", forKey: "uid")
-    
+                defaults.setValue("\(email)", forKey: "email")
+                defaults.setValue(true, forKey: "loginStatus")
                 
                 completionHandler("Succefuly signin" , true)
             }
@@ -107,6 +110,7 @@ class RequestManager{
         do{
             try Auth.auth().signOut()
             completionHandler("Successfuly signout",true)
+            defaults.setValue(false, forKey: "loginStatus")
         }
         catch let error as NSError{
             completionHandler(error.localizedDescription,false)
@@ -165,8 +169,9 @@ class RequestManager{
         self.ref.child("users").child(currentUserUid).child("typeOfUser").setValue("\(typeOfUser)")
     }
     func updateUserAvailability(userStatus:userAvailabilty){
-        let currentUserUid = defaults.value(forKey: "uid") as! String
+        if let currentUserUid = defaults.value (forKey: "uid") as? String{
         self.ref.child("users").child(currentUserUid).child("userAvailability").setValue("\(userStatus)")
+        }
     }
     private func getCurrentUserForPsCreated(completionHandler:@escaping (_ counter : Int)->Void){
         let currentUserUid = defaults.value(forKey: "uid") as! String
