@@ -35,6 +35,14 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var btnPressedStatus = true
     var usersData : [User]!
     var psData : [PlayStation]!
+    var oneRootadded = false
+    var prevMarkerPosition:CLLocationCoordinate2D!
+    var blueLine:BlueLine!
+    var totalDistanceInMeters: UInt = 0
+    var totalDistance: String!
+    var totalDurationInSeconds: UInt = 0
+    var totalDuration: String!
+    var currentUserDetails:User!
     var userStatus = true
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
