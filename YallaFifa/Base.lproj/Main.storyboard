@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GLO-Sg-xCl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GLO-Sg-xCl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -391,7 +391,7 @@
                                         <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search about player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-7d-pap">
                                         <rect key="frame" x="68" y="0.0" width="203" height="67"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -476,26 +476,26 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-ul-qgP">
-                                <rect key="frame" x="69" y="259.5" width="237" height="35.5"/>
+                                <rect key="frame" x="82" y="259.5" width="211" height="35.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-qk-P2U" userLabel="choose meting point">
-                                        <rect key="frame" x="0.0" y="0.0" width="237" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="211" height="35.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="kgL-ZG-fhj">
-                                                <rect key="frame" x="202" y="11" width="27" height="14"/>
+                                                <rect key="frame" x="176" y="11" width="27" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="NxN-t2-ESH"/>
                                                     <constraint firstAttribute="width" constant="27" id="t9k-Dx-z2F"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Meeting Point" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nr1-PM-T8B">
-                                                <rect key="frame" x="8" y="8" width="186" height="19.5"/>
+                                                <rect key="frame" x="8" y="8" width="160" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-hr-hCG">
-                                                <rect key="frame" x="0.0" y="0.0" width="237" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="35.5"/>
                                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="18"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -626,7 +626,6 @@
                         <constraints>
                             <constraint firstItem="lpH-nZ-egQ" firstAttribute="centerY" secondItem="xh3-bJ-1ho" secondAttribute="centerY" id="1Mg-dg-feQ"/>
                             <constraint firstItem="D92-s8-usb" firstAttribute="top" secondItem="PHC-k5-PhA" secondAttribute="bottom" constant="8" id="1ZP-gn-kz7"/>
-                            <constraint firstItem="9Ak-ul-qgP" firstAttribute="width" secondItem="Q2A-dc-pL5" secondAttribute="width" multiplier="0.7" id="75G-YP-ffH"/>
                             <constraint firstItem="rQx-9C-BaB" firstAttribute="top" secondItem="8tx-01-XLE" secondAttribute="bottom" constant="8" id="8Ku-dK-5kI"/>
                             <constraint firstItem="MfD-1K-3xT" firstAttribute="top" secondItem="9Ak-ul-qgP" secondAttribute="bottom" constant="8" id="98S-JY-Jp1"/>
                             <constraint firstItem="AAY-5y-O45" firstAttribute="top" secondItem="D92-s8-usb" secondAttribute="bottom" id="9P5-Vd-YkS"/>

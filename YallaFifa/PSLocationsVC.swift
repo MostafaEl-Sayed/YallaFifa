@@ -25,6 +25,7 @@ class PSLocationsViewController: GlobalController {
         super.viewDidLoad()
 
         self.scrollViewInitilaizer(scrollView: scrollView)
+        print("dah l final zfft \(psChoosedLocation.latitude),\(psChoosedLocation.longtude)")
         print(psChoosedLocation.latitude)
     }
 

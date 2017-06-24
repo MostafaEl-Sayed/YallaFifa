@@ -15,12 +15,16 @@ var userType = UserType.undefined
 enum UserType{
     case undefined
     case meetFriends
-    case onlineMatch
+    case online
 }
 
 enum childKey : String{
     case playstation = "PS"
     case user = "users"
+}
+enum userAvailabilty : String{
+    case online = "on"
+    case offline = "off"
 }
 
 extension UIViewController{

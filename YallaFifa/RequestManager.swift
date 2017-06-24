@@ -60,7 +60,7 @@ class RequestManager{
                                 
                             }catch let error as NSError {
                                 print(error.localizedDescription)
-                                completionHandler("", false , nil)
+                                completionHandler("\(error.localizedDescription)", false , nil)
                             }
                         }
                         
@@ -93,7 +93,7 @@ class RequestManager{
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 print("successfully signed up")
-                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" , "psCounter" : 0 ])
+                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ,"userAvailability":"" , "psCounter" : 0 ])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                 defaults.set("uid", forKey: user.uid)
                 completionHandler("Succefuly signup" , true)
@@ -164,7 +164,10 @@ class RequestManager{
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("users").child(currentUserUid).child("typeOfUser").setValue("\(typeOfUser)")
     }
-    
+    func updateUserAvailability(userStatus:userAvailabilty){
+        let currentUserUid = defaults.value(forKey: "uid") as! String
+        self.ref.child("users").child(currentUserUid).child("userAvailability").setValue("\(userStatus)")
+    }
     private func getCurrentUserForPsCreated(completionHandler:@escaping (_ counter : Int)->Void){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("users").child(currentUserUid).observeSingleEvent(of: .value, with: { (snapshot) in
