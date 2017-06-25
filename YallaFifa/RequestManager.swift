@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+import  OneSignal
 class RequestManager{
     
     var ref: DatabaseReference!
@@ -75,8 +76,16 @@ class RequestManager{
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 
-                self.currUser.email = user.email!
-                self.currUser.phone = user.phoneNumber!
+//                self.currUser.email = user.email!
+//                self.currUser.phone = user.phoneNumber!
+                let tags = [
+                    "userEmail":"\(email)"
+                ]
+                OneSignal.sendTags(tags, onSuccess: { (result) in
+                    print("success! on signall a7la msaa 3leek ")
+                }) { (error) in
+                    print("Error sending tags - \(error?.localizedDescription)")
+                }
                 let uidd = "\(user.uid)"
                 let defaults = UserDefaults.standard
                 defaults.setValue("\(uidd)", forKey: "uid")

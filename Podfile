@@ -13,6 +13,7 @@ target 'YallaFifa' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
+  pod 'OneSignal', '>= 2.5.2', '< 3.0'
 
 
 end

@@ -56,6 +56,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - OneSignal (2.5.4)
   - Protobuf (3.3.0)
 
 DEPENDENCIES:
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - OneSignal (< 3.0, >= 2.5.2)
 
 SPEC CHECKSUMS:
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
@@ -81,8 +83,9 @@ SPEC CHECKSUMS:
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  OneSignal: da994bcf6a2efbdceaf71e389e1d05245c562899
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: 03545b87233271fc8152e6b7da352bd256dd5d60
+PODFILE CHECKSUM: 4d19730b8fc2a5684d46c1af0ffa550301b24156
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

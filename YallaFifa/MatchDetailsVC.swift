@@ -66,6 +66,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         
     }
     
+    
     @IBAction func goButtonTapped(_ sender: Any) {
         RequestManager.defaultManager.updateLocationFor(.user, longtude: self.userCurrentLocation.longtude, latitude: self.userCurrentLocation.latitude)
         if userType == .undefined {

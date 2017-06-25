@@ -15,8 +15,11 @@ import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+
+import  OneSignal
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterDelegate, MessagingDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -26,24 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         GMSPlacesClient.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
         GMSServices.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
     
-        // FireBase Configration
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: authOptions,
-                completionHandler: {_, _ in })
-            // For iOS 10 data message (sent via FCM
-            Messaging.messaging().delegate = self
-        } else {
-            let settings: UIUserNotificationSettings =
-                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
-        
-        application.registerForRemoteNotifications()
-        
+        // firebse configrartion
         FirebaseApp.configure()
         
         if let userLogined = defaults.value(forKey: "loginStatus") as? Bool {
@@ -68,6 +54,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
                 
             }
         }
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+        
+        // Replace '11111111-2222-3333-4444-0123456789ab' with your OneSignal App ID.
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
+        // Sync hashed email if you have a login system or collect it.
+        //   Will be used to reach the user at the most optimal time of day.
+        // OneSignal.syncHashedEmail(userEmail)
         
         return true
     }
@@ -102,24 +107,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,UNUserNotificationCenterD
         print("applicationWillTerminate")
         
     }
-    
-    // The callback to handle data message received via FCM for devices running iOS 10 or above.
-    func application(received remoteMessage: MessagingRemoteMessage) {
-        print(remoteMessage.appData)
-        print("gggtttttttttt")
-    }
-    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
-    print("fcmToken:\(fcmToken)")
-    }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        var token = ""
-        for i in 0..<deviceToken.count {
-            token = token + String(format: "%02.2hhx", arguments: [deviceToken[i]])
-        }
-        print(token)
-        print("ffff")
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        
+        print("Device token: \(deviceTokenString)")
+        
     }
-
+    
+    
+    
     
 
 }
