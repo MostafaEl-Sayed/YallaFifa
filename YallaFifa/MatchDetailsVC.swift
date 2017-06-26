@@ -87,6 +87,15 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         }
         
     }
+    
+    @IBAction func signout(_ sender: Any) {
+        RequestManager.defaultManager.signout { (status, success) in
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "siginVC")
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
 
 }
 

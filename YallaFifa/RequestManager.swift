@@ -76,17 +76,17 @@ class RequestManager{
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 
-//                self.currUser.email = user.email!
-//                self.currUser.phone = user.phoneNumber!
-                let tags = [
-                    "userEmail":"\(email)"
-                ]
+                let tags = ["userEmail":"\(email)"]
                 OneSignal.sendTags(tags, onSuccess: { (result) in
-                    print("success! on signall a7la msaa 3leek ")
-                }) { (error) in
-                    print("Error sending tags - \(error?.localizedDescription)")
-                }
+                    print("success! on signall a7la msaa 3leek ")})
+                { (error) in print("Error sending tags - "+error!.localizedDescription) }
+                
                 let uidd = "\(user.uid)"
+                
+                self.getUserWithId(uidd, completionHandler: { (user) in
+                    currentUser = user
+                })
+                
                 let defaults = UserDefaults.standard
                 defaults.setValue("\(uidd)", forKey: "uid")
                 defaults.setValue("\(email)", forKey: "email")
@@ -198,6 +198,17 @@ class RequestManager{
         let newCounter = oldCounter + 1
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("users").child(currentUserUid).child("psCounter").setValue(newCounter)
+    }
+    
+    func getUserWithId(_ uid : String , completionHandler : @escaping (_ user : User)-> Void){
+        self.ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as! NSDictionary
+            let user = User(data : value)
+            completionHandler(user)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 }
 
