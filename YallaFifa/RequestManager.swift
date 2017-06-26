@@ -15,7 +15,6 @@ import  OneSignal
 class RequestManager{
     
     var ref: DatabaseReference!
-    var currUser = User()
     static let defaultManager = RequestManager()
     private init (){
         print("* my private init *")

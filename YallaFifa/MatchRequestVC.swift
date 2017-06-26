@@ -577,10 +577,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         } else if segue.identifier == "UserProfileViewController" {
             let userProfileVC = segue.destination as! UserProfileViewController
             if myProfileStatus {
+                userProfileVC.startRequesting = true
                 userProfileVC.choosedMetpoint = self.choosedMetpoint
-                userProfileVC.userProfileData = RequestManager.defaultManager.currUser
+                userProfileVC.userProfileData = currentUser
             }else{
-                userProfileVC.userProfileData = User() // dummy data should come from notificaation
+                userProfileVC.startRequesting = false
+                userProfileVC.userProfileData = User()
             }
             
         }

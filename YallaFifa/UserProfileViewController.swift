@@ -24,6 +24,7 @@ class UserProfileViewController: UIViewController {
         
         
     }
+    
     func prepareDataOfProfileView(){
         if startRequesting {
             self.requestGameBtn.isHidden = false
