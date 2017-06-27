@@ -8,7 +8,7 @@
 
 import Foundation
 class User: NSObject ,NSCoding {
-    
+    var playerID: String
     var email: String
     var phone: String
     var location: Location!
@@ -16,6 +16,7 @@ class User: NSObject ,NSCoding {
     var typeOfUser:String
     
     init(data: NSDictionary) {
+        self.playerID = data.getValueForKey(Key: "playerID", callBack: "")
         self.email = data.getValueForKey(Key: "email", callBack: "")
         self.phone = data.getValueForKey(Key: "phoneNumber", callBack: "")
         self.location = Location(data: data.getValueForKey(Key: "location" , callBack: [:]))
@@ -24,6 +25,7 @@ class User: NSObject ,NSCoding {
     }
     
     override init() {
+        self.playerID = ""
         self.email = ""
         self.phone = ""
         self.psCounter = 0
@@ -34,6 +36,7 @@ class User: NSObject ,NSCoding {
     
     
     required init?(coder aDecoder: NSCoder) {
+        playerID = aDecoder.decodeObject(forKey: "PlayerID") as! String
         email = aDecoder.decodeObject(forKey: "Email") as! String
         phone = aDecoder.decodeObject(forKey: "Phone") as! String
         psCounter = aDecoder.decodeObject(forKey: "psCounter") as! Int
@@ -42,6 +45,7 @@ class User: NSObject ,NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(email, forKey: "PlayerID")
         aCoder.encode(email, forKey: "Email")
         aCoder.encode(phone, forKey: "Phone")
         aCoder.encode(psCounter, forKey: "psCounter")

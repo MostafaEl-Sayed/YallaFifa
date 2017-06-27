@@ -43,6 +43,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var totalDurationInSeconds: UInt = 0
     var totalDuration: String!
     var currentUserDetails:User!
+    var targetUserDetails:User!
     var userStatus = true
     var myProfileStatus = false
     
@@ -232,6 +233,16 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         
     }
+    func getUserFromLocation(selectedMarker: GMSMarker) -> User {
+        let lat = selectedMarker.position.latitude
+        let long = selectedMarker.position.longitude
+        for user in usersData {
+            if user.location.latitude == lat && user.location.longtude == long {
+                return user
+            }
+        }
+        return User()
+    }
     
     func startAnimatingViews() {
         
@@ -322,9 +333,13 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
     }
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        if marker.icon == UIImage(named:"user") {
+            self.targetUserDetails = getUserFromLocation(selectedMarker: marker)
+            print(targetUserDetails.email)
+        }
         addNewPsView.isHidden = true
         currentStatusOfMakingRequest = true
-        
         startAnimatingViews()
         chooseMeetingPointLabel.text! = "Choose Meeting Point"
         newPSStatusActive = false
@@ -576,13 +591,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             
         } else if segue.identifier == "UserProfileViewController" {
             let userProfileVC = segue.destination as! UserProfileViewController
+            
+            
             if myProfileStatus {
-                userProfileVC.startRequesting = true
+                userProfileVC.startRequesting = false
                 userProfileVC.choosedMetpoint = self.choosedMetpoint
                 userProfileVC.userProfileData = currentUser
             }else{
-                userProfileVC.startRequesting = false
-                userProfileVC.userProfileData = User()
+                userProfileVC.startRequesting = true
+                userProfileVC.userProfileData = targetUserDetails
             }
             
         }

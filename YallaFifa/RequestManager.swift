@@ -72,6 +72,7 @@ class RequestManager{
     }
     
     func signIn(email : String , password : String , completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+        
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 
@@ -104,8 +105,9 @@ class RequestManager{
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let user = user {
                 print("successfully signed up")
-                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ,"userAvailability":"" , "psCounter" : 0 ])
+                self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ,"userAvailability":"" , "psCounter" : 0 ,"playerID":playerID])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
+                
                 defaults.set("uid", forKey: user.uid)
                 completionHandler("Succefuly signup" , true)
             } else if let error = error {
@@ -170,6 +172,21 @@ class RequestManager{
     func updateLocationFor(_ childKey : childKey , longtude : Double, latitude : Double){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child(childKey.rawValue).child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
+    }
+    //        var registeredUsers:[String] = []
+    //        OneSignal.getTags({ tags in
+    //            print("tags - \(tags!)")
+    //            registeredUsers = tags?["userEmail"] as! [String]
+    //
+    //        }, onFailure: { error in
+    //            print("Error getting tags - \(error?.localizedDescription)")
+    //            completionHandler("\(error?.localizedDescription)",false)
+    //        })
+    func sendRequestToUser(_ targetUserDetails : User ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+        
+        if targetUserDetails.playerID != "" {
+            OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["\(targetUserDetails.playerID)"]])
+        }
     }
     
     func updateTypeOfUser(typeOfUser:UserType){

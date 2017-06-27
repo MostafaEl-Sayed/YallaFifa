@@ -13,17 +13,19 @@ import GooglePlacePicker
 
 import UserNotifications
 import Firebase
-import FirebaseInstanceID
-import FirebaseMessaging
 
 import  OneSignal
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        // OneSignal Observer
+        OneSignal.add(self as OSSubscriptionObserver)
         
         // Provide Google Maps Key
         GMSPlacesClient.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
@@ -104,6 +106,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    
+    func onOSSubscriptionChanged(_ stateChanges: OSSubscriptionStateChanges!) {
+        if !stateChanges.from.subscribed && stateChanges.to.subscribed {
+            print("Subscribed for OneSignal push notifications!")
+        }
+        print("SubscriptionStateChange: \n\(stateChanges)")
+        
+        //The player id is inside stateChanges. But be careful, this value can be nil if the user has not granted you permission to send notifications.
+        if let playerId = stateChanges.to.userId {
+            print("Current playerId \(playerId)")
+            playerID = playerId
+        }
+    }
     
     
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import OneSignal
 class SigninVC: GlobalController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,6 +18,14 @@ class SigninVC: GlobalController {
         super.viewDidLoad()
         self.scrollViewInitilaizer(scrollView: scrollView)
         loadLastEmailLogined()
+//        OneSignal.getTags({ tags in
+//            print("tags - \(tags!)")
+//            //    registeredUsers = tags[]
+//        }, onFailure: { error in
+//            print("Error getting tags - \(error?.localizedDescription)")
+//         //   completionHandler("\(error?.localizedDescription)",false)
+//        })
+        OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["4fb57a71-fbce-4cce-ae1f-ca75f51d0805"]])
     }
     func loadLastEmailLogined()  {
         if  let userEmail = defaults.value(forKey: "email") as? String {

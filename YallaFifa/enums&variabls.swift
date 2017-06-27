@@ -12,6 +12,7 @@ import UIKit
 let defaults = UserDefaults.standard
 var userType = UserType.undefined
 var currentUser = User()
+var playerID = ""
 
 enum UserType{
     case undefined

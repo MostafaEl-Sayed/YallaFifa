@@ -28,12 +28,19 @@ class UserProfileViewController: UIViewController {
     func prepareDataOfProfileView(){
         if startRequesting {
             self.requestGameBtn.isHidden = false
+            userNameLabel.text! = userProfileData.email
+            userPhoneNumber.text! = userProfileData.phone
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func startRequestingBtnAct(_ sender: Any) {
+        RequestManager.defaultManager.sendRequestToUser(userProfileData) { (_, _) in
+            print("am sent")
+        }
     }
     
 
