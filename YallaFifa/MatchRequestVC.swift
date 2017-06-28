@@ -76,7 +76,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         userDataObserver()
         playStationDataObserver()
-        
+        print("current user\(currentUser.email)")
         
         self.mapView.delegate = self
         mapView.setMinZoom(10, maxZoom: 19)
@@ -141,14 +141,12 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     func getUserData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfUserData { (data) in
             self.usersData = data
-            print("user data : \(self.usersData)")
             compilitionHandler()
         }
     }
     func getPlayStationData(compilitionHandler : @escaping ()-> Void){
         RequestManager.defaultManager.getListOfPlayStationData(completionHandler: { (data) in
             self.psData = data
-            print("ps data : \(self.psData)")
             compilitionHandler()
         })
     }
@@ -283,9 +281,11 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         }
         
         for user in users! {
+            print("users:-")
             print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
-            print(userType)
-            if "\(user.typeOfUser)" != "\(userType)" {
+            print("currentUser\(currentUser.email)")
+            if "\(user.typeOfUser)" != "\(userType)" || user.email == currentUser.email {
+                print("ana lmfrood marsemsh")
                 continue
             }
             let lat = user.location.latitude
@@ -336,7 +336,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         if marker.icon == UIImage(named:"user") {
             self.targetUserDetails = getUserFromLocation(selectedMarker: marker)
-            print(targetUserDetails.email)
+            print("targetUserDetails.email\(targetUserDetails.email)")
         }
         addNewPsView.isHidden = true
         currentStatusOfMakingRequest = true

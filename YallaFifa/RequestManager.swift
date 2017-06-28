@@ -85,6 +85,7 @@ class RequestManager{
                 
                 self.getUserWithId(uidd, completionHandler: { (user) in
                     currentUser = user
+                    RequestManager.defaultManager.saveCurrentUser()
                 })
                 
                 let defaults = UserDefaults.standard
@@ -121,6 +122,7 @@ class RequestManager{
             try Auth.auth().signOut()
             completionHandler("Successfuly signout",true)
             defaults.setValue(false, forKey: "loginStatus")
+            
         }
         catch let error as NSError{
             completionHandler(error.localizedDescription,false)
@@ -182,10 +184,18 @@ class RequestManager{
     //            print("Error getting tags - \(error?.localizedDescription)")
     //            completionHandler("\(error?.localizedDescription)",false)
     //        })
-    func sendRequestToUser(_ targetUserDetails : User ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+    func sendRequestToUser(_ targetPlayerID : String ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         
-        if targetUserDetails.playerID != "" {
-            OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["\(targetUserDetails.playerID)"]])
+        if targetPlayerID != "" {
+            let message = "sha7t ma7t"
+            let data = [
+                "contents": ["en": "\(message)"],
+                "include_player_ids":["\(targetPlayerID)"],
+                "ios_badgeType": "Increase",
+                "ios_badgeCount": 1
+            ]   as [AnyHashable:Any]
+            OneSignal.postNotification(data)
+            
         }
     }
     
@@ -225,6 +235,34 @@ class RequestManager{
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    func saveCurrentUser() {
+        let data = NSMutableData()
+        let archiver = NSKeyedArchiver(forWritingWith: data)
+        archiver.encode(currentUser, forKey: "currentUser")
+        archiver.finishEncoding()
+        data.write(toFile: dataFilePath(), atomically: true)
+        
+    }
+    
+    func loadCurrentUser() {
+        let path = dataFilePath()
+        if FileManager.default.fileExists(atPath: path) {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+                let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
+                currentUser = unarchiver.decodeObject(forKey: "currentUser")
+                    as! User
+                unarchiver.finishDecoding()
+            }
+        }
+    }
+    func documentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        return paths[0] as NSString
+    }
+    
+    func dataFilePath() -> String {
+        return documentsDirectory().appendingPathComponent("currentUser.plist")
     }
 }
 

@@ -35,23 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         FirebaseApp.configure()
         
         if let userLogined = defaults.value(forKey: "loginStatus") as? Bool {
-            print("userlogined\(userLogined)")
+            
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             var navigationController = storyboard.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
+            RequestManager.defaultManager.loadCurrentUser()
             if !userLogined {
                 navigationController = storyboard.instantiateViewController(withIdentifier: "siginVC") as! UINavigationController
             }
             self.window?.rootViewController = navigationController
             self.window?.makeKeyAndVisible()
         }
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        
-        // Replace '11111111-2222-3333-4444-0123456789ab' with your OneSignal App ID.
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
         
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
         

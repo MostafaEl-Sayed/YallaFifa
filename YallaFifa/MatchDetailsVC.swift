@@ -27,7 +27,7 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     }
 
     
-    @IBAction func doneSelectionBtnAct(_ sender: UIButton) {
+    @IBAction func doneSelectionsBtnAct(_ sender: UIButton) {
         
         if sender.tag == 0 {
             meetFriendsLabel.backgroundColor = UIColor.clear

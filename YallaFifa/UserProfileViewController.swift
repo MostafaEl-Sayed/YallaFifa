@@ -38,7 +38,8 @@ class UserProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func startRequestingBtnAct(_ sender: Any) {
-        RequestManager.defaultManager.sendRequestToUser(userProfileData) { (_, _) in
+        print("player ID \(userProfileData.playerID)")
+        RequestManager.defaultManager.sendRequestToUser(userProfileData.playerID) { (_, _) in
             print("am sent")
         }
     }

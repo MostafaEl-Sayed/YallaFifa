@@ -89,7 +89,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUV-I0-PjQ">
                                         <rect key="frame" x="8" y="280" width="359" height="99"/>
                                         <connections>
-                                            <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="d3A-NN-Kjw"/>
+                                            <action selector="doneSelectionsBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="drO-ZZ-kYk"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-q4-NKI">
@@ -116,7 +116,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aA-jm-nz7">
                                         <rect key="frame" x="8" y="395" width="351" height="99"/>
                                         <connections>
-                                            <action selector="doneSelectionBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="LPb-Ec-fWF"/>
+                                            <action selector="doneSelectionsBtnAct:" destination="cDY-ky-gTc" eventType="touchUpInside" id="Kb2-b6-Fu3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-dH-y69">
@@ -1556,7 +1556,7 @@
             <objects>
                 <navigationController storyboardIdentifier="matchDetailsNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LfZ-ds-XyS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gLm-An-13W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gLm-An-13W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1574,7 +1574,7 @@
             <objects>
                 <navigationController storyboardIdentifier="siginVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GLO-Sg-xCl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="m3r-aA-MOD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m3r-aA-MOD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
