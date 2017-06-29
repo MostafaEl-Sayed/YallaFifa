@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        
-        // Replace '11111111-2222-3333-4444-0123456789ab' with your OneSignal App ID.
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
                                         handleNotificationAction: nil,
@@ -61,16 +59,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         //   how your app will use them.
         OneSignal.promptForPushNotifications(userResponse: { accepted in
             print("User accepted notifications: \(accepted)")
+            
         })
+        let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
+            
+            if let additionalData = notification?.payload.additionalData {
+                let email: String? = additionalData["email"] as! String
+                let phone: String? = additionalData["phone"] as! String
+                let playerID: String? = additionalData["playerID"] as! String
+                let long: Double? = additionalData["long"] as! Double
+                let lat: Double? = additionalData["lat"] as! Double
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+                
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+                
+                
+            }
+            print("Received Notification: \(notification!.payload.notificationID)")
+        }
         
-        // Sync hashed email if you have a login system or collect it.
-        //   Will be used to reach the user at the most optimal time of day.
-        // OneSignal.syncHashedEmail(userEmail)
         
-       
-        OneSignal.postNotification(["contents": ["en": "Test Message"],
-                                        "include_player_ids": ["181dcb38-b914-4abc-b81e-beb0df2f3523"],
-                                        "data": ["postID": "id"]])
+        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
+            // This block gets called when the user reacts to a notification received
+            let payload: OSNotificationPayload = result!.notification.payload
+            
+            var fullMessage = payload.body
+            print("Message = \(fullMessage)")
+            
+            if payload.additionalData != nil {
+                if payload.title != nil {
+                    let messageTitle = payload.title
+                    print("Message Title = \(messageTitle!)")
+                }
+                
+                let additionalData = payload.additionalData
+                if additionalData?["actionSelected"] != nil {
+                    fullMessage = fullMessage! + "\nPressed ButtonID: \(additionalData!["actionSelected"])"
+                }
+            }
+        }
+    
+        
         return true
     }
 
@@ -87,6 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         RequestManager.defaultManager.updateUserAvailability(userStatus: .offline)
         
     }
+    
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -98,11 +131,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         print("applicationDidBecomeActive")
         RequestManager.defaultManager.updateUserAvailability(userStatus: .online)
     }
+    
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         print("applicationWillTerminate")
         
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("userInfo:\(userInfo)")
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         

@@ -184,21 +184,19 @@ class RequestManager{
     //            print("Error getting tags - \(error?.localizedDescription)")
     //            completionHandler("\(error?.localizedDescription)",false)
     //        })
-    func sendRequestToUser(_ targetPlayerID : String ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+    func sendRequestToUser(_ targetUserDetails : User ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         
-        if targetPlayerID != "" {
-            let message = "sha7t ma7t"
-            let data = [
-                "contents": ["en": "\(message)"],
-                "include_player_ids":["\(targetPlayerID)"],
-                "ios_badgeType": "Increase",
-                "ios_badgeCount": 1
-            ]   as [AnyHashable:Any]
-            OneSignal.postNotification(data)
+        if targetUserDetails.playerID != "" {
+
+            let data = ["email":"\(targetUserDetails.email)","phone": "\(targetUserDetails.phone)","playerID":"\(targetUserDetails.playerID)","long":"\(targetUserDetails.location.longtude)","lat":"\(targetUserDetails.location.latitude)"]
+            OneSignal.postNotification(["contents": ["en": "YALLA Benaaa Wa7d Fifa"],
+                                        "include_player_ids": ["\(targetUserDetails.playerID)"],
+                                        "ios_badgeCount":"Increase",
+                                        "data":data])
+
             
         }
     }
-    
     func updateTypeOfUser(typeOfUser:UserType){
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child("users").child(currentUserUid).child("typeOfUser").setValue("\(typeOfUser)")

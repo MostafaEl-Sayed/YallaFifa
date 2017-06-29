@@ -39,7 +39,7 @@ class UserProfileViewController: UIViewController {
     }
     @IBAction func startRequestingBtnAct(_ sender: Any) {
         print("player ID \(userProfileData.playerID)")
-        RequestManager.defaultManager.sendRequestToUser(userProfileData.playerID) { (_, _) in
+        RequestManager.defaultManager.sendRequestToUser(userProfileData) { (_, _) in
             print("am sent")
         }
     }
