@@ -23,7 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         
+        // Replace '11111111-2222-3333-4444-0123456789ab' with your OneSignal App ID.
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
         // OneSignal Observer
         OneSignal.add(self as OSSubscriptionObserver)
         
@@ -59,6 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         //   Will be used to reach the user at the most optimal time of day.
         // OneSignal.syncHashedEmail(userEmail)
         
+       
+        OneSignal.postNotification(["contents": ["en": "Test Message"],
+                                        "include_player_ids": ["181dcb38-b914-4abc-b81e-beb0df2f3523"],
+                                        "data": ["postID": "id"]])
         return true
     }
 
