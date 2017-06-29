@@ -44,6 +44,9 @@ class UserProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func backBtnAct(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

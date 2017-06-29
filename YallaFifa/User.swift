@@ -14,7 +14,7 @@ class User: NSObject ,NSCoding {
     var location: Location!
     var psCounter : Int!
     var typeOfUser:String
-    
+    var userAvailability:String
     init(data: NSDictionary) {
         self.playerID = data.getValueForKey(Key: "playerID", callBack: "")
         self.email = data.getValueForKey(Key: "email", callBack: "")
@@ -22,6 +22,7 @@ class User: NSObject ,NSCoding {
         self.location = Location(data: data.getValueForKey(Key: "location" , callBack: [:]))
         self.psCounter = data.getValueForKey(Key: "psCounter", callBack: 0)
         self.typeOfUser = data.getValueForKey(Key: "typeOfUser", callBack: "")
+        self.userAvailability = data.getValueForKey(Key: "userAvailability", callBack: "")
     }
     
     override init() {
@@ -31,6 +32,7 @@ class User: NSObject ,NSCoding {
         self.psCounter = 0
         self.location = Location()
         self.typeOfUser = ""
+        self.userAvailability = ""
     }
     
     
@@ -42,6 +44,7 @@ class User: NSObject ,NSCoding {
         psCounter = aDecoder.decodeObject(forKey: "psCounter") as! Int
         location = aDecoder.decodeObject(forKey: "Location") as! Location
         typeOfUser = aDecoder.decodeObject(forKey: "typeOfUser") as! String
+        userAvailability = aDecoder.decodeObject(forKey: "userAvailability") as! String
     }
     
     func encode(with aCoder: NSCoder) {
@@ -51,6 +54,7 @@ class User: NSObject ,NSCoding {
         aCoder.encode(psCounter, forKey: "psCounter")
         aCoder.encode(location, forKey: "Location")
         aCoder.encode(typeOfUser, forKey: "typeOfUser")
+        aCoder.encode(userAvailability, forKey: "userAvailability")
     }
     
 }

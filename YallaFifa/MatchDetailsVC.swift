@@ -79,7 +79,6 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
             vc.userCurrentLocation = self.userCurrentLocation
             RequestManager.defaultManager.updateLocationFor(.user, longtude: userCurrentLocation.longtude, latitude: userCurrentLocation.latitude)
             RequestManager.defaultManager.updateTypeOfUser(typeOfUser:userType)
-            
             self.navigationController!.pushViewController(vc, animated: true)
             
         } else {
