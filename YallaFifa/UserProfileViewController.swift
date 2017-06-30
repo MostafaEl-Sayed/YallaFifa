@@ -10,7 +10,10 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
+    @IBOutlet weak var callImgLogo: UIImageView!
     
+    @IBOutlet weak var smallLine: UIView!
+    @IBOutlet weak var callImgBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var requestGameBtn: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -42,9 +45,13 @@ class UserProfileViewController: UIViewController {
     func prepareDataOfProfileView(){
         if startRequesting {
             self.requestGameBtn.isHidden = false
-            userNameLabel.text! = userProfileData.email
-            userPhoneNumber.text! = userProfileData.phone
+        }else {
+            callImgBtn.isHidden = true
+            callImgLogo.isHidden = true
+            smallLine.isHidden = true
         }
+        userNameLabel.text! = userProfileData.email
+        userPhoneNumber.text! = userProfileData.phone
     }
 
     override func didReceiveMemoryWarning() {

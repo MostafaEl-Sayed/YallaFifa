@@ -2,8 +2,8 @@
 //  RequestManager.swift
 //  Future Center
 //
-//  Created by MsZ on 8/23/16.
-//  Copyright © 2016 MsZ. All rights reserved.
+//  Created by Mostafa El_sayed on 6/9/17.
+//  Copyright © 2017 TheGang. All rights reserved.
 //
 
 import Foundation

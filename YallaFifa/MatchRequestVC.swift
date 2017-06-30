@@ -103,11 +103,20 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        var latitude  = self.userCurrentLocation.latitude
+        var longitude = self.userCurrentLocation.longtude
+        
+        self.navigationController?.navigationBar.isHidden = true
+        resetAllViewsToDefaultValues()
+        statusOfSwitchedControllers = false
+        
         self.fliveViewControllerView.isHidden = false
         self.flipViewControllerBtn.isHidden = false
         if !notificationAcceptStatus {
             loadData()
         }else {
+             latitude  = currentUser.location.latitude
+             longitude = currentUser.location.longtude
             flipViewControllerBtn.isHidden = true
             fliveViewControllerView.isHidden = true
             addNewPsView.isHidden = true
@@ -116,21 +125,18 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             print(userDisplayWhileRequesting.location.latitude)
             print(currentUser.location.latitude)
             drowUserLocationsMarkers(users: [userDisplayWhileRequesting,currentUser], imageMarkerName: "user")
-            createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation.latitude!),\(userCurrentLocation.longtude!)", endPoints: "\(userDisplayWhileRequesting.location.latitude),\(userDisplayWhileRequesting.location.longtude)")
+            createBlueLineBetween2locations(orderedLatLong: "\(currentUser.location.latitude!),\(currentUser.location.longtude!)", endPoints: "\(userDisplayWhileRequesting.location.latitude),\(userDisplayWhileRequesting.location.longtude)")
         }
         
 
         // Map setupx
-        let latitude  = self.userCurrentLocation.latitude
-        let longitude = self.userCurrentLocation.longtude
+        
         
         let camera = GMSCameraPosition.camera(withLatitude:latitude!,longitude: longitude!, zoom: self.mapView.camera.zoom)
             self.mapView.camera = camera
             self.locationLabel.text! = "\(self.locatonlabelValue)"
         
-        self.navigationController?.navigationBar.isHidden = true
-        resetAllViewsToDefaultValues()
-        statusOfSwitchedControllers = false
+        
     }
     
     

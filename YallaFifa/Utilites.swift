@@ -2,8 +2,8 @@
 //  Controller .swift
 //  FootPrintCap
 //
-//  Created by ADMIN on 9/20/16.
-//  Copyright © 2016 com.indianmesh. All rights reserved.
+//  Created by Mostafa El_sayed on 6/9/17.
+//  Copyright © 2017 TheGang. All rights reserved.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  signinVC.swift
 //  YallaFifa
 //
-//  Created by Ahmed Hussien on 6/10/17.
+//  Created by Mostafa El_sayed on 6/9/17.
 //  Copyright © 2017 TheGang. All rights reserved.
 //
 
@@ -25,7 +25,7 @@ class SigninVC: GlobalController {
 //            print("Error getting tags - \(error?.localizedDescription)")
 //         //   completionHandler("\(error?.localizedDescription)",false)
 //        })
-        OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["4fb57a71-fbce-4cce-ae1f-ca75f51d0805"]])
+//        OneSignal.postNotification(["contents": ["en": "Test Message"], "include_player_ids": ["4fb57a71-fbce-4cce-ae1f-ca75f51d0805"]])
     }
     func loadLastEmailLogined()  {
         if  let userEmail = defaults.value(forKey: "email") as? String {

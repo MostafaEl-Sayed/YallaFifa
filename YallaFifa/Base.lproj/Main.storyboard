@@ -1289,8 +1289,11 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="mw0-Lw-SOh" id="X2p-Du-p4O"/>
+                        <outlet property="callImgBtn" destination="Mzc-kP-Cgd" id="y12-LN-VBx"/>
+                        <outlet property="callImgLogo" destination="7TC-0P-Ni3" id="oD3-7y-fIQ"/>
                         <outlet property="notificationResponseView" destination="Jog-7y-oaM" id="7qc-Td-zFr"/>
                         <outlet property="requestGameBtn" destination="mB3-jz-Ohl" id="GhN-7c-5B3"/>
+                        <outlet property="smallLine" destination="CZO-OT-eOJ" id="mVd-qo-8kL"/>
                         <outlet property="userNameLabel" destination="lTe-Up-q3h" id="69d-Va-uVG"/>
                         <outlet property="userPhoneNumber" destination="RMT-AL-ll7" id="HRh-B4-Nuj"/>
                     </connections>
