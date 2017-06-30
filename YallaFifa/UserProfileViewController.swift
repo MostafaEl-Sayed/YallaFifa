@@ -11,18 +11,32 @@ import UIKit
 class UserProfileViewController: UIViewController {
 
     
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var requestGameBtn: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userPhoneNumber: UILabel!
+    @IBOutlet weak var notificationResponseView: UIView!
     var choosedMetpoint = Location()
     var userProfileData = User()
     var startRequesting = false
+    
+    var notificationComeProfileStatus = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareDataOfProfileView()
+        if notificationComeProfileStatus {
+            prepareStatusOfNotificationView()
+        }
         
-        
+    }
+    func prepareStatusOfNotificationView(){
+        self.requestGameBtn.isHidden = true
+        self.notificationResponseView.isHidden = false
+        self.backBtn.isHidden = true
+        userNameLabel.text! = userProfileData.email
+        userPhoneNumber.text! = userProfileData.phone
+    
     }
     
     func prepareDataOfProfileView(){
@@ -39,9 +53,24 @@ class UserProfileViewController: UIViewController {
     }
     @IBAction func startRequestingBtnAct(_ sender: Any) {
         print("player ID \(userProfileData.playerID)")
-        RequestManager.defaultManager.sendRequestToUser(userProfileData) { (_, _) in
+        RequestManager.defaultManager.sendRequestToUser(userProfileData,notificationMessage: "Yalla Bena nl3boo ya zmerro",notificationStatus: "newRequest") { (_, _) in
             print("am sent")
         }
+    }
+    @IBAction func acceptNotificationVtnAct(_ sender: Any) {
+        print("curranto\(currentUser.playerID)")
+        RequestManager.defaultManager.sendRequestToUser(currentUser,notificationMessage: "Ana bees ya 8ali",notificationStatus: "accept") { (_, _) in
+            
+        }
+    }
+    @IBAction func cancelNotificationBtnAct(_ sender: Any) {
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
+        RequestManager.defaultManager.loadCurrentUser()
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKeyAndVisible()
     }
     
     @IBAction func backBtnAct(_ sender: Any) {

@@ -1155,6 +1155,50 @@
                                             <constraint firstAttribute="height" constant="0.5" id="U3A-ds-QNU"/>
                                         </constraints>
                                     </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jog-7y-oaM" userLabel="NotificationResponseView">
+                                        <rect key="frame" x="36" y="484" width="304" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlH-JB-Xnf">
+                                                <rect key="frame" x="11.5" y="6.5" width="281" height="53.5"/>
+                                                <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                                <state key="normal" title="Accept">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="acceptNotificationVtnAct:" destination="Zdc-Od-LhW" eventType="touchUpInside" id="635-Uj-huX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZP-Vt-xyg">
+                                                <rect key="frame" x="11.5" y="73.5" width="281" height="53.5"/>
+                                                <color key="backgroundColor" red="0.7767661683" green="0.63318899449999999" blue="0.158746522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelNotificationBtnAct:" destination="Zdc-Od-LhW" eventType="touchUpInside" id="Yqv-Zp-ywT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="6ZP-Vt-xyg" firstAttribute="centerX" secondItem="Jog-7y-oaM" secondAttribute="centerX" id="IUT-pp-1Qc"/>
+                                            <constraint firstItem="xlH-JB-Xnf" firstAttribute="centerX" secondItem="Jog-7y-oaM" secondAttribute="centerX" id="IiZ-NB-ayK"/>
+                                            <constraint firstItem="xlH-JB-Xnf" firstAttribute="centerY" secondItem="Jog-7y-oaM" secondAttribute="centerY" multiplier="0.5" id="ogs-l5-9Uo"/>
+                                            <constraint firstItem="6ZP-Vt-xyg" firstAttribute="centerY" secondItem="Jog-7y-oaM" secondAttribute="centerY" multiplier="1.5" id="roO-cB-r70"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1176,16 +1220,20 @@
                                     <constraint firstItem="V25-h5-9Wj" firstAttribute="centerX" secondItem="RMT-AL-ll7" secondAttribute="centerX" id="Wk7-Ex-UQF"/>
                                     <constraint firstItem="jBE-j6-fWN" firstAttribute="width" secondItem="lTe-Up-q3h" secondAttribute="width" multiplier="0.9" id="Xf5-Ty-6MY"/>
                                     <constraint firstItem="Qho-dx-PKL" firstAttribute="centerX" secondItem="DV7-t5-kjN" secondAttribute="centerX" id="Y4E-Iu-SBd"/>
+                                    <constraint firstItem="Jog-7y-oaM" firstAttribute="trailing" secondItem="V25-h5-9Wj" secondAttribute="trailing" id="ZBL-9E-icH"/>
                                     <constraint firstItem="mw0-Lw-SOh" firstAttribute="leading" secondItem="DV7-t5-kjN" secondAttribute="leading" constant="20" id="cad-Fb-9mF"/>
                                     <constraint firstItem="lTe-Up-q3h" firstAttribute="centerY" secondItem="DV7-t5-kjN" secondAttribute="centerY" multiplier="1.1" id="eDs-Na-2jz"/>
                                     <constraint firstItem="azW-cH-9u0" firstAttribute="height" secondItem="Qho-dx-PKL" secondAttribute="height" multiplier="0.5" id="ecJ-ek-4yw"/>
+                                    <constraint firstItem="Jog-7y-oaM" firstAttribute="height" secondItem="DV7-t5-kjN" secondAttribute="height" multiplier="0.2" id="hFE-Gk-V4W"/>
                                     <constraint firstItem="RMT-AL-ll7" firstAttribute="top" secondItem="aOc-qM-Yqc" secondAttribute="bottom" constant="20" id="lhy-TM-QRU"/>
                                     <constraint firstItem="V25-h5-9Wj" firstAttribute="top" secondItem="RMT-AL-ll7" secondAttribute="bottom" constant="8" id="q08-fR-sbi"/>
                                     <constraint firstItem="jBE-j6-fWN" firstAttribute="top" secondItem="lTe-Up-q3h" secondAttribute="bottom" constant="8" id="rxP-56-tWG"/>
                                     <constraint firstItem="RMT-AL-ll7" firstAttribute="width" secondItem="aOc-qM-Yqc" secondAttribute="width" id="rzW-1B-DkB"/>
                                     <constraint firstItem="Qho-dx-PKL" firstAttribute="height" secondItem="DV7-t5-kjN" secondAttribute="height" multiplier="0.2" id="s57-92-GkW"/>
                                     <constraint firstItem="aOc-qM-Yqc" firstAttribute="top" secondItem="lTe-Up-q3h" secondAttribute="bottom" constant="20" id="tIt-lm-KNj"/>
+                                    <constraint firstItem="Jog-7y-oaM" firstAttribute="top" secondItem="V25-h5-9Wj" secondAttribute="bottom" constant="8" id="vAN-d3-FDR"/>
                                     <constraint firstItem="azW-cH-9u0" firstAttribute="top" secondItem="Qho-dx-PKL" secondAttribute="bottom" constant="8" id="wDS-rb-TK2"/>
+                                    <constraint firstItem="Jog-7y-oaM" firstAttribute="leading" secondItem="V25-h5-9Wj" secondAttribute="leading" id="zqy-3S-Iwj"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blf-1O-qxO">
@@ -1222,10 +1270,14 @@
                             <constraint firstItem="Blf-1O-qxO" firstAttribute="centerX" secondItem="dmJ-Qk-kob" secondAttribute="centerX" id="27a-OU-8Q4"/>
                             <constraint firstItem="mw0-Lw-SOh" firstAttribute="centerY" secondItem="Blf-1O-qxO" secondAttribute="centerY" id="2MX-HN-CFk"/>
                             <constraint firstItem="mB3-jz-Ohl" firstAttribute="top" secondItem="RMT-AL-ll7" secondAttribute="bottom" constant="60" id="6mv-0H-Mj1"/>
+                            <constraint firstItem="6ZP-Vt-xyg" firstAttribute="height" secondItem="mB3-jz-Ohl" secondAttribute="height" id="8MP-kq-Dhi"/>
                             <constraint firstItem="DV7-t5-kjN" firstAttribute="width" secondItem="dmJ-Qk-kob" secondAttribute="width" id="Ae3-SL-YMB"/>
                             <constraint firstItem="mB3-jz-Ohl" firstAttribute="width" secondItem="DV7-t5-kjN" secondAttribute="width" multiplier="0.75" id="EJb-b8-rmL"/>
+                            <constraint firstItem="xlH-JB-Xnf" firstAttribute="height" secondItem="mB3-jz-Ohl" secondAttribute="height" id="F5L-Tj-C1g"/>
                             <constraint firstItem="Blf-1O-qxO" firstAttribute="top" secondItem="9xU-hY-yyr" secondAttribute="bottom" constant="15" id="Meb-uV-Sur"/>
+                            <constraint firstItem="xlH-JB-Xnf" firstAttribute="width" secondItem="mB3-jz-Ohl" secondAttribute="width" id="SvZ-QF-eCb"/>
                             <constraint firstItem="mB3-jz-Ohl" firstAttribute="centerX" secondItem="RMT-AL-ll7" secondAttribute="centerX" id="Y36-d8-1Oi"/>
+                            <constraint firstItem="6ZP-Vt-xyg" firstAttribute="width" secondItem="mB3-jz-Ohl" secondAttribute="width" id="Yia-IY-J1X"/>
                             <constraint firstItem="Lue-Qb-u1Z" firstAttribute="centerX" secondItem="Blf-1O-qxO" secondAttribute="centerX" id="ZFT-Gg-wKc"/>
                             <constraint firstItem="DV7-t5-kjN" firstAttribute="centerY" secondItem="dmJ-Qk-kob" secondAttribute="centerY" id="a2S-OW-BbD"/>
                             <constraint firstItem="mB3-jz-Ohl" firstAttribute="height" secondItem="DV7-t5-kjN" secondAttribute="height" multiplier="0.08" id="cnd-aV-xQd"/>
@@ -1236,6 +1288,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="mw0-Lw-SOh" id="X2p-Du-p4O"/>
+                        <outlet property="notificationResponseView" destination="Jog-7y-oaM" id="7qc-Td-zFr"/>
                         <outlet property="requestGameBtn" destination="mB3-jz-Ohl" id="GhN-7c-5B3"/>
                         <outlet property="userNameLabel" destination="lTe-Up-q3h" id="69d-Va-uVG"/>
                         <outlet property="userPhoneNumber" destination="RMT-AL-ll7" id="HRh-B4-Nuj"/>
@@ -1243,7 +1297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCz-op-2QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8553" y="396"/>
+            <point key="canvasLocation" x="8552.7999999999993" y="394.45277361319341"/>
         </scene>
         <!--Item-->
         <scene sceneID="twi-LF-mnM">

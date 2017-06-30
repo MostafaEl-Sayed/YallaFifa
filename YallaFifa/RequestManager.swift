@@ -184,15 +184,25 @@ class RequestManager{
     //            print("Error getting tags - \(error?.localizedDescription)")
     //            completionHandler("\(error?.localizedDescription)",false)
     //        })
-    func sendRequestToUser(_ targetUserDetails : User ,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
+    func sendRequestToUser(_ targetUserDetails : User ,notificationMessage:String,notificationStatus:String,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         
         if targetUserDetails.playerID != "" {
 
-            let data = ["email":"\(targetUserDetails.email)","phone": "\(targetUserDetails.phone)","playerID":"\(targetUserDetails.playerID)","long":"\(targetUserDetails.location.longtude)","lat":"\(targetUserDetails.location.latitude)"]
-            OneSignal.postNotification(["contents": ["en": "YALLA Benaaa Wa7d Fifa"],
-                                        "include_player_ids": ["\(targetUserDetails.playerID)"],
-                                        "ios_badgeCount":"Increase",
-                                        "data":data])
+            let data =
+                ["email":"\(targetUserDetails.email)",
+                "phoneNumber": "\(targetUserDetails.phone)",
+                    "playerID":"\(targetUserDetails.playerID)",
+                    "long":"\(targetUserDetails.location.longtude!)",
+                    "lat":"\(targetUserDetails.location.latitude!)",
+                    "typeOfUser":"\(targetUserDetails.typeOfUser)",
+                    "notificationStatus":"\(notificationStatus)"]
+            OneSignal.postNotification(
+                ["contents": ["en": "\(notificationMessage)"],
+                 "include_player_ids": ["\(targetUserDetails.playerID)"],
+                 "ios_badgeCount":"Increase",
+                 "data":data]
+            )
+            
 
             
         }

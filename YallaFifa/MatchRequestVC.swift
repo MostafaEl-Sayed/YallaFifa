@@ -47,6 +47,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     var userStatus = true
     var myProfileStatus = false
     var filteredUserAvailableNow = [User]()
+    var notificationAcceptStatus = false
+    var userDisplayWhileRequesting = User()
     
     @IBOutlet weak var chooseMeetingPointLabel: UILabel!
     @IBOutlet weak var locationLogoImg: UIImageView!
@@ -74,8 +76,6 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("current user\(currentUser.email)")
         
         self.mapView.delegate = self
         mapView.setMinZoom(10, maxZoom: 19)
@@ -105,16 +105,20 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         
         self.fliveViewControllerView.isHidden = false
         self.flipViewControllerBtn.isHidden = false
-        userDataObserver()
-        if userType == .online {
-            self.addNewPsView.isHidden = true
-            
+        if !notificationAcceptStatus {
+            loadData()
+        }else {
+            flipViewControllerBtn.isHidden = true
+            fliveViewControllerView.isHidden = true
+            addNewPsView.isHidden = true
+            chooseLocationView.isHidden = true
+            print("notificationaya")
+            print(userDisplayWhileRequesting.location.latitude)
+            print(currentUser.location.latitude)
+            drowUserLocationsMarkers(users: [userDisplayWhileRequesting,currentUser], imageMarkerName: "user")
+            createBlueLineBetween2locations(orderedLatLong: "\(userCurrentLocation.latitude!),\(userCurrentLocation.longtude!)", endPoints: "\(userDisplayWhileRequesting.location.latitude),\(userDisplayWhileRequesting.location.longtude)")
         }
-        if userType == .meetFriends {
-            self.addNewPsView.isHidden = false
-            
-            playStationDataObserver()
-        }
+        
 
         // Map setupx
         let latitude  = self.userCurrentLocation.latitude
@@ -130,7 +134,18 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     }
     
     
-   
+    func loadData()  {
+        userDataObserver()
+        if userType == .online {
+            self.addNewPsView.isHidden = true
+            
+        }
+        if userType == .meetFriends {
+            self.addNewPsView.isHidden = false
+            
+            playStationDataObserver()
+        }
+    }
 
     
     
@@ -200,6 +215,9 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         let route = blueLine.overviewPolyline["points"] as! String
         let path: GMSPath = GMSPath(fromEncodedPath: route)!
         blueLine.routePolyline = GMSPolyline(path: path)
+        if notificationAcceptStatus {
+            blueLine.routePolyline.strokeColor = .green
+        }
         blueLine.routePolyline.strokeWidth = 2
         blueLine.routePolyline.map = self.mapView
         oneRootadded = true
@@ -292,10 +310,8 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
         }
         filteredUserAvailableNow = []
         for user in users! {
-            print("users:-")
-            print("\(user.email),\(user.location.latitude),\(user.location.longtude),\(user.typeOfUser)")
-            print("currentUser\(currentUser.email)")
-            if "\(user.typeOfUser)" != "\(userType)" || user.email == currentUser.email || user.userAvailability == "offline" {
+            
+            if "\(user.typeOfUser)" != "\(userType)" || (user.email == currentUser.email && !notificationAcceptStatus) || user.userAvailability == "offline" {
                 print("ana lmfrood marsemsh")
                 continue
             }
@@ -305,10 +321,7 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
             let position = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let marker = GMSMarker(position: position)
             marker.title = "\(userType)"
-            
-            
             marker.icon = UIImage(named: imageMarkerName)
-            
             marker.map = mapView
             
         }
@@ -530,6 +543,15 @@ class MatchRequestViewController: UIViewController , CLLocationManagerDelegate ,
     
     @IBAction func cancelRequestBtnAct(_ sender: Any) {
         
+        if notificationAcceptStatus {
+            notificationAcceptStatus = false
+            flipViewControllerBtn.isHidden = false
+            fliveViewControllerView.isHidden = false
+            addNewPsView.isHidden = false
+            chooseLocationView.isHidden = false
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "matchDetailsNav") as! UINavigationController
+            self.navigationController!.present(vc, animated: true, completion: nil)
+        }
         
         self.smallSearchBtn.setImage(UIImage(named:"Search"), for: .normal)
         makeBackEnable = true

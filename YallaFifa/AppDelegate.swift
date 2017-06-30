@@ -24,10 +24,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
+    OneSignal.initWithLaunchOptions(launchOptions,
+    appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
+    handleNotificationAction: { result in
+                                        // This block gets called when the user reacts to a notification received
+    let payload: OSNotificationPayload = result!.notification.payload
+                                        
+    var fullMessage = payload.body
+    let additionalData = payload.additionalData
+        if let data = additionalData as NSDictionary? {
+            
+            if let status = data["notificationStatus"] as? String {
+                
+                let senderDetails = User(data: data)
+                let long = data.getValueForKey(Key: "long", callBack: "")
+                let lat = data.getValueForKey(Key: "lat", callBack: "")
+                senderDetails.location.longtude = Double(long)
+                senderDetails.location.latitude = Double(lat)
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                if status == "accept" {
+                    
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+                    viewController.notificationAcceptStatus = true
+                    viewController.userDisplayWhileRequesting = senderDetails
+                    self.window?.rootViewController = viewController
+                    self.window?.makeKeyAndVisible()
+                }else if status == "newRequest"{
+                    
+                     let viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+                    viewController.notificationComeProfileStatus = true
+                    viewController.userProfileData = senderDetails
+                    self.window?.rootViewController = viewController
+                    self.window?.makeKeyAndVisible()
+                }
+                
+            }
+            
+        }
+        
+    }
+    ,settings: onesignalInitSettings)
         
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
         // OneSignal Observer
@@ -64,11 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
             
             if let additionalData = notification?.payload.additionalData {
-                let email: String? = additionalData["email"] as! String
-                let phone: String? = additionalData["phone"] as! String
-                let playerID: String? = additionalData["playerID"] as! String
-                let long: Double? = additionalData["long"] as! Double
-                let lat: Double? = additionalData["lat"] as! Double
+                
                 self.window = UIWindow(frame: UIScreen.main.bounds)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 var viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
